@@ -14698,14 +14698,14 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <part name="DIS1" library="display-kingbright" deviceset="SA23-11" device=""/>
 <part name="DIS2" library="display-kingbright" deviceset="SA23-11" device=""/>
 <part name="DIS3" library="display-kingbright" deviceset="SA23-11" device=""/>
-<part name="R1" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R3" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R4" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R5" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R0603"/>
-<part name="R8" library="rcl" deviceset="R-EU_" device="R0603"/>
+<part name="R1" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R3" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R4" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R5" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="R0603" value="220R"/>
+<part name="R8" library="rcl" deviceset="R-EU_" device="R0603" value="470R"/>
 <part name="R9" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="R0603"/>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R0603"/>
