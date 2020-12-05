@@ -48,7 +48,7 @@ component FDivider
 	);
 end component;
 
-component hexconv
+component decconv
 	port (
 		A : in STD_LOGIC;
 		B : in STD_LOGIC;
@@ -119,7 +119,7 @@ begin
 			val => hoursbcd
 		);	
 	
-	display1 : hexconv port map (
+	display1 : decconv port map (
 		A => hoursbcd(0),
 		B => hoursbcd(1),
 		C => hoursbcd(2),
@@ -133,7 +133,7 @@ begin
 		Seg_G => DIG1(6)
 	);
 	
-	display10 : hexconv port map (
+	display10 : decconv port map (
 		A => hoursbcd(4),
 		B => hoursbcd(5),
 		C => hoursbcd(6),
@@ -147,7 +147,7 @@ begin
 		Seg_G => DIG0(6)
 	);
 
-	display2 : hexconv port map (
+	display2 : decconv port map (
 		A => minutesbcd(0),
 		B => minutesbcd(1),
 		C => minutesbcd(2),
@@ -161,7 +161,7 @@ begin
 		Seg_G => DIG3(6)
 	);
 	
-	display20 : hexconv port map (
+	display20 : decconv port map (
 		A => minutesbcd(4),
 		B => minutesbcd(5),
 		C => minutesbcd(6),
