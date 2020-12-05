@@ -1,5 +1,0 @@
-vhdl work "bin2bcd.vhd"
-vhdl work "hexconv.vhd"
-vhdl work "FDivider.vhd"
-vhdl work "deccount.vhd"
-vhdl work "clock.vhd"
