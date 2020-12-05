@@ -36,22 +36,15 @@ entity dec2bcd is port (
 end dec2bcd;
 
 architecture Behavioral of dec2bcd is
-	signal inval : unsigned(6 DOWNTO 0) := (others => '0');
-	signal outval1 : unsigned(3 DOWNTO 0) := (others => '0');
-	signal outval10 : unsigned(3 DOWNTO 0) := (others => '0');
+	--signal inval : unsigned(6 DOWNTO 0) := (others => '0');
+	--signal outval1 : unsigned(3 DOWNTO 0) := (others => '0');
+	--signal outval10 : unsigned(3 DOWNTO 0) := (others => '0');
 	
 begin
-	dec2bcd_proc : process(clk)
-	begin
-		if rising_edge(clk) then
-			outval1 <= inval MOD 10;
-			outval10 <= inval / 10;
-		end if;
-	end process;
+	--this is temp!
 	
-	inval <= unsigned(decval);
-	bcdval(3 DOWNTO 0) <= STD_LOGIC_VECTOR(outval1);
-	bcdval(7 DOWNTO 4) <= STD_LOGIC_VECTOR(outval10);
+	bcdval(6 DOWNTO 0) <= decval;
+	bcdval(7) <= '0';
 	
 end Behavioral;
 

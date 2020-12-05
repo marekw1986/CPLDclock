@@ -1,0 +1,10 @@
+AR deccount behavioral /home/marek/Dropbox/Projekty/CPLDclock/code/deccount.vhd sub00/vhpl05 1607178512
+EN clock NULL /home/marek/Dropbox/Projekty/CPLDclock/code/clock.vhd sub00/vhpl08 1607178515
+EN fdivider NULL /home/marek/Dropbox/Projekty/CPLDclock/code/FDivider.vhd sub00/vhpl02 1607178509
+EN deccount NULL /home/marek/Dropbox/Projekty/CPLDclock/code/deccount.vhd sub00/vhpl04 1607178511
+AR clock behavioral /home/marek/Dropbox/Projekty/CPLDclock/code/clock.vhd sub00/vhpl09 1607178516
+EN bin2bcd NULL /home/marek/Dropbox/Projekty/CPLDclock/code/bin2bcd.vhd sub00/vhpl00 1607178507
+AR hexconv behavioral /home/marek/Dropbox/Projekty/CPLDclock/code/hexconv.vhd sub00/vhpl07 1607178514
+EN hexconv NULL /home/marek/Dropbox/Projekty/CPLDclock/code/hexconv.vhd sub00/vhpl06 1607178513
+AR bin2bcd behavioral /home/marek/Dropbox/Projekty/CPLDclock/code/bin2bcd.vhd sub00/vhpl01 1607178508
+AR fdivider behavioral /home/marek/Dropbox/Projekty/CPLDclock/code/FDivider.vhd sub00/vhpl03 1607178510

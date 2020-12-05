@@ -1,4 +1,4 @@
-NET "Clk"		LOC = P23;
+NET "MainClk"		LOC = P23;
 #NET "Rst"		LOC = P99;
 #NET "DCF"		LOC = P46;
 #

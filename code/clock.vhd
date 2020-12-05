@@ -31,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity clock is
 	port (
-		Clk : in STD_LOGIC;
+		MainClk : in STD_LOGIC;
 		DIG0 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
 		DIG1 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
 		DIG2 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -64,24 +64,66 @@ component hexconv
 	);
 end component;
 
-signal seconds : unsigned(5 downto 0) := (others => '0');
-signal minutes1 : unsigned(3 downto 0) := (others => '0');
-signal minutes10 : unsigned(2 downto 0) := (others => '0');
+component deccount
+	generic (maxval : integer := 99);
+	port (
+		clkin : in STD_LOGIC;
+		clkout : out STD_LOGIC;
+		val : out STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+end component;
+
+
+--signal minutes1 : unsigned(3 downto 0) := (others => '0');
+--signal minutes10 : unsigned(2 downto 0) := (others => '0');
+--signal seconds1 : unsigned(3 downto 0) := (others => '0');
+--signal seconds10 : unsigned(2 downto 0) := (others => '0');
+
+--signal secondsbcd : STD_LOGIC_VECTOR(7 downto 0);
+signal minutesbcd : STD_LOGIC_VECTOR(7 downto 0);
+signal hoursbcd : STD_LOGIC_VECTOR(7 downto 0);
 signal FSec : STD_LOGIC;
+signal FMin : STD_LOGIC;
+signal FHour : STD_LOGIC;
+--signal FDay : STD_LOGIC;
 signal dot : STD_LOGIC;
 
 begin
-	
+
 	dzielnik : FDivider port map (
-		Clk => Clk,
+		Clk => MainClk,
 		FSec => FSec
 	);
 	
+	seccount : deccount
+		generic map (maxval => 59)
+		port map (
+			clkin => FSec,
+			clkout => FMin,
+			val => open
+		);
+		
+	mincount : deccount
+		generic map (maxval => 59)
+		port map (
+			clkin => FMin,
+			clkout => FHour,
+			val => minutesbcd
+		);
+		
+	hourcount : deccount
+		generic map (maxval => 23)
+		port map (
+			clkin => FHour,
+			clkout => open,
+			val => hoursbcd
+		);	
+	
 	display1 : hexconv port map (
-		A => minutes1(0),
-		B => minutes1(1),
-		C => minutes1(2),
-		D => minutes1(3),
+		A => hoursbcd(0),
+		B => hoursbcd(1),
+		C => hoursbcd(2),
+		D => hoursbcd(3),
 		Seg_A => DIG1(0),
 		Seg_B => DIG1(1),
 		Seg_C => DIG1(2),
@@ -92,10 +134,10 @@ begin
 	);
 	
 	display10 : hexconv port map (
-		A => minutes10(0),
-		B => minutes10(1),
-		C => minutes10(2),
-		D => '0',
+		A => hoursbcd(4),
+		B => hoursbcd(5),
+		C => hoursbcd(6),
+		D => hoursbcd(7),
 		Seg_A => DIG0(0),
 		Seg_B => DIG0(1),
 		Seg_C => DIG0(2),
@@ -106,10 +148,10 @@ begin
 	);
 
 	display2 : hexconv port map (
-		A => minutes1(0),
-		B => minutes1(1),
-		C => minutes1(2),
-		D => minutes1(3),
+		A => minutesbcd(0),
+		B => minutesbcd(1),
+		C => minutesbcd(2),
+		D => minutesbcd(3),
 		Seg_A => DIG3(0),
 		Seg_B => DIG3(1),
 		Seg_C => DIG3(2),
@@ -120,10 +162,10 @@ begin
 	);
 	
 	display20 : hexconv port map (
-		A => minutes10(0),
-		B => minutes10(1),
-		C => minutes10(2),
-		D => '0',
+		A => minutesbcd(4),
+		B => minutesbcd(5),
+		C => minutesbcd(6),
+		D => minutesbcd(7),
 		Seg_A => DIG2(0),
 		Seg_B => DIG2(1),
 		Seg_C => DIG2(2),
@@ -136,30 +178,37 @@ begin
 	clock_proc: process(FSec)
 	begin
 		if rising_edge(FSec) then
-			if seconds = 59 then
-				seconds <= (others => '0');
-				if minutes1 = 9 then
-					minutes1 <= (others => '0');
-					if minutes10 = 5 then
-						minutes10 <= (others => '0');
-					else
-						minutes10 <= minutes10 + 1;
-					end if;						
-				else
-					minutes1 <= minutes1 + 1;
-				end if;					
-			else
-				seconds <= seconds + 1;
-			end if;
-			
+--			if seconds1 = 9 then
+--				seconds1 <= (others => '0');
+--				if seconds10 = 5 then
+--					seconds10 <= (others => '0');
+--				else
+--					seconds10 <= seconds10 + 1;
+--				end if;						
+--			else
+---				seconds1 <= seconds1 + 1;
+--			end if;				
 			dot <= not dot;
 		end if;
+	
+--		if rising_edge(FMin) then
+--			if minutes1 = 9 then
+--				minutes1 <= (others => '0');
+--				if minutes10 = 5 then
+--					minutes10 <= (others => '0');
+--				else
+--					minutes10 <= minutes10 + 1;
+--				end if;						
+--			else
+--				minutes1 <= minutes1 + 1;
+--			end if;					
+--		end if;
 	end process;
 	
 	DIG0(7) <= '0';
 	DIG1(7) <= dot;
 	DIG2(7) <= '0';	
-	DIG3(7) <= dot;
+	DIG3(7) <= '0';
 
 end Behavioral;
 

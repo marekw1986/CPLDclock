@@ -1,0 +1,75 @@
+Pin Freeze File:  version P.20131013
+
+2C128100 XC2C128-6-VQ100
+MainClk S:PIN23
+DIG0<0> S:PIN12
+DIG0<1> S:PIN13
+DIG0<2> S:PIN6
+DIG0<3> S:PIN7
+DIG0<4> S:PIN8
+DIG0<5> S:PIN10
+DIG0<6> S:PIN9
+DIG0<7> S:PIN11
+DIG1<0> S:PIN22
+DIG1<1> S:PIN24
+DIG1<2> S:PIN14
+DIG1<3> S:PIN15
+DIG1<4> S:PIN16
+DIG1<5> S:PIN18
+DIG1<6> S:PIN17
+DIG1<7> S:PIN19
+DIG2<0> S:PIN34
+DIG2<1> S:PIN35
+DIG2<2> S:PIN27
+DIG2<3> S:PIN28
+DIG2<4> S:PIN29
+DIG2<5> S:PIN32
+DIG2<6> S:PIN30
+DIG2<7> S:PIN33
+DIG3<0> S:PIN43
+DIG3<1> S:PIN44
+DIG3<2> S:PIN36
+DIG3<3> S:PIN37
+DIG3<4> S:PIN39
+DIG3<5> S:PIN41
+DIG3<6> S:PIN40
+DIG3<7> S:PIN42
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 DIG0<1>
+PARTITION FB1_3 DIG0<0> DIG0<7> DIG0<5> DIG0<6>
+		 dzielnik/FDivCnt<0> N_PZ_319 N_PZ_396 hoursbcd<2>
+		 DIG0<4> DIG0<3> DIG0<2> hoursbcd<3>
+		
+
+PARTITION FB2_2 DIG1<2> DIG1<3> DIG1<4> DIG1<6>
+		 DIG1<5> seccount/counter<0> N_PZ_300 minutesbcd<1>
+		 minutesbcd<3> DIG1<7> minutesbcd<2> DIG1<0>
+		
+PARTITION FB2_15 DIG1<1> DIG2<2>
+PARTITION FB3_1 dzielnik/FDivCnt<10> hourcount/counter<1> hoursbcd<0> dzielnik/FDivCnt<1>
+		 dzielnik/FDivCnt<2> dzielnik/FDivCnt<3> dzielnik/FDivCnt<4> dzielnik/FDivCnt<11>
+		 dzielnik/FDivCnt<12> dzielnik/FDivCnt<13> dzielnik/FDivCnt<5> FSec
+		 dzielnik/FDivCnt<6> dzielnik/FDivCnt<7> dzielnik/FDivCnt<8> dzielnik/FDivCnt<9>
+		
+PARTITION FB4_1 DIG2<3> mincount/counter<2> mincount/counter<5> DIG2<4>
+		 DIG2<6> DIG2<5> DIG2<7> mincount/counter<4>
+		 mincount/counter<3> FHour DIG2<0> DIG2<1>
+		 DIG3<2> DIG3<3> DIG3<4> DIG3<6>
+		
+PARTITION FB5_1 N_PZ_405 N_PZ_313 N_PZ_317 hourcount/counter<2>
+		 mincount/counter<6> hourcount/counter<5> mincount/counter<1> hourcount/counter<6>
+		 hourcount/counter<3> hourcount/counter<4> minutesbcd<0> N_PZ_312
+		 N_PZ_364 N_PZ_354 N_PZ_316 hoursbcd<1>
+		
+PARTITION FB6_7 seccount/counter<1> seccount/counter<6> seccount/counter<5> seccount/counter<4>
+		 seccount/counter<3>
+PARTITION FB6_13 FMin
+PARTITION FB6_15 seccount/counter<2> N_PZ_315
+
+PARTITION FB8_13 DIG3<1> DIG3<0> DIG3<7> DIG3<5>
+		
+
