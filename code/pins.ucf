@@ -2,10 +2,10 @@ NET "MainClk"		LOC = P23;
 #NET "Rst"		LOC = P99;
 #NET "DCF"		LOC = P46;
 #
-#NET "KEY1"		LOC = P97;
-#NET "KEY2"		LOC = P96;
-#NET "KEY3"		LOC = P49;
-#NET "KEY4"		LOC = P50;
+NET "KEY1"		LOC = P97;
+NET "KEY2"		LOC = P96;
+NET "KEY3"		LOC = P49;
+NET "KEY4"		LOC = P50;
 #
 NET "DIG0[0]"	LOC = P12;
 NET "DIG0[1]"	LOC = P13;

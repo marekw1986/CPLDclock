@@ -32,6 +32,10 @@ use IEEE.NUMERIC_STD.ALL;
 entity clock is
 	port (
 		MainClk : in STD_LOGIC;
+		KEY1 : in STD_LOGIC;
+		KEY2 : in STD_LOGIC;
+		KEY3 : in STD_LOGIC;
+		KEY4 : in STD_LOGIC;
 		DIG0 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
 		DIG1 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
 		DIG2 : out STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -45,6 +49,14 @@ component FDivider
 	port (
 		Clk : in STD_LOGIC;
 		FSec : out STD_LOGIC
+	);
+end component;
+
+component PushButton
+	port (
+		KClk : in STD_LOGIC;
+		KeyIn : in STD_LOGIC;
+		Status : out STD_LOGIC
 	);
 end component;
 
@@ -87,6 +99,10 @@ signal FMin : STD_LOGIC;
 signal FHour : STD_LOGIC;
 --signal FDay : STD_LOGIC;
 signal dot : STD_LOGIC;
+signal chmod : STD_LOGIC;
+signal settime : STD_LOGIC;
+signal sethour : STD_LOGIC;
+signal setminute : STD_LOGIC;
 
 begin
 
@@ -94,6 +110,30 @@ begin
 		Clk => MainClk,
 		FSec => FSec
 	);
+	
+	modeBtn : PushButton port map (
+		KClk => FSec,
+		KeyIn => KEY1,
+		Status => chmod
+	);
+	
+	setBtn : PushButton port map (
+		KClk => FSec,
+		KeyIn => KEY2,
+		Status => settime
+	);
+
+	setHr : PushButton port map (
+		KClk => FSec,
+		KeyIn => KEY3,
+		Status => sethour
+	);	
+
+	setMn : PushButton port map (
+		KClk => FSec,
+		KeyIn => KEY4,
+		Status => setminute
+	);		
 	
 	seccount : deccount
 		generic map (maxval => 59)
