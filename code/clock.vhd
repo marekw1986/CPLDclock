@@ -49,7 +49,8 @@ component FDivider
 	port (
 		Clk : in STD_LOGIC;
 		FSec : out STD_LOGIC;
-		F8ms : out STD_LOGIC
+		F8ms : out STD_LOGIC;
+		F250ms : out STD_LOGIC
 	);
 end component;
 
@@ -93,6 +94,7 @@ signal hoursbcd : STD_LOGIC_VECTOR(7 DOWNTO 0);
 signal indisp0 : STD_LOGIC_VECTOR(7 DOWNTO 0); 
 signal indisp1 : STD_LOGIC_VECTOR(7 DOWNTO 0); 
 signal F8ms : STD_LOGIC;
+signal F250ms : STD_LOGIC;
 signal FSec : STD_LOGIC;
 signal FMin : STD_LOGIC;
 signal FHour : STD_LOGIC;
@@ -101,14 +103,19 @@ signal chmod : STD_LOGIC;
 signal settime : STD_LOGIC;
 signal sethour : STD_LOGIC;
 signal setminute : STD_LOGIC;
-signal showhr : STD_LOGIC := '1';
+signal hr_clkin : STD_LOGIC;
+signal min_clkin : STD_LOGIC;
+signal showhr : STD_LOGIC := '0';
+signal setmode : STD_LOGIC := '0';
+signal secrst : STD_LOGIC;
 
 begin
 
 	dzielnik : FDivider port map (
 		Clk => MainClk,
 		FSec => FSec,
-		F8ms => F8ms
+		F8ms => F8ms,
+		F250ms => F250ms
 	);
 	
 	modeBtn : PushButton port map (
@@ -139,7 +146,7 @@ begin
 		generic map (maxval => 59)
 		port map (
 			clkin => FSec,
-			rst => '1',
+			rst => not settime,
 			clkout => FMin,
 			val => secondsbcd
 		);
@@ -147,7 +154,7 @@ begin
 	mincount : deccount
 		generic map (maxval => 59)
 		port map (
-			clkin => FMin,
+			clkin => min_clkin,
 			rst => '1',
 			clkout => FHour,
 			val => minutesbcd
@@ -156,7 +163,7 @@ begin
 	hourcount : deccount
 		generic map (maxval => 23)
 		port map (
-			clkin => FHour,
+			clkin => hr_clkin,
 			rst => '1',
 			clkout => open,
 			val => hoursbcd
@@ -218,25 +225,23 @@ begin
 		Seg_G => DIG2(6)
 	);
 
-	mode_proce : process(chmod)
+	mode_proce : process(chmod, settime)
 	begin
-		if falling_edge(chmod) then
+		if rising_edge(chmod) then
 			showhr <= not showhr;
 		end if;
-	end process;
-	
-	clock_proc: process(FSec)
-	begin
-		if rising_edge(FSec) then			
-			dot <= not dot;
+		if rising_edge(settime) then
+			setmode <= not setmode;
 		end if;
 	end process;
 	
 	indisp0 <= hoursbcd when (showhr = '1') else (others => '1');
 	indisp1 <= minutesbcd when (showhr = '1') else secondsbcd;
+	min_clkin <= FMin when (setmode = '0') else setminute;
+	hr_clkin <= FHour when (setmode = '0') else sethour;
 	
 	DIG0(7) <= '0';
-	DIG1(7) <= dot;
+	DIG1(7) <= FSec when (setmode = '0') else F250ms;
 	DIG2(7) <= '0';	
 	DIG3(7) <= '0';
 

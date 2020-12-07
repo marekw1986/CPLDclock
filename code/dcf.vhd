@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    11:33:30 11/18/2020 
+-- Create Date:    16:18:04 12/07/2020 
 -- Design Name: 
--- Module Name:    FDivider - Behavioral 
+-- Module Name:    dcf - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,24 +29,21 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity FDivider is
-	port (Clk : in STD_LOGIC;
-			FSec : out STD_LOGIC;
-			F8ms : out STD_LOGIC;
-			F250ms : out STD_LOGIC);
-end FDivider;
+entity dcf is
+	port (
+		data : in STD_LOGIC
+	);
+end dcf;
 
-architecture Behavioral of FDivider is
-	signal FDivCnt : unsigned (14 downto 0);
+architecture Behavioral of dcf is
+	signal buff : STD_LOGIC_VECTOR(59 DOWNTO 0) := (others => '0');
+
 begin
-	FDividerInstance : process (Clk)
+	dcf_proc : process (data)
 	begin
-		if rising_edge(Clk) then
-			FDivCnt <= FDivCnt + 1;
+		if falling_edge(data) then
+			buff <= buff(58 DOWNTO 0) & data;
 		end if;
 	end process;
-	FSec <= FDivCnt (FDivCnt'left);
-	F8ms <= FDivCnt(7);
-	F250ms <= FDivCnt(12);
 end Behavioral;
 
