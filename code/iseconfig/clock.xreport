@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-12-05T22:18:37</DateModified>
+  <DateModified>2020-12-07T13:35:07</DateModified>
   <ModuleName>clock</ModuleName>
-  <SummaryTimeStamp>2020-12-05T22:18:08</SummaryTimeStamp>
+  <SummaryTimeStamp>2020-12-07T13:33:01</SummaryTimeStamp>
   <SavedFilePath>/home/marek/Dropbox/Projekty/CPLDclock/code/iseconfig/clock.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/marek/Dropbox/Projekty/CPLDclock/code/</ImplementationReportsDirectory>
   <DateInitialized>2020-11-17T15:04:08</DateInitialized>

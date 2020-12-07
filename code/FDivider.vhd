@@ -31,7 +31,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity FDivider is
 	port (Clk : in STD_LOGIC;
-			FSec : out STD_LOGIC);
+			FSec : out STD_LOGIC;
+			F8ms : out STD_LOGIC);
 end FDivider;
 
 architecture Behavioral of FDivider is
@@ -44,5 +45,6 @@ begin
 		end if;
 	end process;
 	FSec <= FDivCnt (FDivCnt'left);
+	F8ms <= FDivCnt(7);
 end Behavioral;
 

@@ -33,6 +33,7 @@ entity deccount is
 	generic (maxval : integer := 99);
 	port (
 		clkin : in STD_LOGIC;
+		rst : in STD_LOGIC;
 		clkout : out STD_LOGIC;
 		val : out STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
@@ -55,15 +56,19 @@ begin
 		bcdval => val
 	);
 
-	count_proc : process (clkin)
+	count_proc : process (clkin, rst)
 	begin
-		if rising_edge(clkin) then
-			if counter = maxval then
-				counter <= (others => '0');
-				clkout <= '1';
-			else
-				counter <= counter + 1;
-				clkout <= '0';
+		if rst = '0' then
+			counter <= (others => '0');
+		else
+			if rising_edge(clkin) then
+				if counter = maxval then
+					counter <= (others => '0');
+					clkout <= '1';
+				else
+					counter <= counter + 1;
+					clkout <= '0';
+				end if;
 			end if;
 		end if;
 	end process;
