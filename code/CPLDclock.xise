@@ -17,7 +17,7 @@
   <files>
     <file xil_pn:name="clock.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="7"/>
     </file>
     <file xil_pn:name="pins.ucf" xil_pn:type="FILE_UCF">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -26,21 +26,25 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="41"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="3"/>
     </file>
-    <file xil_pn:name="deccount.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="43"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="4"/>
-    </file>
-    <file xil_pn:name="bin2bcd.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="46"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
-    </file>
     <file xil_pn:name="decconv.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="8"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="5"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="4"/>
     </file>
     <file xil_pn:name="PushButton.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="185"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="2"/>
+    </file>
+    <file xil_pn:name="bcdcount.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="9"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="1"/>
+    </file>
+    <file xil_pn:name="bcdcnt60.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="15"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="5"/>
+    </file>
+    <file xil_pn:name="bcdcnt24.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="45"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
     </file>
   </files>
 
@@ -68,7 +72,7 @@
     <property xil_pn:name="Create IEEE 1532 Configuration File" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Default Powerup Value of Registers" xil_pn:value="Low" xil_pn:valueState="default"/>
     <property xil_pn:name="Delay Values To Be Read from SDF" xil_pn:value="Setup Time" xil_pn:valueState="default"/>
-    <property xil_pn:name="Device" xil_pn:value="xc2c256" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Device" xil_pn:value="xc2c128" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Device Family" xil_pn:value="CoolRunner2 CPLDs" xil_pn:valueState="non-default"/>
     <property xil_pn:name="Device Speed Grade/Select ABS Minimum" xil_pn:value="-6" xil_pn:valueState="default"/>
     <property xil_pn:name="Do Not Escape Signal and Instance Names in Netlist" xil_pn:value="false" xil_pn:valueState="default"/>

@@ -78,8 +78,16 @@ component decconv
 	);
 end component;
 
-component deccount
-	generic (maxval : integer := 99);
+component bcdcnt60
+	port (
+		clkin : in STD_LOGIC;
+		rst : in STD_LOGIC;
+		clkout : out STD_LOGIC;
+		val : out STD_LOGIC_VECTOR(7 DOWNTO 0)
+	);
+end component;
+
+component bcdcnt24
 	port (
 		clkin : in STD_LOGIC;
 		rst : in STD_LOGIC;
@@ -142,8 +150,7 @@ begin
 		Status => setminute
 	);		
 	
-	seccount : deccount
-		generic map (maxval => 59)
+	seccount : bcdcnt60
 		port map (
 			clkin => FSec,
 			rst => not settime,
@@ -151,8 +158,7 @@ begin
 			val => secondsbcd
 		);
 		
-	mincount : deccount
-		generic map (maxval => 59)
+	mincount : bcdcnt60
 		port map (
 			clkin => min_clkin,
 			rst => '1',
@@ -160,8 +166,7 @@ begin
 			val => minutesbcd
 		);
 		
-	hourcount : deccount
-		generic map (maxval => 23)
+	hourcount : bcdcnt24
 		port map (
 			clkin => hr_clkin,
 			rst => '1',
