@@ -1,6 +1,6 @@
-NET "MainClk"		LOC = P23;
+NET "MainClk"	LOC = P23 | PERIOD = 30517.5781ns;
 #NET "Rst"		LOC = P99;
-#NET "DCF"		LOC = P46;
+#NET "DCFIN"		LOC = P46;
 #
 NET "KEY1"		LOC = P96;
 NET "KEY2"		LOC = P97;

@@ -1,0 +1,1338 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: clock                               Date:  1-22-2021,  1:03PM
+Device Used: XC2C128-6-VQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+99 /128 ( 77%) 226 /448  ( 50%) 125 /320  ( 39%) 66 /128 ( 52%) 37 /80  ( 46%)
+
+** Function Block Resources **
+
+Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
+Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
+FB1      16/16*    11/40    33/56     8/10    1/1*     1/1*     0/1      0/1
+FB2      16/16*    20/40    44/56     9/10    1/1*     1/1*     0/1      0/1
+FB3      16/16*    19/40    19/56     0/11    1/1*     0/1      0/1      0/1
+FB4      14/16     19/40    56/56*   11/11*   1/1*     0/1      0/1      0/1
+FB5      16/16*    27/40    29/56     0/10    1/1*     1/1*     0/1      0/1
+FB6      15/16     18/40    24/56     0/ 9    1/1*     1/1*     0/1      0/1
+FB7       0/16      0/40     0/56     0/10    0/1      0/1      0/1      0/1
+FB8       6/16     11/40    21/56     4/ 9    1/1*     0/1      0/1      0/1
+         -----    -------  -------   -----    ---      ---      ---      ---
+Total    99/128   125/320  226/448   32/80    7/8      4/8      0/8      0/8 
+
+CTC - Control Term Clock
+CTR - Control Term Reset
+CTS - Control Term Set
+CTE - Control Term Output Enable
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+GCK         GSR         GTS         DGE         
+Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+1/3         0/1         0/4         0/1
+
+Signal 'MainClk' mapped onto global clock net GCK1.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :    4           4    |  I/O              :    32     70
+Output        :   32          32    |  GCK/IO           :     3      3
+Bidirectional :    0           0    |  GTS/IO           :     0      4
+GCK           :    1           1    |  GSR/IO           :     0      1
+GTS           :    0           0    |  CDR/IO           :     1      1
+GSR           :    0           0    |  DGE/IO           :     1      1
+                 ----        ----
+        Total     37          37
+
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'clock.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'MainClk' based upon the LOC
+   constraint 'P23'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+*************************  Summary of Mapped Logic  ************************
+
+** 32 Outputs **
+
+Signal                    Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                      Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+DIG0<1>                   4     5     2    FB1_1   13    I/O       O       LVCMOS18           FAST         
+DIG0<0>                   4     5     2    FB1_3   12    I/O       O       LVCMOS18           FAST         
+DIG0<7>                   0     0     2    FB1_4   11    I/O       O       LVCMOS18           FAST         
+DIG0<5>                   3     5     2    FB1_5   10    I/O       O       LVCMOS18           FAST         
+DIG0<6>                   3     5     2    FB1_6   9     I/O       O       LVCMOS18           FAST         
+DIG0<4>                   2     5     2    FB1_11  8     I/O       O       LVCMOS18           FAST         
+DIG0<3>                   4     5     2    FB1_12  7     I/O       O       LVCMOS18           FAST         
+DIG0<2>                   3     5     2    FB1_13  6     I/O       O       LVCMOS18           FAST         
+DIG1<2>                   3     5     1    FB2_2   14    I/O       O       LVCMOS18           FAST         
+DIG1<3>                   4     5     1    FB2_3   15    I/O       O       LVCMOS18           FAST         
+DIG1<4>                   2     5     1    FB2_4   16    I/O       O       LVCMOS18           FAST         
+DIG1<6>                   3     5     1    FB2_5   17    I/O       O       LVCMOS18           FAST         
+DIG1<5>                   3     5     1    FB2_6   18    I/O       O       LVCMOS18           FAST         
+DIG1<7>                   2     3     1    FB2_11  19    I/O       O       LVCMOS18           FAST         
+DIG1<0>                   4     5     1    FB2_13  22    GCK/I/O   O       LVCMOS18           FAST         
+DIG1<1>                   4     5     1    FB2_15  24    CDR/I/O   O       LVCMOS18           FAST         
+DIG2<2>                   6     9     1    FB2_16  27    GCK/I/O   O       LVCMOS18           FAST         
+DIG2<3>                   9     9     1    FB4_1   28    DGE/I/O   O       LVCMOS18           FAST         
+DIG2<4>                   4     9     1    FB4_4   29    I/O       O       LVCMOS18           FAST         
+DIG2<6>                   7     9     1    FB4_5   30    I/O       O       LVCMOS18           FAST         
+DIG2<5>                   7     9     1    FB4_6   32    I/O       O       LVCMOS18           FAST         
+DIG2<7>                   0     0     1    FB4_7   33    I/O       O       LVCMOS18           FAST         
+DIG2<0>                   8     9     1    FB4_11  34    I/O       O       LVCMOS18           FAST         
+DIG2<1>                   8     9     1    FB4_12  35    I/O       O       LVCMOS18           FAST         
+DIG3<2>                   6     9     1    FB4_13  36    I/O       O       LVCMOS18           FAST         
+DIG3<3>                   8     10    1    FB4_14  37    I/O       O       LVCMOS18           FAST         
+DIG3<4>                   4     9     1    FB4_15  39    I/O       O       LVCMOS18           FAST         
+DIG3<6>                   6     10    1    FB4_16  40    I/O       O       LVCMOS18           FAST         
+DIG3<1>                   8     9     1    FB8_13  44    I/O       O       LVCMOS18           FAST         
+DIG3<0>                   6     10    1    FB8_14  43    I/O       O       LVCMOS18           FAST         
+DIG3<7>                   0     0     1    FB8_15  42    I/O       O       LVCMOS18           FAST         
+DIG3<5>                   7     10    1    FB8_16  41    I/O       O       LVCMOS18           FAST         
+
+** 67 Buried Nodes **
+
+Signal                    Total Total Loc     Reg     Reg Init
+Name                      Pts   Inps          Use     State
+hoursbcd<4>               3     9     FB1_2   TFF     RESET
+hourcount/intclk          3     10    FB1_7   DFF     RESET
+hoursbcd<3>               4     9     FB1_8   TFF     RESET
+hoursbcd<1>               4     9     FB1_9   TFF     RESET
+hoursbcd<2>               3     9     FB1_10  TFF     RESET
+hoursbcd<0>               2     9     FB1_14  TFF     RESET
+hoursbcd<7>               3     9     FB1_15  TFF     RESET
+hoursbcd<6>               3     9     FB1_16  TFF     RESET
+secondsbcd<6>             4     6     FB2_1   TFF     RESET
+secondsbcd<5>             4     6     FB2_7   TFF     RESET
+minutesbcd<7>             2     4     FB2_8   TFF     RESET
+minutesbcd<6>             3     5     FB2_9   TFF     RESET
+minutesbcd<5>             3     5     FB2_10  TFF     RESET
+FHour                     2     5     FB2_12  DFF     RESET
+FMin                      3     7     FB2_14  DFF     RESET
+F250ms                    1     12    FB3_1   TFF     RESET
+dzielnik/FDivCnt<1>       1     1     FB3_2   TFF     RESET
+dzielnik/FDivCnt<2>       1     2     FB3_3   TFF     RESET
+dzielnik/FDivCnt<3>       1     3     FB3_4   TFF     RESET
+setBtn/ShiftRegister<0>   3     4     FB3_5   DFF     RESET
+modeBtn/ShiftRegister<0>  3     4     FB3_6   DFF     RESET
+dzielnik/FDivCnt<4>       1     4     FB3_7   TFF     RESET
+dzielnik/FDivCnt<11>      1     11    FB3_8   TFF     RESET
+dzielnik/FDivCnt<10>      1     10    FB3_9   TFF     RESET
+dzielnik/FDivCnt<9>       1     9     FB3_10  TFF     RESET
+dzielnik/FDivCnt<5>       1     5     FB3_11  TFF     RESET
+dzielnik/FDivCnt<8>       1     8     FB3_12  TFF     RESET
+dzielnik/FDivCnt<6>       1     6     FB3_13  TFF     RESET
+F8ms                      1     7     FB3_14  TFF     RESET
+FSec                      1     14    FB3_15  TFF     RESET
+dzielnik/FDivCnt<13>      1     13    FB3_16  TFF     RESET
+minutesbcd<0>             1     1     FB4_8   TFF     RESET
+dzielnik/FDivCnt<0>       0     0     FB4_9   TFF     RESET
+N_PZ_413                  2     7     FB4_10          
+setBtn/ShiftRegister<1>   2     2     FB5_1   DFF     RESET
+modeBtn/ShiftRegister<3>  2     2     FB5_2   DFF     RESET
+chmod                     2     4     FB5_3   LATCH   RESET
+secondsbcd<1>             4     6     FB5_4   TFF     RESET
+modeBtn/ShiftRegister<2>  2     2     FB5_5   DFF     RESET
+secondsbcd<2>             3     4     FB5_6   TFF     RESET
+
+Signal                    Total Total Loc     Reg     Reg Init
+Name                      Pts   Inps          Use     State
+modeBtn/ShiftRegister<1>  2     2     FB5_7   DFF     RESET
+secondsbcd<0>             2     2     FB5_8   TFF     RESET
+setmode                   1     1     FB5_9   TFF     RESET
+minutesbcd<4>             1     1     FB5_10  TFF     RESET
+showhr                    1     1     FB5_11  TFF     RESET
+secondsbcd<7>             3     5     FB5_12  TFF     RESET
+secondsbcd<4>             2     2     FB5_13  TFF     RESET
+seccount/intclk           3     7     FB5_14  DFF     RESET
+secondsbcd<3>             4     6     FB5_15  TFF     RESET
+hoursbcd<5>               4     9     FB5_16  TFF     RESET
+setMn/ShiftRegister<3>    2     2     FB6_2   DFF     RESET
+setminute                 2     4     FB6_3   LATCH   RESET
+setMn/ShiftRegister<2>    2     2     FB6_4   DFF     RESET
+setMn/ShiftRegister<1>    2     2     FB6_5   DFF     RESET
+setHr/ShiftRegister<3>    2     2     FB6_6   DFF     RESET
+settime                   2     4     FB6_7   LATCH   RESET
+setBtn/ShiftRegister<3>   2     2     FB6_8   DFF     RESET
+setBtn/ShiftRegister<2>   2     2     FB6_9   DFF     RESET
+minutesbcd<2>             2     3     FB6_10  TFF     RESET
+minutesbcd<3>             3     5     FB6_11  TFF     RESET
+sethour                   2     4     FB6_12  LATCH   RESET
+mincount/intclk           2     5     FB6_13  DFF     RESET
+setHr/ShiftRegister<2>    2     2     FB6_14  DFF     RESET
+minutesbcd<1>             3     5     FB6_15  TFF     RESET
+setHr/ShiftRegister<1>    2     2     FB6_16  DFF     RESET
+setMn/ShiftRegister<0>    1     1     FB8_4   DFF     RESET
+setHr/ShiftRegister<0>    1     1     FB8_6   DFF     RESET
+
+** 5 Inputs **
+
+Signal                    Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                                   No.   Type      Use     STD      Style
+MainClk                   1    FB2_14  23    GCK/I/O   GCK     LVCMOS18 KPR
+KEY2                      2    FB3_5   97    I/O       I       LVCMOS18 KPR
+KEY1                      2    FB3_6   96    I/O       I       LVCMOS18 KPR
+KEY4                      1    FB8_4   50    I/O       I       LVCMOS18 KPR
+KEY3                      1    FB8_6   49    I/O       I       LVCMOS18 KPR
+
+Legend:
+Pin No.   - ~     - User Assigned
+I/O Style - OD    - OpenDrain
+          - PU    - Pullup
+          - KPR   - Keeper
+          - S     - SchmittTrigger
+          - DG    - DataGate
+Reg Use   - LATCH - Transparent latch
+          - DFF   - D-flip-flop
+          - DEFF  - D-flip-flop with clock enable
+          - TFF   - T-flip-flop
+          - TDFF  - Dual-edge-triggered T-flip-flop
+          - DDFF  - Dual-edge-triggered flip-flop
+          - DDEFF - Dual-edge-triggered flip-flop with clock enable
+          /S (after any above flop/latch type) indicates initial state is Set
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+              VRF - Vref
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               11/29
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   33/23
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+DIG0<1>                       4     FB1_1   13   I/O     O                 
+hoursbcd<4>                   3     FB1_2        (b)     (b)        +      
+DIG0<0>                       4     FB1_3   12   I/O     O                 
+DIG0<7>                       0     FB1_4   11   I/O     O                 
+DIG0<5>                       3     FB1_5   10   I/O     O                 
+DIG0<6>                       3     FB1_6   9    I/O     O                 
+hourcount/intclk              3     FB1_7        (b)     (b)    +          
+hoursbcd<3>                   4     FB1_8        (b)     (b)    +   +      
+hoursbcd<1>                   4     FB1_9        (b)     (b)    +   +      
+hoursbcd<2>                   3     FB1_10       (b)     (b)    +   +      
+DIG0<4>                       2     FB1_11  8    I/O     O                 
+DIG0<3>                       4     FB1_12  7    I/O     O                 
+DIG0<2>                       3     FB1_13  6    I/O     O                 
+hoursbcd<0>                   2     FB1_14       (b)     (b)    +   +      
+hoursbcd<7>                   3     FB1_15  4    GTS/I/O (b)        +      
+hoursbcd<6>                   3     FB1_16  3    GTS/I/O (b)        +      
+
+Signals Used by Logic in Function Block
+  1: hourcount/intclk   5: hoursbcd<3>        9: hoursbcd<7> 
+  2: hoursbcd<0>        6: hoursbcd<4>       10: setBtn/ShiftRegister<0>.COMB 
+  3: hoursbcd<1>        7: hoursbcd<5>       11: showhr 
+  4: hoursbcd<2>        8: hoursbcd<6>      
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+DIG0<1>           .....XXXX.X............................. 5       
+hoursbcd<4>       XXXXXXXXX............................... 9       
+DIG0<0>           .....XXXX.X............................. 5       
+DIG0<7>           ........................................ 0       
+DIG0<5>           .....XXXX.X............................. 5       
+DIG0<6>           .....XXXX.X............................. 5       
+hourcount/intclk  XXXXXXXXXX.............................. 10      
+hoursbcd<3>       .XXXXXXXXX.............................. 9       
+hoursbcd<1>       .XXXXXXXXX.............................. 9       
+hoursbcd<2>       .XXXXXXXXX.............................. 9       
+DIG0<4>           .....XXXX.X............................. 5       
+DIG0<3>           .....XXXX.X............................. 5       
+DIG0<2>           .....XXXX.X............................. 5       
+hoursbcd<0>       .XXXXXXXXX.............................. 9       
+hoursbcd<7>       XXXXXXXXX............................... 9       
+hoursbcd<6>       XXXXXXXXX............................... 9       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               20/20
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   44/12
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+secondsbcd<6>                 4     FB2_1        (b)     (b)        +      
+DIG1<2>                       3     FB2_2   14   I/O     O                 
+DIG1<3>                       4     FB2_3   15   I/O     O                 
+DIG1<4>                       2     FB2_4   16   I/O     O                 
+DIG1<6>                       3     FB2_5   17   I/O     O                 
+DIG1<5>                       3     FB2_6   18   I/O     O                 
+secondsbcd<5>                 4     FB2_7        (b)     (b)        +      
+minutesbcd<7>                 2     FB2_8        (b)     (b)    +          
+minutesbcd<6>                 3     FB2_9        (b)     (b)    +          
+minutesbcd<5>                 3     FB2_10       (b)     (b)    +          
+DIG1<7>                       2     FB2_11  19   I/O     O                 
+FHour                         2     FB2_12       (b)     (b)    +          
+DIG1<0>                       4     FB2_13  22   GCK/I/O O                 
+FMin                          3     FB2_14  23   GCK/I/O GCK               
+DIG1<1>                       4     FB2_15  24   CDR/I/O O                 
+DIG2<2>                       6     FB2_16  27   GCK/I/O O                 
+
+Signals Used by Logic in Function Block
+  1: F250ms             8: mincount/intclk   15: secondsbcd<5> 
+  2: FMin               9: minutesbcd<4>     16: secondsbcd<6> 
+  3: FSec              10: minutesbcd<5>     17: secondsbcd<7> 
+  4: hoursbcd<0>       11: minutesbcd<6>     18: setmode 
+  5: hoursbcd<1>       12: minutesbcd<7>     19: settime 
+  6: hoursbcd<2>       13: seccount/intclk   20: showhr 
+  7: hoursbcd<3>       14: secondsbcd<4>    
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+secondsbcd<6>     ............XXXXX.X..................... 6       
+DIG1<2>           ...XXXX............X.................... 5       
+DIG1<3>           ...XXXX............X.................... 5       
+DIG1<4>           ...XXXX............X.................... 5       
+DIG1<6>           ...XXXX............X.................... 5       
+DIG1<5>           ...XXXX............X.................... 5       
+secondsbcd<5>     ............XXXXX.X..................... 6       
+minutesbcd<7>     .......XXXX............................. 4       
+minutesbcd<6>     .......XXXXX............................ 5       
+minutesbcd<5>     .......XXXXX............................ 5       
+DIG1<7>           X.X..............X...................... 3       
+FHour             .......XXXXX............................ 5       
+DIG1<0>           ...XXXX............X.................... 5       
+FMin              .X..........XXXXX.X..................... 7       
+DIG1<1>           ...XXXX............X.................... 5       
+DIG2<2>           ........XXXX.XXXX..X.................... 9       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB3  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               19/21
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   19/37
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+F250ms                        1     FB3_1        (b)     (b)               
+dzielnik/FDivCnt<1>           1     FB3_2   2    GTS/I/O (b)               
+dzielnik/FDivCnt<2>           1     FB3_3   1    GTS/I/O (b)               
+dzielnik/FDivCnt<3>           1     FB3_4   99   GSR/I/O (b)               
+setBtn/ShiftRegister<0>       3     FB3_5   97   I/O     I      +          
+modeBtn/ShiftRegister<0>      3     FB3_6   96   I/O     I      +          
+dzielnik/FDivCnt<4>           1     FB3_7   95   I/O     (b)               
+dzielnik/FDivCnt<11>          1     FB3_8        (b)     (b)               
+dzielnik/FDivCnt<10>          1     FB3_9        (b)     (b)               
+dzielnik/FDivCnt<9>           1     FB3_10       (b)     (b)               
+dzielnik/FDivCnt<5>           1     FB3_11  94   I/O     (b)               
+dzielnik/FDivCnt<8>           1     FB3_12       (b)     (b)               
+dzielnik/FDivCnt<6>           1     FB3_13  93   I/O     (b)               
+F8ms                          1     FB3_14  92   I/O     (b)               
+FSec                          1     FB3_15  91   I/O     (b)               
+dzielnik/FDivCnt<13>          1     FB3_16  90   I/O     (b)               
+
+Signals Used by Logic in Function Block
+  1: F250ms                 8: dzielnik/FDivCnt<13>  14: dzielnik/FDivCnt<6> 
+  2: F8ms                   9: dzielnik/FDivCnt<1>   15: dzielnik/FDivCnt<8> 
+  3: FHour                 10: dzielnik/FDivCnt<2>   16: dzielnik/FDivCnt<9> 
+  4: FMin                  11: dzielnik/FDivCnt<3>   17: sethour 
+  5: dzielnik/FDivCnt<0>   12: dzielnik/FDivCnt<4>   18: setminute 
+  6: dzielnik/FDivCnt<10>  13: dzielnik/FDivCnt<5>   19: setmode 
+  7: dzielnik/FDivCnt<11> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+F250ms            .X..XXX.XXXXXXXX........................ 12      
+dzielnik/FDivCnt<1> 
+                  ....X................................... 1       
+dzielnik/FDivCnt<2> 
+                  ....X...X............................... 2       
+dzielnik/FDivCnt<3> 
+                  ....X...XX.............................. 3       
+setBtn/ShiftRegister<0> 
+                  .XX.............X.X..................... 4       
+modeBtn/ShiftRegister<0> 
+                  .X.X.............XX..................... 4       
+dzielnik/FDivCnt<4> 
+                  ....X...XXX............................. 4       
+dzielnik/FDivCnt<11> 
+                  .X..XX..XXXXXXXX........................ 11      
+dzielnik/FDivCnt<10> 
+                  .X..X...XXXXXXXX........................ 10      
+dzielnik/FDivCnt<9> 
+                  .X..X...XXXXXXX......................... 9       
+dzielnik/FDivCnt<5> 
+                  ....X...XXXX............................ 5       
+dzielnik/FDivCnt<8> 
+                  .X..X...XXXXXX.......................... 8       
+dzielnik/FDivCnt<6> 
+                  ....X...XXXXX........................... 6       
+F8ms              ....X...XXXXXX.......................... 7       
+FSec              XX..XXXXXXXXXXXX........................ 14      
+dzielnik/FDivCnt<13> 
+                  XX..XXX.XXXXXXXX........................ 13      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB4  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               19/21
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   56/0
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+DIG2<3>                       9     FB4_1   28   DGE/I/O O                 
+(unused)                      0     FB4_2        (b)           
+(unused)                      0     FB4_3        (b)           
+DIG2<4>                       4     FB4_4   29   I/O     O                 
+DIG2<6>                       7     FB4_5   30   I/O     O                 
+DIG2<5>                       7     FB4_6   32   I/O     O                 
+DIG2<7>                       0     FB4_7   33   I/O     O                 
+minutesbcd<0>                 1     FB4_8        (b)     (b)    +          
+dzielnik/FDivCnt<0>           0     FB4_9        (b)     (b)               
+N_PZ_413                      2     FB4_10       (b)     (b)               
+DIG2<0>                       8     FB4_11  34   I/O     O                 
+DIG2<1>                       8     FB4_12  35   I/O     O                 
+DIG3<2>                       6     FB4_13  36   I/O     O                 
+DIG3<3>                       8     FB4_14  37   I/O     O                 
+DIG3<4>                       4     FB4_15  39   I/O     O                 
+DIG3<6>                       6     FB4_16  40   I/O     O                 
+
+Signals Used by Logic in Function Block
+  1: N_PZ_413           8: minutesbcd<6>                  14: secondsbcd<3> 
+  2: minutesbcd<0>      9: minutesbcd<7>                  15: secondsbcd<4> 
+  3: minutesbcd<1>     10: modeBtn/ShiftRegister<0>.COMB  16: secondsbcd<5> 
+  4: minutesbcd<2>     11: secondsbcd<0>                  17: secondsbcd<6> 
+  5: minutesbcd<3>     12: secondsbcd<1>                  18: secondsbcd<7> 
+  6: minutesbcd<4>     13: secondsbcd<2>                  19: showhr 
+  7: minutesbcd<5>    
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+DIG2<3>           .....XXXX.....XXXXX..................... 9       
+DIG2<4>           .....XXXX.....XXXXX..................... 9       
+DIG2<6>           .....XXXX.....XXXXX..................... 9       
+DIG2<5>           .....XXXX.....XXXXX..................... 9       
+DIG2<7>           ........................................ 0       
+minutesbcd<0>     .........X.............................. 1       
+dzielnik/FDivCnt<0> 
+                  ........................................ 0       
+N_PZ_413          ..XXX......XXX....X..................... 7       
+DIG2<0>           .....XXXX.....XXXXX..................... 9       
+DIG2<1>           .....XXXX.....XXXXX..................... 9       
+DIG3<2>           .XXXX.....XXXX....X..................... 9       
+DIG3<3>           XXXXX.....XXXX....X..................... 10      
+DIG3<4>           .XXXX.....XXXX....X..................... 9       
+DIG3<6>           XXXXX.....XXXX....X..................... 10      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB5  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               27/13
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   29/27
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+setBtn/ShiftRegister<1>       2     FB5_1   65   I/O     (b)               
+modeBtn/ShiftRegister<3>      2     FB5_2   66   I/O     (b)               
+chmod                         2     FB5_3   67   I/O     (b)               
+secondsbcd<1>                 4     FB5_4        (b)     (b)    +   +      
+modeBtn/ShiftRegister<2>      2     FB5_5   68   I/O     (b)               
+secondsbcd<2>                 3     FB5_6        (b)     (b)    +   +      
+modeBtn/ShiftRegister<1>      2     FB5_7   70   I/O     (b)               
+secondsbcd<0>                 2     FB5_8        (b)     (b)    +   +      
+setmode                       1     FB5_9        (b)     (b)               
+minutesbcd<4>                 1     FB5_10       (b)     (b)               
+showhr                        1     FB5_11  71   I/O     (b)               
+secondsbcd<7>                 3     FB5_12  72   I/O     (b)        +      
+secondsbcd<4>                 2     FB5_13  73   I/O     (b)        +      
+seccount/intclk               3     FB5_14  74   I/O     (b)    +          
+secondsbcd<3>                 4     FB5_15  76   I/O     (b)    +   +      
+hoursbcd<5>                   4     FB5_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: F8ms              10: hoursbcd<5>               19: secondsbcd<0> 
+  2: FSec              11: hoursbcd<6>               20: secondsbcd<1> 
+  3: chmod             12: hoursbcd<7>               21: secondsbcd<2> 
+  4: hourcount/intclk  13: mincount/intclk           22: secondsbcd<3> 
+  5: hoursbcd<0>       14: modeBtn/ShiftRegister<0>  23: secondsbcd<4> 
+  6: hoursbcd<1>       15: modeBtn/ShiftRegister<1>  24: secondsbcd<5> 
+  7: hoursbcd<2>       16: modeBtn/ShiftRegister<2>  25: secondsbcd<6> 
+  8: hoursbcd<3>       17: modeBtn/ShiftRegister<3>  26: setBtn/ShiftRegister<0> 
+  9: hoursbcd<4>       18: seccount/intclk           27: settime 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+setBtn/ShiftRegister<1> 
+                  X........................X.............. 2       
+modeBtn/ShiftRegister<3> 
+                  X..............X........................ 2       
+chmod             .............XXXX....................... 4       
+secondsbcd<1>     .X................XXXX....X............. 6       
+modeBtn/ShiftRegister<2> 
+                  X.............X......................... 2       
+secondsbcd<2>     .X................XX......X............. 4       
+modeBtn/ShiftRegister<1> 
+                  X............X.......................... 2       
+secondsbcd<0>     .X........................X............. 2       
+setmode           ..........................X............. 1       
+minutesbcd<4>     ............X........................... 1       
+showhr            ..X..................................... 1       
+secondsbcd<7>     .................X....XXX.X............. 5       
+secondsbcd<4>     .................X........X............. 2       
+seccount/intclk   .X...............XXXXX....X............. 7       
+secondsbcd<3>     .X................XXXX....X............. 6       
+hoursbcd<5>       ...XXXXXXXXX............................ 9       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB6  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               18/22
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   24/32
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB6_1   64   I/O           
+setMn/ShiftRegister<3>        2     FB6_2   63   I/O     (b)    +          
+setminute                     2     FB6_3   61   I/O     (b)               
+setMn/ShiftRegister<2>        2     FB6_4   60   I/O     (b)    +          
+setMn/ShiftRegister<1>        2     FB6_5   59   I/O     (b)    +          
+setHr/ShiftRegister<3>        2     FB6_6   58   I/O     (b)    +          
+settime                       2     FB6_7        (b)     (b)        +      
+setBtn/ShiftRegister<3>       2     FB6_8        (b)     (b)    +          
+setBtn/ShiftRegister<2>       2     FB6_9        (b)     (b)    +          
+minutesbcd<2>                 2     FB6_10       (b)     (b)               
+minutesbcd<3>                 3     FB6_11       (b)     (b)               
+sethour                       2     FB6_12  56   I/O     (b)               
+mincount/intclk               2     FB6_13       (b)     (b)               
+setHr/ShiftRegister<2>        2     FB6_14  55   I/O     (b)    +          
+minutesbcd<1>                 3     FB6_15       (b)     (b)               
+setHr/ShiftRegister<1>        2     FB6_16  54   I/O     (b)    +          
+
+Signals Used by Logic in Function Block
+  1: F8ms                            7: setBtn/ShiftRegister<0>  13: setHr/ShiftRegister<2> 
+  2: minutesbcd<0>                   8: setBtn/ShiftRegister<1>  14: setHr/ShiftRegister<3> 
+  3: minutesbcd<1>                   9: setBtn/ShiftRegister<2>  15: setMn/ShiftRegister<0> 
+  4: minutesbcd<2>                  10: setBtn/ShiftRegister<3>  16: setMn/ShiftRegister<1> 
+  5: minutesbcd<3>                  11: setHr/ShiftRegister<0>   17: setMn/ShiftRegister<2> 
+  6: modeBtn/ShiftRegister<0>.COMB  12: setHr/ShiftRegister<1>   18: setMn/ShiftRegister<3> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+setMn/ShiftRegister<3> 
+                  X...............X....................... 2       
+setminute         ..............XXXX...................... 4       
+setMn/ShiftRegister<2> 
+                  X..............X........................ 2       
+setMn/ShiftRegister<1> 
+                  X.............X......................... 2       
+setHr/ShiftRegister<3> 
+                  X...........X........................... 2       
+settime           ......XXXX.............................. 4       
+setBtn/ShiftRegister<3> 
+                  X.......X............................... 2       
+setBtn/ShiftRegister<2> 
+                  X......X................................ 2       
+minutesbcd<2>     .XX..X.................................. 3       
+minutesbcd<3>     .XXXXX.................................. 5       
+sethour           ..........XXXX.......................... 4       
+mincount/intclk   .XXXXX.................................. 5       
+setHr/ShiftRegister<2> 
+                  X..........X............................ 2       
+minutesbcd<1>     .XXXXX.................................. 5       
+setHr/ShiftRegister<1> 
+                  X.........X............................. 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB7  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               0/40
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   0/56
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB7_1   77   I/O           
+(unused)                      0     FB7_2   78   I/O           
+(unused)                      0     FB7_3        (b)           
+(unused)                      0     FB7_4   79   I/O           
+(unused)                      0     FB7_5   80   I/O           
+(unused)                      0     FB7_6   81   I/O           
+(unused)                      0     FB7_7        (b)           
+(unused)                      0     FB7_8        (b)           
+(unused)                      0     FB7_9        (b)           
+(unused)                      0     FB7_10       (b)           
+(unused)                      0     FB7_11  82   I/O           
+(unused)                      0     FB7_12       (b)           
+(unused)                      0     FB7_13  85   I/O           
+(unused)                      0     FB7_14  86   I/O           
+(unused)                      0     FB7_15  87   I/O           
+(unused)                      0     FB7_16  89   I/O           
+*********************************** FB8  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               11/29
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   21/35
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB8_1        (b)           
+(unused)                      0     FB8_2   53   I/O           
+(unused)                      0     FB8_3   52   I/O           
+setMn/ShiftRegister<0>        1     FB8_4   50   I/O     I      +          
+(unused)                      0     FB8_5        (b)           
+setHr/ShiftRegister<0>        1     FB8_6   49   I/O     I      +          
+(unused)                      0     FB8_7        (b)           
+(unused)                      0     FB8_8        (b)           
+(unused)                      0     FB8_9        (b)           
+(unused)                      0     FB8_10       (b)           
+(unused)                      0     FB8_11       (b)           
+(unused)                      0     FB8_12  46   I/O           
+DIG3<1>                       8     FB8_13  44   I/O     O                 
+DIG3<0>                       6     FB8_14  43   I/O     O                 
+DIG3<7>                       0     FB8_15  42   I/O     O                 
+DIG3<5>                       7     FB8_16  41   I/O     O                 
+
+Signals Used by Logic in Function Block
+  1: F8ms               5: minutesbcd<2>      9: secondsbcd<2> 
+  2: N_PZ_413           6: minutesbcd<3>     10: secondsbcd<3> 
+  3: minutesbcd<0>      7: secondsbcd<0>     11: showhr 
+  4: minutesbcd<1>      8: secondsbcd<1>    
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+DIG3<1>           ..XXXXXXXXX............................. 9       
+DIG3<0>           .XXXXXXXXXX............................. 10      
+DIG3<7>           ........................................ 0       
+DIG3<5>           .XXXXXXXXXX............................. 10      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+DIG0(0) <= ((hoursbcd(5) AND NOT hoursbcd(7) AND showhr)
+	OR (NOT hoursbcd(5) AND NOT hoursbcd(6) AND hoursbcd(7) AND 
+	showhr)
+	OR (hoursbcd(4) AND hoursbcd(6) AND NOT hoursbcd(7) AND 
+	showhr)
+	OR (NOT hoursbcd(4) AND NOT hoursbcd(6) AND NOT hoursbcd(7) AND 
+	showhr));
+
+
+DIG0(1) <= ((NOT hoursbcd(5) AND NOT hoursbcd(6) AND showhr)
+	OR (NOT hoursbcd(6) AND NOT hoursbcd(7) AND showhr)
+	OR (hoursbcd(5) AND hoursbcd(4) AND NOT hoursbcd(7) AND 
+	showhr)
+	OR (NOT hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(7) AND 
+	showhr));
+
+
+DIG0(2) <= ((NOT hoursbcd(5) AND NOT hoursbcd(6) AND showhr)
+	OR (hoursbcd(4) AND NOT hoursbcd(7) AND showhr)
+	OR (hoursbcd(6) AND NOT hoursbcd(7) AND showhr));
+
+
+DIG0(3) <= (NOT hoursbcd(6) AND showhr)
+	XOR ((hoursbcd(5) AND NOT hoursbcd(6) AND hoursbcd(7) AND 
+	showhr)
+	OR (NOT hoursbcd(5) AND hoursbcd(4) AND NOT hoursbcd(7) AND 
+	showhr)
+	OR (hoursbcd(5) AND NOT hoursbcd(4) AND hoursbcd(6) AND 
+	NOT hoursbcd(7) AND showhr));
+
+
+DIG0(4) <= ((hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(7) AND 
+	showhr)
+	OR (NOT hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	showhr));
+
+
+DIG0(5) <= (NOT hoursbcd(5) AND NOT hoursbcd(6) AND showhr)
+	XOR ((NOT hoursbcd(5) AND hoursbcd(4) AND NOT hoursbcd(7) AND 
+	showhr)
+	OR (NOT hoursbcd(4) AND hoursbcd(6) AND NOT hoursbcd(7) AND 
+	showhr));
+
+
+DIG0(6) <= (NOT hoursbcd(7) AND showhr)
+	XOR ((NOT hoursbcd(5) AND NOT hoursbcd(6) AND showhr)
+	OR (hoursbcd(5) AND hoursbcd(4) AND hoursbcd(6) AND 
+	NOT hoursbcd(7) AND showhr));
+
+
+DIG0(7) <= '0';
+
+
+DIG1(0) <= ((hoursbcd(1) AND NOT hoursbcd(3) AND showhr)
+	OR (hoursbcd(0) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	showhr)
+	OR (NOT hoursbcd(0) AND NOT hoursbcd(2) AND NOT hoursbcd(3) AND 
+	showhr)
+	OR (NOT hoursbcd(1) AND NOT hoursbcd(2) AND hoursbcd(3) AND 
+	showhr));
+
+
+DIG1(1) <= ((NOT hoursbcd(1) AND NOT hoursbcd(2) AND showhr)
+	OR (NOT hoursbcd(2) AND NOT hoursbcd(3) AND showhr)
+	OR (hoursbcd(0) AND hoursbcd(1) AND NOT hoursbcd(3) AND 
+	showhr)
+	OR (NOT hoursbcd(0) AND NOT hoursbcd(1) AND NOT hoursbcd(3) AND 
+	showhr));
+
+
+DIG1(2) <= ((hoursbcd(0) AND NOT hoursbcd(3) AND showhr)
+	OR (NOT hoursbcd(1) AND NOT hoursbcd(2) AND showhr)
+	OR (hoursbcd(2) AND NOT hoursbcd(3) AND showhr));
+
+
+DIG1(3) <= (NOT hoursbcd(2) AND showhr)
+	XOR ((hoursbcd(0) AND NOT hoursbcd(1) AND NOT hoursbcd(3) AND 
+	showhr)
+	OR (hoursbcd(1) AND NOT hoursbcd(2) AND hoursbcd(3) AND 
+	showhr)
+	OR (NOT hoursbcd(0) AND hoursbcd(1) AND hoursbcd(2) AND 
+	NOT hoursbcd(3) AND showhr));
+
+
+DIG1(4) <= ((NOT hoursbcd(0) AND hoursbcd(1) AND NOT hoursbcd(3) AND 
+	showhr)
+	OR (NOT hoursbcd(0) AND NOT hoursbcd(1) AND NOT hoursbcd(2) AND 
+	showhr));
+
+
+DIG1(5) <= (NOT hoursbcd(1) AND NOT hoursbcd(2) AND showhr)
+	XOR ((hoursbcd(0) AND NOT hoursbcd(1) AND NOT hoursbcd(3) AND 
+	showhr)
+	OR (NOT hoursbcd(0) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	showhr));
+
+
+DIG1(6) <= (NOT hoursbcd(3) AND showhr)
+	XOR ((NOT hoursbcd(1) AND NOT hoursbcd(2) AND showhr)
+	OR (hoursbcd(0) AND hoursbcd(1) AND hoursbcd(2) AND 
+	NOT hoursbcd(3) AND showhr));
+
+
+DIG1(7) <= NOT (((setmode AND NOT F250ms)
+	OR (NOT setmode AND NOT FSec)));
+
+
+DIG2(0) <= NOT (((showhr AND minutesbcd(5) AND minutesbcd(7))
+	OR (showhr AND minutesbcd(6) AND minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(5) AND secondsbcd(7))
+	OR (NOT showhr AND secondsbcd(6) AND secondsbcd(7))
+	OR (showhr AND NOT minutesbcd(4) AND NOT minutesbcd(5) AND 
+	minutesbcd(6))
+	OR (NOT showhr AND NOT secondsbcd(4) AND NOT secondsbcd(5) AND 
+	secondsbcd(6))
+	OR (showhr AND minutesbcd(4) AND NOT minutesbcd(5) AND 
+	NOT minutesbcd(6) AND NOT minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(4) AND NOT secondsbcd(5) AND 
+	NOT secondsbcd(6) AND NOT secondsbcd(7))));
+
+
+DIG2(1) <= ((showhr AND NOT minutesbcd(5) AND NOT minutesbcd(6))
+	OR (showhr AND NOT minutesbcd(6) AND NOT minutesbcd(7))
+	OR (NOT showhr AND NOT secondsbcd(5) AND NOT secondsbcd(6))
+	OR (NOT showhr AND NOT secondsbcd(6) AND NOT secondsbcd(7))
+	OR (showhr AND minutesbcd(4) AND minutesbcd(5) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(4) AND NOT minutesbcd(5) AND 
+	NOT minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(4) AND secondsbcd(5) AND 
+	NOT secondsbcd(7))
+	OR (NOT showhr AND NOT secondsbcd(4) AND NOT secondsbcd(5) AND 
+	NOT secondsbcd(7)));
+
+
+DIG2(2) <= ((showhr AND minutesbcd(4) AND NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(5) AND NOT minutesbcd(6))
+	OR (showhr AND minutesbcd(6) AND NOT minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(4) AND NOT secondsbcd(7))
+	OR (NOT showhr AND NOT secondsbcd(5) AND NOT secondsbcd(6))
+	OR (NOT showhr AND secondsbcd(6) AND NOT secondsbcd(7)));
+
+
+DIG2(3) <= (NOT showhr AND NOT secondsbcd(6))
+	XOR ((showhr AND NOT minutesbcd(4) AND minutesbcd(5) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(4) AND NOT minutesbcd(6) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND minutesbcd(5) AND NOT minutesbcd(6) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(5) AND NOT minutesbcd(6) AND 
+	minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(4) AND NOT secondsbcd(5) AND 
+	NOT secondsbcd(7))
+	OR (NOT showhr AND secondsbcd(5) AND NOT secondsbcd(6) AND 
+	secondsbcd(7))
+	OR (showhr AND minutesbcd(4) AND NOT minutesbcd(5) AND 
+	minutesbcd(6) AND NOT minutesbcd(7))
+	OR (NOT showhr AND NOT secondsbcd(4) AND secondsbcd(5) AND 
+	secondsbcd(6) AND NOT secondsbcd(7)));
+
+
+DIG2(4) <= ((showhr AND NOT minutesbcd(4) AND minutesbcd(5) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(4) AND NOT minutesbcd(5) AND 
+	NOT minutesbcd(6))
+	OR (NOT showhr AND NOT secondsbcd(4) AND secondsbcd(5) AND 
+	NOT secondsbcd(7))
+	OR (NOT showhr AND NOT secondsbcd(4) AND NOT secondsbcd(5) AND 
+	NOT secondsbcd(6)));
+
+
+DIG2(5) <= (NOT showhr AND NOT secondsbcd(5) AND NOT secondsbcd(6))
+	XOR ((showhr AND NOT minutesbcd(4) AND NOT minutesbcd(5) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(4) AND minutesbcd(6) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(5) AND minutesbcd(6) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(5) AND NOT minutesbcd(6) AND 
+	minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(4) AND NOT secondsbcd(5) AND 
+	NOT secondsbcd(7))
+	OR (NOT showhr AND NOT secondsbcd(4) AND secondsbcd(6) AND 
+	NOT secondsbcd(7)));
+
+
+DIG2(6) <= (NOT showhr AND NOT secondsbcd(7))
+	XOR ((NOT showhr AND NOT secondsbcd(5) AND NOT secondsbcd(6))
+	OR (showhr AND NOT minutesbcd(4) AND minutesbcd(5) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND minutesbcd(5) AND NOT minutesbcd(6) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(5) AND minutesbcd(6) AND 
+	NOT minutesbcd(7))
+	OR (showhr AND NOT minutesbcd(5) AND NOT minutesbcd(6) AND 
+	minutesbcd(7))
+	OR (NOT showhr AND secondsbcd(4) AND secondsbcd(5) AND 
+	secondsbcd(6) AND NOT secondsbcd(7)));
+
+
+DIG2(7) <= '0';
+
+
+DIG3(0) <= NOT (((showhr AND minutesbcd(3) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(3) AND NOT N_PZ_413)
+	OR (showhr AND minutesbcd(0) AND NOT minutesbcd(1) AND 
+	NOT minutesbcd(2) AND NOT N_PZ_413)
+	OR (showhr AND NOT minutesbcd(0) AND NOT minutesbcd(1) AND 
+	minutesbcd(2) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(0) AND NOT secondsbcd(1) AND 
+	NOT secondsbcd(2) AND NOT N_PZ_413)
+	OR (NOT showhr AND NOT secondsbcd(0) AND NOT secondsbcd(1) AND 
+	secondsbcd(2) AND NOT N_PZ_413)));
+
+
+DIG3(1) <= ((showhr AND NOT minutesbcd(1) AND NOT minutesbcd(2))
+	OR (showhr AND NOT minutesbcd(2) AND NOT minutesbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(1) AND NOT secondsbcd(2))
+	OR (NOT showhr AND NOT secondsbcd(2) AND NOT secondsbcd(3))
+	OR (showhr AND minutesbcd(0) AND minutesbcd(1) AND 
+	NOT minutesbcd(3))
+	OR (showhr AND NOT minutesbcd(0) AND NOT minutesbcd(1) AND 
+	NOT minutesbcd(3))
+	OR (NOT showhr AND secondsbcd(0) AND secondsbcd(1) AND 
+	NOT secondsbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(0) AND NOT secondsbcd(1) AND 
+	NOT secondsbcd(3)));
+
+
+DIG3(2) <= ((showhr AND minutesbcd(0) AND NOT minutesbcd(3))
+	OR (showhr AND NOT minutesbcd(1) AND NOT minutesbcd(2))
+	OR (showhr AND minutesbcd(2) AND NOT minutesbcd(3))
+	OR (NOT showhr AND secondsbcd(0) AND NOT secondsbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(1) AND NOT secondsbcd(2))
+	OR (NOT showhr AND secondsbcd(2) AND NOT secondsbcd(3)));
+
+
+DIG3(3) <= NOT (((showhr AND minutesbcd(3) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(3) AND NOT N_PZ_413)
+	OR (showhr AND minutesbcd(0) AND minutesbcd(1) AND 
+	minutesbcd(2) AND NOT N_PZ_413)
+	OR (showhr AND minutesbcd(0) AND NOT minutesbcd(1) AND 
+	NOT minutesbcd(2) AND NOT N_PZ_413)
+	OR (showhr AND NOT minutesbcd(0) AND NOT minutesbcd(1) AND 
+	minutesbcd(2) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(0) AND secondsbcd(1) AND 
+	secondsbcd(2) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(0) AND NOT secondsbcd(1) AND 
+	NOT secondsbcd(2) AND NOT N_PZ_413)
+	OR (NOT showhr AND NOT secondsbcd(0) AND NOT secondsbcd(1) AND 
+	secondsbcd(2) AND NOT N_PZ_413)));
+
+
+DIG3(4) <= ((showhr AND NOT minutesbcd(0) AND minutesbcd(1) AND 
+	NOT minutesbcd(3))
+	OR (showhr AND NOT minutesbcd(0) AND NOT minutesbcd(1) AND 
+	NOT minutesbcd(2))
+	OR (NOT showhr AND NOT secondsbcd(0) AND secondsbcd(1) AND 
+	NOT secondsbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(0) AND NOT secondsbcd(1) AND 
+	NOT secondsbcd(2)));
+
+
+DIG3(5) <= ((N_PZ_413)
+	OR (showhr AND NOT minutesbcd(0) AND NOT minutesbcd(1) AND 
+	NOT minutesbcd(3))
+	OR (showhr AND NOT minutesbcd(0) AND minutesbcd(2) AND 
+	NOT minutesbcd(3))
+	OR (showhr AND NOT minutesbcd(1) AND minutesbcd(2) AND 
+	NOT minutesbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(0) AND NOT secondsbcd(1) AND 
+	NOT secondsbcd(2))
+	OR (NOT showhr AND NOT secondsbcd(0) AND secondsbcd(2) AND 
+	NOT secondsbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(1) AND secondsbcd(2) AND 
+	NOT secondsbcd(3)));
+
+
+DIG3(6) <= NOT (((showhr AND minutesbcd(3) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(3) AND NOT N_PZ_413)
+	OR (showhr AND NOT minutesbcd(1) AND NOT minutesbcd(2) AND 
+	NOT N_PZ_413)
+	OR (NOT showhr AND NOT secondsbcd(1) AND NOT secondsbcd(2) AND 
+	NOT N_PZ_413)
+	OR (showhr AND minutesbcd(0) AND minutesbcd(1) AND 
+	minutesbcd(2) AND NOT N_PZ_413)
+	OR (NOT showhr AND secondsbcd(0) AND secondsbcd(1) AND 
+	secondsbcd(2) AND NOT N_PZ_413)));
+
+
+DIG3(7) <= '0';
+
+FTCPE_F250ms: FTCPE port map (F250ms,F250ms_T,MainClk,'0','0','1');
+F250ms_T <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6) AND dzielnik/FDivCnt(10) AND 
+	dzielnik/FDivCnt(8) AND dzielnik/FDivCnt(9) AND dzielnik/FDivCnt(11));
+
+FTCPE_F8ms: FTCPE port map (F8ms,F8ms_T,MainClk,'0','0','1');
+F8ms_T <= (dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6));
+
+FDCPE_FHour: FDCPE port map (FHour,FHour_D,mincount/intclk,'0','0','1');
+FHour_D <= NOT ((minutesbcd(4) AND NOT minutesbcd(5) AND minutesbcd(6) AND 
+	NOT minutesbcd(7)));
+
+FDCPE_FMin: FDCPE port map (FMin,FMin_D,seccount/intclk,'0','0','1');
+FMin_D <= NOT (((settime AND NOT FMin)
+	OR (NOT settime AND secondsbcd(4) AND NOT secondsbcd(5) AND 
+	secondsbcd(6) AND NOT secondsbcd(7))));
+
+FTCPE_FSec: FTCPE port map (FSec,FSec_T,MainClk,'0','0','1');
+FSec_T <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6) AND F250ms AND 
+	dzielnik/FDivCnt(10) AND dzielnik/FDivCnt(8) AND dzielnik/FDivCnt(9) AND 
+	dzielnik/FDivCnt(11) AND dzielnik/FDivCnt(13));
+
+
+N_PZ_413 <= ((showhr AND NOT minutesbcd(1) AND NOT minutesbcd(2) AND 
+	minutesbcd(3))
+	OR (NOT showhr AND NOT secondsbcd(1) AND NOT secondsbcd(2) AND 
+	secondsbcd(3)));
+
+LDCP_chmod: LDCP port map (chmod,NOT '0',,chmod_CLR,'0');
+chmod_G <= (NOT modeBtn/ShiftRegister(0) AND 
+	NOT modeBtn/ShiftRegister(1) AND NOT modeBtn/ShiftRegister(2) AND 
+	NOT modeBtn/ShiftRegister(3));
+chmod_CLR <= (modeBtn/ShiftRegister(0) AND 
+	modeBtn/ShiftRegister(1) AND modeBtn/ShiftRegister(2) AND 
+	modeBtn/ShiftRegister(3));
+
+FTCPE_dzielnik/FDivCnt0: FTCPE port map (dzielnik/FDivCnt(0),'0',MainClk,'0','0','1');
+
+FTCPE_dzielnik/FDivCnt1: FTCPE port map (dzielnik/FDivCnt(1),dzielnik/FDivCnt(0),MainClk,'0','0','1');
+
+FTCPE_dzielnik/FDivCnt2: FTCPE port map (dzielnik/FDivCnt(2),dzielnik/FDivCnt_T(2),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(2) <= (dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1));
+
+FTCPE_dzielnik/FDivCnt3: FTCPE port map (dzielnik/FDivCnt(3),dzielnik/FDivCnt_T(3),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(3) <= (dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2));
+
+FTCPE_dzielnik/FDivCnt4: FTCPE port map (dzielnik/FDivCnt(4),dzielnik/FDivCnt_T(4),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(4) <= (dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3));
+
+FTCPE_dzielnik/FDivCnt5: FTCPE port map (dzielnik/FDivCnt(5),dzielnik/FDivCnt_T(5),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(5) <= (dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4));
+
+FTCPE_dzielnik/FDivCnt6: FTCPE port map (dzielnik/FDivCnt(6),dzielnik/FDivCnt_T(6),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(6) <= (dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5));
+
+FTCPE_dzielnik/FDivCnt8: FTCPE port map (dzielnik/FDivCnt(8),dzielnik/FDivCnt_T(8),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(8) <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6));
+
+FTCPE_dzielnik/FDivCnt9: FTCPE port map (dzielnik/FDivCnt(9),dzielnik/FDivCnt_T(9),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(9) <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6) AND dzielnik/FDivCnt(8));
+
+FTCPE_dzielnik/FDivCnt10: FTCPE port map (dzielnik/FDivCnt(10),dzielnik/FDivCnt_T(10),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(10) <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6) AND dzielnik/FDivCnt(8) AND 
+	dzielnik/FDivCnt(9));
+
+FTCPE_dzielnik/FDivCnt11: FTCPE port map (dzielnik/FDivCnt(11),dzielnik/FDivCnt_T(11),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(11) <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6) AND dzielnik/FDivCnt(10) AND 
+	dzielnik/FDivCnt(8) AND dzielnik/FDivCnt(9));
+
+FTCPE_dzielnik/FDivCnt13: FTCPE port map (dzielnik/FDivCnt(13),dzielnik/FDivCnt_T(13),MainClk,'0','0','1');
+dzielnik/FDivCnt_T(13) <= (F8ms AND dzielnik/FDivCnt(0) AND dzielnik/FDivCnt(1) AND 
+	dzielnik/FDivCnt(2) AND dzielnik/FDivCnt(3) AND dzielnik/FDivCnt(4) AND 
+	dzielnik/FDivCnt(5) AND dzielnik/FDivCnt(6) AND F250ms AND 
+	dzielnik/FDivCnt(10) AND dzielnik/FDivCnt(8) AND dzielnik/FDivCnt(9) AND 
+	dzielnik/FDivCnt(11));
+
+FDCPE_hourcount/intclk: FDCPE port map (hourcount/intclk,hourcount/intclk_D,setBtn/ShiftRegister(0).COMB,'0','0','1');
+hourcount/intclk_D <= NOT (((hoursbcd(0) AND NOT hoursbcd(1) AND NOT hoursbcd(2) AND 
+	hoursbcd(3))
+	OR (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hourcount/intclk AND NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND 
+	NOT hoursbcd(3) AND NOT hoursbcd(7))));
+
+FTCPE_hoursbcd0: FTCPE port map (hoursbcd(0),'0',setBtn/ShiftRegister(0).COMB,hoursbcd_CLR(0),'0','1');
+hoursbcd_CLR(0) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd1: FTCPE port map (hoursbcd(1),hoursbcd_T(1),setBtn/ShiftRegister(0).COMB,hoursbcd_CLR(1),'0','1');
+hoursbcd_T(1) <= NOT (((NOT hoursbcd(0))
+	OR (NOT hoursbcd(1) AND NOT hoursbcd(2) AND hoursbcd(3))));
+hoursbcd_CLR(1) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd2: FTCPE port map (hoursbcd(2),hoursbcd_T(2),setBtn/ShiftRegister(0).COMB,hoursbcd_CLR(2),'0','1');
+hoursbcd_T(2) <= (hoursbcd(0) AND hoursbcd(1));
+hoursbcd_CLR(2) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd3: FTCPE port map (hoursbcd(3),hoursbcd_T(3),setBtn/ShiftRegister(0).COMB,hoursbcd_CLR(3),'0','1');
+hoursbcd_T(3) <= ((hoursbcd(0) AND hoursbcd(1) AND hoursbcd(2))
+	OR (hoursbcd(0) AND NOT hoursbcd(1) AND NOT hoursbcd(2) AND 
+	hoursbcd(3)));
+hoursbcd_CLR(3) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd4: FTCPE port map (hoursbcd(4),hoursbcd_T(4),hourcount/intclk,hoursbcd_CLR(4),'0','1');
+hoursbcd_T(4) <= NOT ((hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(7)));
+hoursbcd_CLR(4) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd5: FTCPE port map (hoursbcd(5),hoursbcd_T(5),hourcount/intclk,hoursbcd_CLR(5),'0','1');
+hoursbcd_T(5) <= ((hoursbcd(4))
+	OR (hoursbcd(5) AND NOT hoursbcd(6) AND NOT hoursbcd(7)));
+hoursbcd_CLR(5) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd6: FTCPE port map (hoursbcd(6),hoursbcd_T(6),hourcount/intclk,hoursbcd_CLR(6),'0','1');
+hoursbcd_T(6) <= (hoursbcd(5) AND hoursbcd(4));
+hoursbcd_CLR(6) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FTCPE_hoursbcd7: FTCPE port map (hoursbcd(7),hoursbcd_T(7),hourcount/intclk,hoursbcd_CLR(7),'0','1');
+hoursbcd_T(7) <= (hoursbcd(5) AND hoursbcd(4) AND hoursbcd(6));
+hoursbcd_CLR(7) <= (hoursbcd(5) AND NOT hoursbcd(4) AND NOT hoursbcd(6) AND 
+	NOT hoursbcd(0) AND NOT hoursbcd(1) AND hoursbcd(2) AND NOT hoursbcd(3) AND 
+	NOT hoursbcd(7));
+
+FDCPE_mincount/intclk: FDCPE port map (mincount/intclk,mincount/intclk_D,modeBtn/ShiftRegister(0).COMB,'0','0','1');
+mincount/intclk_D <= NOT ((minutesbcd(0) AND NOT minutesbcd(1) AND NOT minutesbcd(2) AND 
+	minutesbcd(3)));
+
+FTCPE_minutesbcd0: FTCPE port map (minutesbcd(0),'0',modeBtn/ShiftRegister(0).COMB,'0','0','1');
+
+FTCPE_minutesbcd1: FTCPE port map (minutesbcd(1),minutesbcd_T(1),modeBtn/ShiftRegister(0).COMB,'0','0','1');
+minutesbcd_T(1) <= NOT (((NOT minutesbcd(0))
+	OR (NOT minutesbcd(1) AND NOT minutesbcd(2) AND minutesbcd(3))));
+
+FTCPE_minutesbcd2: FTCPE port map (minutesbcd(2),minutesbcd_T(2),modeBtn/ShiftRegister(0).COMB,'0','0','1');
+minutesbcd_T(2) <= (minutesbcd(0) AND minutesbcd(1));
+
+FTCPE_minutesbcd3: FTCPE port map (minutesbcd(3),minutesbcd_T(3),modeBtn/ShiftRegister(0).COMB,'0','0','1');
+minutesbcd_T(3) <= ((minutesbcd(0) AND minutesbcd(1) AND minutesbcd(2))
+	OR (minutesbcd(0) AND NOT minutesbcd(1) AND NOT minutesbcd(2) AND 
+	minutesbcd(3)));
+
+FTCPE_minutesbcd4: FTCPE port map (minutesbcd(4),'0',mincount/intclk,'0','0','1');
+
+FTCPE_minutesbcd5: FTCPE port map (minutesbcd(5),minutesbcd_T(5),mincount/intclk,'0','0','1');
+minutesbcd_T(5) <= NOT (((NOT minutesbcd(4))
+	OR (NOT minutesbcd(5) AND minutesbcd(6) AND NOT minutesbcd(7))));
+
+FTCPE_minutesbcd6: FTCPE port map (minutesbcd(6),minutesbcd_T(6),mincount/intclk,'0','0','1');
+minutesbcd_T(6) <= ((minutesbcd(4) AND minutesbcd(5))
+	OR (minutesbcd(4) AND minutesbcd(6) AND NOT minutesbcd(7)));
+
+FTCPE_minutesbcd7: FTCPE port map (minutesbcd(7),minutesbcd_T(7),mincount/intclk,'0','0','1');
+minutesbcd_T(7) <= (minutesbcd(4) AND minutesbcd(5) AND minutesbcd(6));
+
+
+modeBtn/ShiftRegister(0).COMB <= ((setmode AND NOT setminute)
+	OR (NOT setmode AND NOT FMin));FDCPE_modeBtn/ShiftRegister0: FDCPE port map (modeBtn/ShiftRegister(0),KEY1,F8ms,'0','0','1');
+
+FDCPE_modeBtn/ShiftRegister1: FDCPE port map (modeBtn/ShiftRegister(1),modeBtn/ShiftRegister(0),F8ms,'0','0','1');
+
+FDCPE_modeBtn/ShiftRegister2: FDCPE port map (modeBtn/ShiftRegister(2),modeBtn/ShiftRegister(1),F8ms,'0','0','1');
+
+FDCPE_modeBtn/ShiftRegister3: FDCPE port map (modeBtn/ShiftRegister(3),modeBtn/ShiftRegister(2),F8ms,'0','0','1');
+
+FDCPE_seccount/intclk: FDCPE port map (seccount/intclk,seccount/intclk_D,FSec,'0','0','1');
+seccount/intclk_D <= NOT (((settime AND NOT seccount/intclk)
+	OR (NOT settime AND secondsbcd(0) AND NOT secondsbcd(1) AND 
+	NOT secondsbcd(2) AND secondsbcd(3))));
+
+FTCPE_secondsbcd0: FTCPE port map (secondsbcd(0),'0',FSec,settime,'0','1');
+
+FTCPE_secondsbcd1: FTCPE port map (secondsbcd(1),secondsbcd_T(1),FSec,settime,'0','1');
+secondsbcd_T(1) <= NOT (((NOT secondsbcd(0))
+	OR (NOT secondsbcd(1) AND NOT secondsbcd(2) AND secondsbcd(3))));
+
+FTCPE_secondsbcd2: FTCPE port map (secondsbcd(2),secondsbcd_T(2),FSec,settime,'0','1');
+secondsbcd_T(2) <= (secondsbcd(0) AND secondsbcd(1));
+
+FTCPE_secondsbcd3: FTCPE port map (secondsbcd(3),secondsbcd_T(3),FSec,settime,'0','1');
+secondsbcd_T(3) <= ((secondsbcd(0) AND secondsbcd(1) AND secondsbcd(2))
+	OR (secondsbcd(0) AND NOT secondsbcd(1) AND NOT secondsbcd(2) AND 
+	secondsbcd(3)));
+
+FTCPE_secondsbcd4: FTCPE port map (secondsbcd(4),'0',seccount/intclk,settime,'0','1');
+
+FTCPE_secondsbcd5: FTCPE port map (secondsbcd(5),secondsbcd_T(5),seccount/intclk,settime,'0','1');
+secondsbcd_T(5) <= NOT (((NOT secondsbcd(4))
+	OR (NOT secondsbcd(5) AND secondsbcd(6) AND NOT secondsbcd(7))));
+
+FTCPE_secondsbcd6: FTCPE port map (secondsbcd(6),secondsbcd_T(6),seccount/intclk,settime,'0','1');
+secondsbcd_T(6) <= ((secondsbcd(4) AND secondsbcd(5))
+	OR (secondsbcd(4) AND secondsbcd(6) AND NOT secondsbcd(7)));
+
+FTCPE_secondsbcd7: FTCPE port map (secondsbcd(7),secondsbcd_T(7),seccount/intclk,settime,'0','1');
+secondsbcd_T(7) <= (secondsbcd(4) AND secondsbcd(5) AND secondsbcd(6));
+
+
+setBtn/ShiftRegister(0).COMB <= ((setmode AND NOT sethour)
+	OR (NOT setmode AND NOT FHour));FDCPE_setBtn/ShiftRegister0: FDCPE port map (setBtn/ShiftRegister(0),KEY2,F8ms,'0','0','1');
+
+FDCPE_setBtn/ShiftRegister1: FDCPE port map (setBtn/ShiftRegister(1),setBtn/ShiftRegister(0),F8ms,'0','0','1');
+
+FDCPE_setBtn/ShiftRegister2: FDCPE port map (setBtn/ShiftRegister(2),setBtn/ShiftRegister(1),F8ms,'0','0','1');
+
+FDCPE_setBtn/ShiftRegister3: FDCPE port map (setBtn/ShiftRegister(3),setBtn/ShiftRegister(2),F8ms,'0','0','1');
+
+FDCPE_setHr/ShiftRegister0: FDCPE port map (setHr/ShiftRegister(0),KEY3,F8ms,'0','0','1');
+
+FDCPE_setHr/ShiftRegister1: FDCPE port map (setHr/ShiftRegister(1),setHr/ShiftRegister(0),F8ms,'0','0','1');
+
+FDCPE_setHr/ShiftRegister2: FDCPE port map (setHr/ShiftRegister(2),setHr/ShiftRegister(1),F8ms,'0','0','1');
+
+FDCPE_setHr/ShiftRegister3: FDCPE port map (setHr/ShiftRegister(3),setHr/ShiftRegister(2),F8ms,'0','0','1');
+
+FDCPE_setMn/ShiftRegister0: FDCPE port map (setMn/ShiftRegister(0),KEY4,F8ms,'0','0','1');
+
+FDCPE_setMn/ShiftRegister1: FDCPE port map (setMn/ShiftRegister(1),setMn/ShiftRegister(0),F8ms,'0','0','1');
+
+FDCPE_setMn/ShiftRegister2: FDCPE port map (setMn/ShiftRegister(2),setMn/ShiftRegister(1),F8ms,'0','0','1');
+
+FDCPE_setMn/ShiftRegister3: FDCPE port map (setMn/ShiftRegister(3),setMn/ShiftRegister(2),F8ms,'0','0','1');
+
+LDCP_sethour: LDCP port map (sethour,NOT '0',,sethour_CLR,'0');
+sethour_G <= (NOT setHr/ShiftRegister(0) AND NOT setHr/ShiftRegister(1) AND 
+	NOT setHr/ShiftRegister(2) AND NOT setHr/ShiftRegister(3));
+sethour_CLR <= (setHr/ShiftRegister(0) AND setHr/ShiftRegister(1) AND 
+	setHr/ShiftRegister(2) AND setHr/ShiftRegister(3));
+
+LDCP_setminute: LDCP port map (setminute,NOT '0',,setminute_CLR,'0');
+setminute_G <= (NOT setMn/ShiftRegister(0) AND NOT setMn/ShiftRegister(1) AND 
+	NOT setMn/ShiftRegister(2) AND NOT setMn/ShiftRegister(3));
+setminute_CLR <= (setMn/ShiftRegister(0) AND setMn/ShiftRegister(1) AND 
+	setMn/ShiftRegister(2) AND setMn/ShiftRegister(3));
+
+FTCPE_setmode: FTCPE port map (setmode,'0',settime,'0','0','1');
+
+LDCP_settime: LDCP port map (settime,NOT '0',,settime_CLR,'0');
+settime_G <= (NOT setBtn/ShiftRegister(0) AND NOT setBtn/ShiftRegister(1) AND 
+	NOT setBtn/ShiftRegister(2) AND NOT setBtn/ShiftRegister(3));
+settime_CLR <= (setBtn/ShiftRegister(0) AND setBtn/ShiftRegister(1) AND 
+	setBtn/ShiftRegister(2) AND setBtn/ShiftRegister(3));
+
+FTCPE_showhr: FTCPE port map (showhr,'0',chmod,'0','0','1');
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FDDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ FTDCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC2C128-6-VQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13                XC2C128-6-VQ100               63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 KPR                              51 VCCIO-1.8                     
+  2 KPR                              52 KPR                           
+  3 KPR                              53 KPR                           
+  4 KPR                              54 KPR                           
+  5 VCCAUX                           55 KPR                           
+  6 DIG0<2>                          56 KPR                           
+  7 DIG0<3>                          57 VCC                           
+  8 DIG0<4>                          58 KPR                           
+  9 DIG0<6>                          59 KPR                           
+ 10 DIG0<5>                          60 KPR                           
+ 11 DIG0<7>                          61 KPR                           
+ 12 DIG0<0>                          62 GND                           
+ 13 DIG0<1>                          63 KPR                           
+ 14 DIG1<2>                          64 KPR                           
+ 15 DIG1<3>                          65 KPR                           
+ 16 DIG1<4>                          66 KPR                           
+ 17 DIG1<6>                          67 KPR                           
+ 18 DIG1<5>                          68 KPR                           
+ 19 DIG1<7>                          69 GND                           
+ 20 VCCIO-1.8                        70 KPR                           
+ 21 GND                              71 KPR                           
+ 22 DIG1<0>                          72 KPR                           
+ 23 MainClk                          73 KPR                           
+ 24 DIG1<1>                          74 KPR                           
+ 25 GND                              75 GND                           
+ 26 VCC                              76 KPR                           
+ 27 DIG2<2>                          77 KPR                           
+ 28 DIG2<3>                          78 KPR                           
+ 29 DIG2<4>                          79 KPR                           
+ 30 DIG2<6>                          80 KPR                           
+ 31 GND                              81 KPR                           
+ 32 DIG2<5>                          82 KPR                           
+ 33 DIG2<7>                          83 TDO                           
+ 34 DIG2<0>                          84 GND                           
+ 35 DIG2<1>                          85 KPR                           
+ 36 DIG3<2>                          86 KPR                           
+ 37 DIG3<3>                          87 KPR                           
+ 38 VCCIO-1.8                        88 VCCIO-1.8                     
+ 39 DIG3<4>                          89 KPR                           
+ 40 DIG3<6>                          90 KPR                           
+ 41 DIG3<5>                          91 KPR                           
+ 42 DIG3<7>                          92 KPR                           
+ 43 DIG3<0>                          93 KPR                           
+ 44 DIG3<1>                          94 KPR                           
+ 45 TDI                              95 KPR                           
+ 46 KPR                              96 KEY1                          
+ 47 TMS                              97 KEY2                          
+ 48 TCK                              98 VCCIO-1.8                     
+ 49 KEY3                             99 KPR                           
+ 50 KEY4                            100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+        PGND  = Unused I/O configured as additional Ground pin
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         WPU  = Unused I/O with weak pull up (leave unconnected)
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+      VCCAUX  = Power supply for JTAG pins
+   VCCIO-3.3  = I/O supply voltage for LVTTL, LVCMOS33, SSTL3_I
+   VCCIO-2.5  = I/O supply voltage for LVCMOS25, SSTL2_I
+   VCCIO-1.8  = I/O supply voltage for LVCMOS18
+   VCCIO-1.5  = I/O supply voltage for LVCMOS15, HSTL_I
+        VREF  = Reference voltage for indicated input standard
+       *VREF  = Reference voltage pin selected by software
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc2c128-6-VQ100
+Optimization Method                         : DENSITY
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Set Unused I/O Pin Termination              : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Enable Input Registers                      : ON
+Function Block Fan-in Limit                 : 38
+Use DATA_GATE Attribute                     : ON
+Set Tristate Outputs to Termination Mode    : KEEPER
+Default Voltage Standard for All Outputs    : LVCMOS18
+Input Limit                                 : 32
+Pterm Limit                                 : 28
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

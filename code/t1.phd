@@ -1,0 +1,783 @@
+" XPLAOPT Version 9.99.99.99
+" Created on Fri Jan 22 13:03:27 2021
+" 173 Mcells, 304 PLApts, 12 Levels, 468 Fanins
+" XPLAOPT -run s -it b -i clock.blx -dev XC2C128-6VQ100 -reg -xor a -mode 1 -th 
+"         28 -fi 32 -bfi 38 -pre keep -unused keeper -terminate keeper -no_output_files 
+MODULE clock
+
+	DIG0<0>  pin 12 ;  " 4 pt.
+ 	DIG0<1>  pin 13 ;  " 4 pt.
+ 	DIG0<2>  pin 6 ;  " 2 pt.
+ 	DIG0<3>  pin 7 ;  " 3 pt.
+ 	DIG0<4>  pin 8 ;  " 2 pt.
+ 	DIG0<5>  pin 10 ;  " 3 pt.
+ 	DIG0<6>  pin 9 ;  " 2 pt.
+ 	DIG0<7>  pin 11 ;  " 0 pt.
+ 	DIG1<0>  pin 22 ;  " 4 pt.
+ 	DIG1<1>  pin 24 ;  " 4 pt.
+ 	DIG1<2>  pin 14 ;  " 3 pt.
+ 	DIG1<3>  pin 15 ;  " 3 pt.
+ 	DIG1<4>  pin 16 ;  " 2 pt.
+ 	DIG1<5>  pin 18 ;  " 3 pt.
+ 	DIG1<6>  pin 17 ;  " 3 pt.
+ 	DIG1<7>  pin 19 ;  " 2 pt.
+ 	DIG2<0>  pin 34 ;  " 6 pt.
+ 	DIG2<1>  pin 35 ;  " 7 pt.
+ 	DIG2<2>  pin 27 ;  " 4 pt.
+ 	DIG2<3>  pin 28 ;  " 5 pt.
+ 	DIG2<4>  pin 29 ;  " 4 pt.
+ 	DIG2<5>  pin 32 ;  " 6 pt.
+ 	DIG2<6>  pin 30 ;  " 3 pt.
+ 	DIG2<7>  pin 33 ;  " 0 pt.
+ 	DIG3<0>  pin 43 ;  " 7 pt.
+ 	DIG3<1>  pin 44 ;  " 7 pt.
+ 	DIG3<2>  pin 36 ;  " 4 pt.
+ 	DIG3<3>  pin 37 ;  " 6 pt.
+ 	DIG3<4>  pin 39 ;  " 3 pt.
+ 	DIG3<5>  pin 41 ;  " 5 pt.
+ 	DIG3<6>  pin 40 ;  " 6 pt.
+ 	DIG3<7>  pin 42 ;  " 0 pt.
+ 	KEY1  pin 96 ; 
+ 	KEY2  pin 97 ; 
+ 	KEY3  pin 49 ; 
+ 	KEY4  pin 50 ; 
+ 	MainClk  pin 23 ; 
+ 
+
+	F250ms  node ;  " 1 pt.
+ 	F8ms  node ;  " 1 pt.
+ 	FHour  node ;  " 1 pt.
+ 	FMin  node ;  " 2 pt.
+ 	FSec  node ;  " 1 pt.
+ 	N_PZ_412  node istype 'collapse';  " 2 pt.
+ 	N_PZ_413  node istype 'collapse';  " 2 pt.
+ 	N_PZ_414  node istype 'collapse';  " 1 pt.
+ 	N_PZ_415  node istype 'collapse';  " 1 pt.
+ 	N_PZ_416  node istype 'collapse';  " 1 pt.
+ 	N_PZ_417  node istype 'collapse';  " 1 pt.
+ 	N_PZ_418  node istype 'collapse';  " 1 pt.
+ 	N_PZ_419  node istype 'collapse';  " 1 pt.
+ 	N_PZ_420  node istype 'collapse';  " 2 pt.
+ 	N_PZ_421  node istype 'collapse';  " 2 pt.
+ 	N_PZ_422  node istype 'collapse';  " 2 pt.
+ 	N_PZ_423  node istype 'collapse';  " 2 pt.
+ 	N_PZ_424  node istype 'collapse';  " 1 pt.
+ 	N_PZ_425  node istype 'collapse';  " 1 pt.
+ 	N_PZ_426  node istype 'collapse';  " 2 pt.
+ 	N_PZ_427  node istype 'collapse';  " 2 pt.
+ 	N_PZ_428  node istype 'collapse';  " 2 pt.
+ 	N_PZ_429  node istype 'collapse';  " 1 pt.
+ 	N_PZ_430  node istype 'collapse';  " 1 pt.
+ 	N_PZ_431  node istype 'collapse';  " 1 pt.
+ 	N_PZ_432  node istype 'collapse';  " 1 pt.
+ 	N_PZ_433  node istype 'collapse';  " 1 pt.
+ 	N_PZ_434  node istype 'collapse';  " 2 pt.
+ 	N_PZ_435  node istype 'collapse';  " 2 pt.
+ 	N_PZ_436  node istype 'collapse';  " 2 pt.
+ 	N_PZ_437  node istype 'collapse';  " 1 pt.
+ 	N_PZ_438  node istype 'collapse';  " 1 pt.
+ 	N_PZ_439  node istype 'collapse';  " 1 pt.
+ 	N_PZ_440  node istype 'collapse';  " 1 pt.
+ 	N_PZ_441  node istype 'collapse';  " 2 pt.
+ 	N_PZ_442  node istype 'collapse';  " 2 pt.
+ 	N_PZ_443  node istype 'collapse';  " 1 pt.
+ 	N_PZ_444  node istype 'collapse';  " 1 pt.
+ 	N_PZ_445  node istype 'collapse';  " 1 pt.
+ 	N_PZ_446  node istype 'collapse';  " 1 pt.
+ 	N_PZ_447  node istype 'collapse';  " 2 pt.
+ 	N_PZ_448  node istype 'collapse';  " 2 pt.
+ 	N_PZ_449  node istype 'collapse';  " 2 pt.
+ 	N_PZ_450  node istype 'collapse';  " 2 pt.
+ 	N_PZ_451  node istype 'collapse';  " 2 pt.
+ 	N_PZ_452  node istype 'collapse';  " 2 pt.
+ 	N_PZ_453  node istype 'collapse';  " 2 pt.
+ 	N_PZ_454  node istype 'collapse';  " 2 pt.
+ 	N_PZ_455  node istype 'collapse';  " 1 pt.
+ 	N_PZ_456  node istype 'collapse';  " 1 pt.
+ 	N_PZ_457  node istype 'collapse';  " 2 pt.
+ 	N_PZ_458  node istype 'collapse';  " 2 pt.
+ 	N_PZ_459  node istype 'collapse';  " 2 pt.
+ 	N_PZ_460  node istype 'collapse';  " 2 pt.
+ 	N_PZ_461  node istype 'collapse';  " 2 pt.
+ 	N_PZ_462  node istype 'collapse';  " 2 pt.
+ 	N_PZ_463  node istype 'collapse';  " 1 pt.
+ 	N_PZ_464  node istype 'collapse';  " 1 pt.
+ 	N_PZ_465  node istype 'collapse';  " 1 pt.
+ 	N_PZ_466  node istype 'collapse';  " 1 pt.
+ 	N_PZ_467  node istype 'collapse';  " 1 pt.
+ 	N_PZ_468  node istype 'collapse';  " 1 pt.
+ 	N_PZ_469  node istype 'collapse';  " 1 pt.
+ 	N_PZ_470  node istype 'collapse';  " 1 pt.
+ 	N_PZ_471  node istype 'collapse';  " 1 pt.
+ 	N_PZ_472  node istype 'collapse';  " 1 pt.
+ 	N_PZ_473  node istype 'collapse';  " 1 pt.
+ 	N_PZ_474  node istype 'collapse';  " 1 pt.
+ 	N_PZ_475  node istype 'collapse';  " 2 pt.
+ 	N_PZ_476  node istype 'collapse';  " 2 pt.
+ 	N_PZ_477  node istype 'collapse';  " 1 pt.
+ 	N_PZ_478  node istype 'collapse';  " 1 pt.
+ 	N_PZ_479  node istype 'collapse';  " 1 pt.
+ 	N_PZ_480  node istype 'collapse';  " 1 pt.
+ 	N_PZ_481  node istype 'collapse';  " 1 pt.
+ 	N_PZ_482  node istype 'collapse';  " 1 pt.
+ 	N_PZ_483  node istype 'collapse';  " 1 pt.
+ 	N_PZ_484  node istype 'collapse';  " 1 pt.
+ 	N_PZ_485  node istype 'collapse';  " 1 pt.
+ 	N_PZ_486  node istype 'collapse';  " 1 pt.
+ 	chmod  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<0>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<10>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<11>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<13>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<1>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<2>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<3>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<4>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<5>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<6>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<8>  node ;  " 1 pt.
+ 	dzielnik/FDivCnt<9>  node ;  " 1 pt.
+ 	hourcount/intclk  node ;  " 2 pt.
+ 	hoursbcd<0>  node ;  " 1 pt.
+ 	hoursbcd<1>  node ;  " 3 pt.
+ 	hoursbcd<2>  node ;  " 1 pt.
+ 	hoursbcd<3>  node ;  " 2 pt.
+ 	hoursbcd<4>  node ;  " 1 pt.
+ 	hoursbcd<5>  node ;  " 2 pt.
+ 	hoursbcd<6>  node ;  " 1 pt.
+ 	hoursbcd<7>  node ;  " 1 pt.
+ 	mincount/intclk  node ;  " 1 pt.
+ 	minutesbcd<0>  node ;  " 1 pt.
+ 	minutesbcd<1>  node ;  " 2 pt.
+ 	minutesbcd<2>  node ;  " 1 pt.
+ 	minutesbcd<3>  node ;  " 2 pt.
+ 	minutesbcd<4>  node ;  " 1 pt.
+ 	minutesbcd<5>  node ;  " 3 pt.
+ 	minutesbcd<6>  node ;  " 2 pt.
+ 	minutesbcd<7>  node ;  " 1 pt.
+ 	modeBtn/ShiftRegister<0>  node ;  " 1 pt.
+ 	modeBtn/ShiftRegister<1>  node ;  " 1 pt.
+ 	modeBtn/ShiftRegister<2>  node ;  " 1 pt.
+ 	modeBtn/ShiftRegister<3>  node ;  " 1 pt.
+ 	seccount/intclk  node ;  " 2 pt.
+ 	secondsbcd<0>  node ;  " 1 pt.
+ 	secondsbcd<1>  node ;  " 2 pt.
+ 	secondsbcd<2>  node ;  " 1 pt.
+ 	secondsbcd<3>  node ;  " 2 pt.
+ 	secondsbcd<4>  node ;  " 1 pt.
+ 	secondsbcd<5>  node ;  " 2 pt.
+ 	secondsbcd<6>  node ;  " 2 pt.
+ 	secondsbcd<7>  node ;  " 1 pt.
+ 	setBtn/ShiftRegister<0>  node ;  " 1 pt.
+ 	setBtn/ShiftRegister<1>  node ;  " 1 pt.
+ 	setBtn/ShiftRegister<2>  node ;  " 1 pt.
+ 	setBtn/ShiftRegister<3>  node ;  " 1 pt.
+ 	setHr/ShiftRegister<0>  node ;  " 1 pt.
+ 	setHr/ShiftRegister<1>  node ;  " 1 pt.
+ 	setHr/ShiftRegister<2>  node ;  " 1 pt.
+ 	setHr/ShiftRegister<3>  node ;  " 1 pt.
+ 	setMn/ShiftRegister<0>  node ;  " 1 pt.
+ 	setMn/ShiftRegister<1>  node ;  " 1 pt.
+ 	setMn/ShiftRegister<2>  node ;  " 1 pt.
+ 	setMn/ShiftRegister<3>  node ;  " 1 pt.
+ 	sethour  node ;  " 1 pt.
+ 	setminute  node ;  " 1 pt.
+ 	setmode  node ;  " 1 pt.
+ 	settime  node ;  " 1 pt.
+ 	showhr  node ;  " 1 pt.
+ 
+
+xpla property 'USER_SLEW_RATE DIG1<7> DIG0<0> DIG0<1> DIG0<2> DIG0<3> DIG0<4> DIG0<5> DIG0<6> 
+	DIG1<0> DIG1<1> DIG1<2> DIG1<3> DIG1<4> DIG1<5> DIG1<6> DIG2<0> DIG2<1> DIG2<2> DIG2<3> DIG2<4> 
+	DIG2<5> DIG2<6> DIG3<0> DIG3<1> DIG3<2> DIG3<3> DIG3<4> DIG3<5> DIG3<6> DIG3<7> DIG2<7> DIG0<7> 
+	'; 
+xpla property 'GLOBAL_CLK MainClk '; 
+xpla property 'unused_keeper'; 
+xpla property 'timespec  F8ms.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q F8ms.D 8719.000000'; 
+xpla property 'timespec  FSec.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<13>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  F250ms.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<11>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<10>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<9>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q FSec.D 8719.000000'; 
+xpla property 'timespec  F250ms.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<11>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<10>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<9>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q F250ms.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<0>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<10>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<9>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<10>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<11>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<10>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<9>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<11>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<13>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  F250ms.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<11>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<10>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<9>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<13>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<1>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<1>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<2>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<2>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<2>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<3>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<3>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<3>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<3>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<4>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<4>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<4>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<4>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<4>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<5>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<5>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<5>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<5>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<5>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<5>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<6>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<8>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<9>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<8>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  F8ms.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'timespec  dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<9>.D 8719.000000'; 
+xpla property 'IOSTD MainClk 2 -1';
+xpla property 'IOSTD KEY1 2 -1';
+xpla property 'IOSTD KEY2 2 -1';
+xpla property 'IOSTD KEY3 2 -1';
+xpla property 'IOSTD KEY4 2 -1';
+xpla property 'IOSTD DIG1<7> 2 -1';
+xpla property 'IOSTD DIG0<0> 2 -1';
+xpla property 'IOSTD DIG0<1> 2 -1';
+xpla property 'IOSTD DIG0<2> 2 -1';
+xpla property 'IOSTD DIG0<3> 2 -1';
+xpla property 'IOSTD DIG0<4> 2 -1';
+xpla property 'IOSTD DIG0<5> 2 -1';
+xpla property 'IOSTD DIG0<6> 2 -1';
+xpla property 'IOSTD DIG1<0> 2 -1';
+xpla property 'IOSTD DIG1<1> 2 -1';
+xpla property 'IOSTD DIG1<2> 2 -1';
+xpla property 'IOSTD DIG1<3> 2 -1';
+xpla property 'IOSTD DIG1<4> 2 -1';
+xpla property 'IOSTD DIG1<5> 2 -1';
+xpla property 'IOSTD DIG1<6> 2 -1';
+xpla property 'IOSTD DIG2<0> 2 -1';
+xpla property 'IOSTD DIG2<1> 2 -1';
+xpla property 'IOSTD DIG2<2> 2 -1';
+xpla property 'IOSTD DIG2<3> 2 -1';
+xpla property 'IOSTD DIG2<4> 2 -1';
+xpla property 'IOSTD DIG2<5> 2 -1';
+xpla property 'IOSTD DIG2<6> 2 -1';
+xpla property 'IOSTD DIG3<0> 2 -1';
+xpla property 'IOSTD DIG3<1> 2 -1';
+xpla property 'IOSTD DIG3<2> 2 -1';
+xpla property 'IOSTD DIG3<3> 2 -1';
+xpla property 'IOSTD DIG3<4> 2 -1';
+xpla property 'IOSTD DIG3<5> 2 -1';
+xpla property 'IOSTD DIG3<6> 2 -1';
+xpla property 'IOSTD DIG3<7> 2 -1';
+xpla property 'IOSTD DIG2<7> 2 -1';
+xpla property 'IOSTD DIG0<7> 2 -1';
+EQUATIONS 
+
+ DIG0<0> = N_PZ_416 & !N_PZ_434
+      # N_PZ_416 & !N_PZ_420
+      # N_PZ_485
+      # N_PZ_483;		"--- [PT=4, FI=5, LVL=4] ---
+ DIG0<1> = !hoursbcd<4>.Q & N_PZ_484
+      # N_PZ_416 & !N_PZ_459
+      # !hoursbcd<6>.Q & N_PZ_416
+      # N_PZ_463;		"--- [PT=4, FI=6, LVL=3] ---
+ DIG0<2> = N_PZ_416 & N_PZ_420
+      # N_PZ_463;		"--- [PT=2, FI=3, LVL=3] ---
+ DIG0<3> = !N_PZ_434 & N_PZ_484
+      # N_PZ_416 & !N_PZ_420
+      # N_PZ_454;		"--- [PT=3, FI=5, LVL=5] ---
+ DIG0<4> = !hoursbcd<4>.Q & N_PZ_483
+      # !N_PZ_420 & N_PZ_443;		"--- [PT=2, FI=4, LVL=3] ---
+ DIG0<5> = hoursbcd<6>.Q & N_PZ_416 & N_PZ_459
+      # !N_PZ_420 & N_PZ_443
+      # N_PZ_485;		"--- [PT=3, FI=6, LVL=4] ---
+ DIG0<6> = hoursbcd<6>.Q & N_PZ_484
+      # N_PZ_454;		"--- [PT=2, FI=3, LVL=5] ---
+ DIG0<7> = 0;
+ DIG1<0> = hoursbcd<2>.Q & N_PZ_471
+      # !hoursbcd<2>.Q & N_PZ_455
+      # hoursbcd<3>.Q & N_PZ_444
+      # hoursbcd<1>.Q & N_PZ_419;		"--- [PT=4, FI=7, LVL=3] ---
+ DIG1<1> = hoursbcd<1>.Q & N_PZ_471
+      # !hoursbcd<1>.Q & N_PZ_455
+      # !hoursbcd<2>.Q & N_PZ_419
+      # N_PZ_444;		"--- [PT=4, FI=6, LVL=3] ---
+ DIG1<2> = hoursbcd<2>.Q & N_PZ_419
+      # N_PZ_471
+      # N_PZ_444;		"--- [PT=3, FI=4, LVL=3] ---
+ DIG1<3> = !N_PZ_421 & N_PZ_471
+      # N_PZ_421 & N_PZ_455
+      # N_PZ_462;		"--- [PT=3, FI=4, LVL=4] ---
+ DIG1<4> = hoursbcd<1>.Q & N_PZ_455
+      # !hoursbcd<0>.Q & N_PZ_444;		"--- [PT=2, FI=4, LVL=3] ---
+ DIG1<5> = N_PZ_444 & N_PZ_476
+      # hoursbcd<2>.Q & N_PZ_455
+      # N_PZ_419 & !N_PZ_421;		"--- [PT=3, FI=6, LVL=3] ---
+ DIG1<6> = hoursbcd<1>.Q & N_PZ_455
+      # N_PZ_419 & !N_PZ_421
+      # N_PZ_462;		"--- [PT=3, FI=5, LVL=4] ---
+! DIG1<7> = setmode.Q & !F250ms.Q
+      # !setmode.Q & !FSec.Q;		"--- [PT=2, FI=3, LVL=1] ---
+ DIG2<0> = N_PZ_415 & !N_PZ_427
+      # N_PZ_418 & !N_PZ_426
+      # N_PZ_481
+      # N_PZ_472
+      # N_PZ_447
+      # N_PZ_412;		"--- [PT=6, FI=8, LVL=4] ---
+ DIG2<1> = !secondsbcd<4>.Q & N_PZ_482
+      # minutesbcd<4>.Q & N_PZ_481
+      # secondsbcd<4>.Q & N_PZ_472
+      # !minutesbcd<5>.Q & N_PZ_466
+      # !secondsbcd<6>.Q & N_PZ_418
+      # !minutesbcd<6>.Q & N_PZ_415
+      # N_PZ_448;		"--- [PT=7, FI=12, LVL=4] ---
+ DIG2<2> = N_PZ_418 & N_PZ_460
+      # minutesbcd<6>.Q & N_PZ_415
+      # minutesbcd<4>.Q & N_PZ_415
+      # N_PZ_448;		"--- [PT=4, FI=6, LVL=4] ---
+ DIG2<3> = !minutesbcd<5>.Q & N_PZ_415 & !N_PZ_427
+      # !N_PZ_426 & N_PZ_482
+      # N_PZ_453
+      # N_PZ_447
+      # N_PZ_412;		"--- [PT=5, FI=8, LVL=4] ---
+ DIG2<4> = !minutesbcd<4>.Q & N_PZ_486
+      # !secondsbcd<4>.Q & N_PZ_472
+      # !N_PZ_460 & N_PZ_470
+      # minutesbcd<5>.Q & N_PZ_466;		"--- [PT=4, FI=8, LVL=3] ---
+ DIG2<5> = !secondsbcd<4>.Q & secondsbcd<6>.Q & N_PZ_418
+      # !N_PZ_460 & N_PZ_470
+      # minutesbcd<6>.Q & N_PZ_466
+      # !minutesbcd<5>.Q & N_PZ_466
+      # N_PZ_449
+      # N_PZ_412;		"--- [PT=6, FI=10, LVL=4] ---
+ DIG2<6> = N_PZ_453
+      # N_PZ_449
+      # N_PZ_412;		"--- [PT=3, FI=3, LVL=4] ---
+ DIG2<7> = 0;
+ DIG3<0> = !minutesbcd<0>.Q & N_PZ_473
+      # secondsbcd<0>.Q & N_PZ_467
+      # minutesbcd<0>.Q & N_PZ_465
+      # N_PZ_417 & !N_PZ_461
+      # secondsbcd<1>.Q & N_PZ_417
+      # minutesbcd<1>.Q & N_PZ_414
+      # N_PZ_413;		"--- [PT=7, FI=11, LVL=3] ---
+ DIG3<1> = !secondsbcd<0>.Q & !secondsbcd<1>.Q & N_PZ_417
+      # !minutesbcd<1>.Q & N_PZ_478
+      # N_PZ_414 & !N_PZ_452
+      # N_PZ_417 & !N_PZ_451
+      # N_PZ_479
+      # N_PZ_473
+      # N_PZ_450;		"--- [PT=7, FI=11, LVL=3] ---
+ DIG3<2> = N_PZ_417 & N_PZ_461
+      # minutesbcd<0>.Q & N_PZ_414
+      # N_PZ_465
+      # N_PZ_450;		"--- [PT=4, FI=6, LVL=3] ---
+ DIG3<3> = N_PZ_441 & N_PZ_479
+      # N_PZ_442 & N_PZ_473
+      # !N_PZ_441 & N_PZ_467
+      # !N_PZ_442 & N_PZ_465
+      # N_PZ_428
+      # N_PZ_413;		"--- [PT=6, FI=8, LVL=4] ---
+ DIG3<4> = !minutesbcd<0>.Q & !minutesbcd<2>.Q & N_PZ_480
+      # !N_PZ_461 & N_PZ_469
+      # N_PZ_428;		"--- [PT=3, FI=6, LVL=4] ---
+ DIG3<5> = !minutesbcd<1>.Q & N_PZ_478
+      # !N_PZ_461 & N_PZ_469
+      # N_PZ_451 & N_PZ_467
+      # N_PZ_452 & N_PZ_465
+      # N_PZ_413;		"--- [PT=5, FI=9, LVL=3] ---
+ DIG3<6> = secondsbcd<1>.Q & N_PZ_479
+      # minutesbcd<1>.Q & N_PZ_473
+      # !secondsbcd<1>.Q & N_PZ_467
+      # !minutesbcd<1>.Q & N_PZ_465
+      # N_PZ_428
+      # N_PZ_413;		"--- [PT=6, FI=8, LVL=4] ---
+ DIG3<7> = 0;
+ F250ms.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ F250ms.T = N_PZ_477;		"--- [PT=1, FI=1, LVL=12] ---
+ F8ms.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ F8ms.T = N_PZ_445;		"--- [PT=1, FI=1, LVL=7] ---
+! FHour.CLK = mincount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! FHour.D = !minutesbcd<5>.Q & !minutesbcd<7>.Q & !N_PZ_427
+    ;		"--- [PT=1, FI=3, LVL=2] ---
+! FMin.CLK = seccount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! FMin.D = !secondsbcd<5>.Q & !secondsbcd<7>.Q & !settime.Q & !N_PZ_426
+    
+      # !FMin.Q & settime.Q;		"--- [PT=2, FI=5, LVL=2] ---
+ FSec.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ FSec.T = F250ms.Q & dzielnik/FDivCnt<13>.Q & N_PZ_477
+    ;		"--- [PT=1, FI=3, LVL=12] ---
+ N_PZ_412 = !secondsbcd<6>.Q & secondsbcd<7>.Q & N_PZ_470
+      # minutesbcd<7>.Q & N_PZ_486;		"--- [PT=2, FI=5, LVL=3] ---
+ N_PZ_413 = !N_PZ_458 & N_PZ_480
+      # !N_PZ_457 & N_PZ_469;		"--- [PT=2, FI=4, LVL=2] ---
+ N_PZ_414 = showhr.Q & !minutesbcd<3>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_415 = showhr.Q & !minutesbcd<7>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_416 = !hoursbcd<7>.Q & showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_417 = !secondsbcd<3>.Q & !showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_418 = !secondsbcd<7>.Q & !showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_419 = !hoursbcd<3>.Q & showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_420 = hoursbcd<6>.Q
+      # hoursbcd<4>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_421 = !hoursbcd<2>.Q
+      # hoursbcd<1>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_422 = !setmode.Q & !FHour.Q
+      # setmode.Q & !sethour.Q;		"--- [PT=2, FI=3, LVL=1] ---
+ N_PZ_423 = setmode.Q & !setminute.Q
+      # !FMin.Q & !setmode.Q;		"--- [PT=2, FI=3, LVL=1] ---
+ N_PZ_424 = dzielnik/FDivCnt<0>.Q & dzielnik/FDivCnt<1>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_425 = dzielnik/FDivCnt<2>.Q & N_PZ_424;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_426 = !secondsbcd<6>.Q
+      # !secondsbcd<4>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_427 = !minutesbcd<6>.Q
+      # !minutesbcd<4>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_428 = !secondsbcd<0>.Q & secondsbcd<1>.Q & N_PZ_417
+      # minutesbcd<1>.Q & N_PZ_478;		"--- [PT=2, FI=5, LVL=3] ---
+ N_PZ_429 = hoursbcd<5>.Q & !hoursbcd<7>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_430 = dzielnik/FDivCnt<3>.Q & N_PZ_425;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_431 = !hoursbcd<1>.Q & !hoursbcd<2>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_432 = !N_PZ_420 & N_PZ_429;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_433 = dzielnik/FDivCnt<4>.Q & N_PZ_430;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_434 = !hoursbcd<6>.Q
+      # !hoursbcd<4>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_435 = !sethour.Q & !FHour.Q
+      # N_PZ_422;		"--- [PT=2, FI=3, LVL=2] ---
+ N_PZ_436 = !FMin.Q & !setminute.Q
+      # N_PZ_423;		"--- [PT=2, FI=3, LVL=2] ---
+ N_PZ_437 = !hoursbcd<3>.Q & !N_PZ_421;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_438 = N_PZ_432 & N_PZ_437;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_439 = !hoursbcd<0>.Q & N_PZ_438;		"--- [PT=1, FI=2, LVL=4] ---
+ N_PZ_440 = dzielnik/FDivCnt<5>.Q & N_PZ_433;		"--- [PT=1, FI=2, LVL=5] ---
+ N_PZ_441 = secondsbcd<1>.Q
+      # !secondsbcd<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_442 = minutesbcd<1>.Q
+      # !minutesbcd<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_443 = !hoursbcd<5>.Q & showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_444 = showhr.Q & N_PZ_431;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_445 = dzielnik/FDivCnt<6>.Q & N_PZ_440;		"--- [PT=1, FI=2, LVL=6] ---
+ N_PZ_446 = F8ms.Q & N_PZ_445;		"--- [PT=1, FI=2, LVL=7] ---
+ N_PZ_447 = !minutesbcd<6>.Q & N_PZ_466
+      # N_PZ_418 & !N_PZ_460;		"--- [PT=2, FI=4, LVL=3] ---
+ N_PZ_448 = !secondsbcd<6>.Q & N_PZ_470
+      # N_PZ_486;		"--- [PT=2, FI=3, LVL=3] ---
+ N_PZ_449 = !minutesbcd<5>.Q & minutesbcd<6>.Q & N_PZ_415
+      # secondsbcd<6>.Q & N_PZ_482;		"--- [PT=2, FI=5, LVL=3] ---
+ N_PZ_450 = !minutesbcd<2>.Q & N_PZ_480
+      # !secondsbcd<2>.Q & N_PZ_469;		"--- [PT=2, FI=4, LVL=2] ---
+ N_PZ_451 = !secondsbcd<1>.Q
+      # !secondsbcd<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_452 = !minutesbcd<1>.Q
+      # !minutesbcd<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_453 = N_PZ_427 & N_PZ_481
+      # N_PZ_426 & N_PZ_472;		"--- [PT=2, FI=4, LVL=3] ---
+ N_PZ_454 = N_PZ_434 & N_PZ_483
+      # N_PZ_485;		"--- [PT=2, FI=3, LVL=4] ---
+ N_PZ_455 = !hoursbcd<0>.Q & N_PZ_419;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_456 = dzielnik/FDivCnt<8>.Q & N_PZ_446;		"--- [PT=1, FI=2, LVL=8] ---
+ N_PZ_457 = !secondsbcd<3>.Q
+      # secondsbcd<2>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_458 = !minutesbcd<3>.Q
+      # minutesbcd<2>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_459 = !hoursbcd<5>.Q
+      # !hoursbcd<4>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_460 = secondsbcd<6>.Q
+      # secondsbcd<4>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_461 = secondsbcd<2>.Q
+      # secondsbcd<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_462 = hoursbcd<1>.Q & !hoursbcd<2>.Q & N_PZ_419
+      # hoursbcd<3>.Q & N_PZ_444;		"--- [PT=2, FI=5, LVL=3] ---
+ N_PZ_463 = !hoursbcd<6>.Q & N_PZ_443;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_464 = dzielnik/FDivCnt<9>.Q & N_PZ_456;		"--- [PT=1, FI=2, LVL=9] ---
+ N_PZ_465 = minutesbcd<2>.Q & N_PZ_414;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_466 = !minutesbcd<4>.Q & N_PZ_415;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_467 = secondsbcd<2>.Q & N_PZ_417;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_468 = dzielnik/FDivCnt<10>.Q & N_PZ_464;		"--- [PT=1, FI=2, LVL=10] ---
+ N_PZ_469 = !secondsbcd<1>.Q & !showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_470 = !secondsbcd<5>.Q & !showhr.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_471 = hoursbcd<0>.Q & N_PZ_419;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_472 = secondsbcd<5>.Q & N_PZ_418;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_473 = !minutesbcd<2>.Q & N_PZ_414;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_474 = !minutesbcd<5>.Q & !minutesbcd<6>.Q
+    ;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_475 = secondsbcd<7>.Q
+      # !secondsbcd<6>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_476 = hoursbcd<3>.Q
+      # !hoursbcd<0>.Q;		"--- [PT=2, FI=2, LVL=1] ---
+ N_PZ_477 = dzielnik/FDivCnt<11>.Q & N_PZ_468;		"--- [PT=1, FI=2, LVL=11] ---
+ N_PZ_478 = !minutesbcd<0>.Q & N_PZ_414;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_479 = !secondsbcd<2>.Q & N_PZ_417;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_480 = showhr.Q & !minutesbcd<1>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ N_PZ_481 = minutesbcd<5>.Q & N_PZ_415;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_482 = !secondsbcd<5>.Q & N_PZ_418;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_483 = hoursbcd<5>.Q & N_PZ_416;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_484 = !hoursbcd<5>.Q & N_PZ_416;		"--- [PT=1, FI=2, LVL=2] ---
+ N_PZ_485 = hoursbcd<7>.Q & N_PZ_463;		"--- [PT=1, FI=2, LVL=3] ---
+ N_PZ_486 = showhr.Q & N_PZ_474;		"--- [PT=1, FI=2, LVL=2] ---
+ chmod.AR = modeBtn/ShiftRegister<0>.Q & modeBtn/ShiftRegister<1>.Q & 
+    modeBtn/ShiftRegister<2>.Q & modeBtn/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ chmod.D = 1;
+ chmod.LH = !modeBtn/ShiftRegister<0>.Q & !modeBtn/ShiftRegister<1>.Q & !
+    modeBtn/ShiftRegister<2>.Q & !modeBtn/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ dzielnik/FDivCnt<0>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<0>.T = 1;
+ dzielnik/FDivCnt<10>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<10>.T = N_PZ_464;		"--- [PT=1, FI=1, LVL=10] ---
+ dzielnik/FDivCnt<11>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<11>.T = N_PZ_468;		"--- [PT=1, FI=1, LVL=11] ---
+ dzielnik/FDivCnt<13>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<13>.T = F250ms.Q & N_PZ_477;		"--- [PT=1, FI=2, LVL=12] ---
+ dzielnik/FDivCnt<1>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<1>.T = dzielnik/FDivCnt<0>.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<2>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<2>.T = N_PZ_424;		"--- [PT=1, FI=1, LVL=2] ---
+ dzielnik/FDivCnt<3>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<3>.T = N_PZ_425;		"--- [PT=1, FI=1, LVL=3] ---
+ dzielnik/FDivCnt<4>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<4>.T = N_PZ_430;		"--- [PT=1, FI=1, LVL=4] ---
+ dzielnik/FDivCnt<5>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<5>.T = N_PZ_433;		"--- [PT=1, FI=1, LVL=5] ---
+ dzielnik/FDivCnt<6>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<6>.T = N_PZ_440;		"--- [PT=1, FI=1, LVL=6] ---
+ dzielnik/FDivCnt<8>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<8>.T = N_PZ_446;		"--- [PT=1, FI=1, LVL=8] ---
+ dzielnik/FDivCnt<9>.CLK = MainClk;		"--- [PT=1, FI=1, LVL=1] ---
+ dzielnik/FDivCnt<9>.T = N_PZ_456;		"--- [PT=1, FI=1, LVL=9] ---
+ hourcount/intclk.CLK = N_PZ_435;		"--- [PT=1, FI=1, LVL=3] ---
+! hourcount/intclk.D = hoursbcd<0>.Q & hoursbcd<3>.Q & N_PZ_431
+      # !hourcount/intclk.Q & N_PZ_439;		"--- [PT=2, FI=5, LVL=5] ---
+ hoursbcd<0>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+ hoursbcd<0>.CLK = N_PZ_435;		"--- [PT=1, FI=1, LVL=3] ---
+ hoursbcd<0>.T = 1;
+ hoursbcd<1>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+ hoursbcd<1>.CLK = N_PZ_435;		"--- [PT=1, FI=1, LVL=3] ---
+ hoursbcd<1>.D = !hoursbcd<1>.Q & !N_PZ_476
+      # hoursbcd<0>.Q & !N_PZ_421
+      # !hoursbcd<0>.Q & hoursbcd<1>.Q;		"--- [PT=3, FI=4, LVL=2] ---
+ hoursbcd<2>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+ hoursbcd<2>.CLK = N_PZ_435;		"--- [PT=1, FI=1, LVL=3] ---
+ hoursbcd<2>.T = hoursbcd<0>.Q & hoursbcd<1>.Q;		"--- [PT=1, FI=2, LVL=1] ---
+ hoursbcd<3>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+ hoursbcd<3>.CLK = N_PZ_435;		"--- [PT=1, FI=1, LVL=3] ---
+ hoursbcd<3>.T = hoursbcd<0>.Q & hoursbcd<3>.Q & N_PZ_431
+      # hoursbcd<0>.Q & hoursbcd<1>.Q & hoursbcd<2>.Q
+    ;		"--- [PT=2, FI=5, LVL=2] ---
+ hoursbcd<4>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+! hoursbcd<4>.CLK = hourcount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! hoursbcd<4>.T = N_PZ_432;		"--- [PT=1, FI=1, LVL=3] ---
+ hoursbcd<5>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+! hoursbcd<5>.CLK = hourcount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ hoursbcd<5>.T = !hoursbcd<6>.Q & N_PZ_429
+      # hoursbcd<4>.Q;		"--- [PT=2, FI=3, LVL=2] ---
+ hoursbcd<6>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+! hoursbcd<6>.CLK = hourcount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ hoursbcd<6>.T = !N_PZ_459;		"--- [PT=1, FI=1, LVL=2] ---
+ hoursbcd<7>.AR = N_PZ_439;		"--- [PT=1, FI=1, LVL=5] ---
+! hoursbcd<7>.CLK = hourcount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ hoursbcd<7>.T = hoursbcd<5>.Q & !N_PZ_434;		"--- [PT=1, FI=2, LVL=2] ---
+ mincount/intclk.CLK = N_PZ_436;		"--- [PT=1, FI=1, LVL=3] ---
+! mincount/intclk.D = !N_PZ_442 & !N_PZ_458;		"--- [PT=1, FI=2, LVL=2] ---
+ minutesbcd<0>.CLK = N_PZ_436;		"--- [PT=1, FI=1, LVL=3] ---
+ minutesbcd<0>.T = 1;
+ minutesbcd<1>.CLK = N_PZ_436;		"--- [PT=1, FI=1, LVL=3] ---
+ minutesbcd<1>.D = !N_PZ_442 & N_PZ_458
+      # !minutesbcd<0>.Q & minutesbcd<1>.Q;		"--- [PT=2, FI=4, LVL=2] ---
+ minutesbcd<2>.CLK = N_PZ_436;		"--- [PT=1, FI=1, LVL=3] ---
+ minutesbcd<2>.T = !N_PZ_452;		"--- [PT=1, FI=1, LVL=2] ---
+ minutesbcd<3>.CLK = N_PZ_436;		"--- [PT=1, FI=1, LVL=3] ---
+ minutesbcd<3>.T = !N_PZ_442 & !N_PZ_458
+      # minutesbcd<2>.Q & !N_PZ_452;		"--- [PT=2, FI=4, LVL=2] ---
+! minutesbcd<4>.CLK = mincount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ minutesbcd<4>.T = 1;
+! minutesbcd<5>.CLK = mincount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ minutesbcd<5>.D = minutesbcd<4>.Q & !minutesbcd<5>.Q & minutesbcd<7>.Q
+    
+      # minutesbcd<4>.Q & N_PZ_474
+      # !minutesbcd<4>.Q & minutesbcd<5>.Q;		"--- [PT=3, FI=4, LVL=2] ---
+! minutesbcd<6>.CLK = mincount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ minutesbcd<6>.T = !minutesbcd<7>.Q & !N_PZ_427
+      # minutesbcd<4>.Q & minutesbcd<5>.Q;		"--- [PT=2, FI=4, LVL=2] ---
+! minutesbcd<7>.CLK = mincount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ minutesbcd<7>.T = minutesbcd<5>.Q & !N_PZ_427;		"--- [PT=1, FI=2, LVL=2] ---
+! modeBtn/ShiftRegister<0>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ modeBtn/ShiftRegister<0>.D = KEY1;		"--- [PT=1, FI=1, LVL=1] ---
+! modeBtn/ShiftRegister<1>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ modeBtn/ShiftRegister<1>.D = modeBtn/ShiftRegister<0>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! modeBtn/ShiftRegister<2>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ modeBtn/ShiftRegister<2>.D = modeBtn/ShiftRegister<1>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! modeBtn/ShiftRegister<3>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ modeBtn/ShiftRegister<3>.D = modeBtn/ShiftRegister<2>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! seccount/intclk.CLK = FSec.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! seccount/intclk.D = !settime.Q & !N_PZ_441 & !N_PZ_457
+      # !seccount/intclk.Q & settime.Q;		"--- [PT=2, FI=4, LVL=2] ---
+ secondsbcd<0>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<0>.CLK = FSec.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<0>.T = 1;
+ secondsbcd<1>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<1>.CLK = FSec.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<1>.D = !N_PZ_441 & N_PZ_457
+      # !secondsbcd<0>.Q & secondsbcd<1>.Q;		"--- [PT=2, FI=4, LVL=2] ---
+ secondsbcd<2>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<2>.CLK = FSec.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<2>.T = !N_PZ_451;		"--- [PT=1, FI=1, LVL=2] ---
+ secondsbcd<3>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<3>.CLK = FSec.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<3>.T = !N_PZ_441 & !N_PZ_457
+      # secondsbcd<2>.Q & !N_PZ_451;		"--- [PT=2, FI=4, LVL=2] ---
+ secondsbcd<4>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<4>.CLK = seccount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<4>.T = 1;
+ secondsbcd<5>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<5>.CLK = seccount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<5>.D = secondsbcd<4>.Q & !secondsbcd<5>.Q & N_PZ_475
+      # !secondsbcd<4>.Q & secondsbcd<5>.Q;		"--- [PT=2, FI=3, LVL=2] ---
+ secondsbcd<6>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<6>.CLK = seccount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<6>.T = !secondsbcd<7>.Q & !N_PZ_426
+      # secondsbcd<4>.Q & secondsbcd<5>.Q;		"--- [PT=2, FI=4, LVL=2] ---
+ secondsbcd<7>.AR = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+! secondsbcd<7>.CLK = seccount/intclk.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ secondsbcd<7>.T = secondsbcd<5>.Q & !N_PZ_426;		"--- [PT=1, FI=2, LVL=2] ---
+! setBtn/ShiftRegister<0>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setBtn/ShiftRegister<0>.D = KEY2;		"--- [PT=1, FI=1, LVL=1] ---
+! setBtn/ShiftRegister<1>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setBtn/ShiftRegister<1>.D = setBtn/ShiftRegister<0>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setBtn/ShiftRegister<2>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setBtn/ShiftRegister<2>.D = setBtn/ShiftRegister<1>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setBtn/ShiftRegister<3>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setBtn/ShiftRegister<3>.D = setBtn/ShiftRegister<2>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setHr/ShiftRegister<0>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setHr/ShiftRegister<0>.D = KEY3;		"--- [PT=1, FI=1, LVL=1] ---
+! setHr/ShiftRegister<1>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setHr/ShiftRegister<1>.D = setHr/ShiftRegister<0>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setHr/ShiftRegister<2>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setHr/ShiftRegister<2>.D = setHr/ShiftRegister<1>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setHr/ShiftRegister<3>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setHr/ShiftRegister<3>.D = setHr/ShiftRegister<2>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setMn/ShiftRegister<0>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setMn/ShiftRegister<0>.D = KEY4;		"--- [PT=1, FI=1, LVL=1] ---
+! setMn/ShiftRegister<1>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setMn/ShiftRegister<1>.D = setMn/ShiftRegister<0>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setMn/ShiftRegister<2>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setMn/ShiftRegister<2>.D = setMn/ShiftRegister<1>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+! setMn/ShiftRegister<3>.CLK = F8ms.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setMn/ShiftRegister<3>.D = setMn/ShiftRegister<2>.Q
+    ;		"--- [PT=1, FI=1, LVL=1] ---
+ sethour.AR = setHr/ShiftRegister<0>.Q & setHr/ShiftRegister<1>.Q & 
+    setHr/ShiftRegister<2>.Q & setHr/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ sethour.D = 1;
+ sethour.LH = !setHr/ShiftRegister<0>.Q & !setHr/ShiftRegister<1>.Q & !
+    setHr/ShiftRegister<2>.Q & !setHr/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ setminute.AR = setMn/ShiftRegister<0>.Q & setMn/ShiftRegister<1>.Q & 
+    setMn/ShiftRegister<2>.Q & setMn/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ setminute.D = 1;
+ setminute.LH = !setMn/ShiftRegister<0>.Q & !setMn/ShiftRegister<1>.Q & !
+    setMn/ShiftRegister<2>.Q & !setMn/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ setmode.CLK = settime.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ setmode.T = 1;
+ settime.AR = setBtn/ShiftRegister<0>.Q & setBtn/ShiftRegister<1>.Q & 
+    setBtn/ShiftRegister<2>.Q & setBtn/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ settime.D = 1;
+ settime.LH = !setBtn/ShiftRegister<0>.Q & !setBtn/ShiftRegister<1>.Q & !
+    setBtn/ShiftRegister<2>.Q & !setBtn/ShiftRegister<3>.Q
+    ;		"--- [PT=1, FI=4, LVL=1] ---
+ showhr.CLK = chmod.Q;		"--- [PT=1, FI=1, LVL=1] ---
+ showhr.T = 1;
+END

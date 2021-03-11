@@ -106,7 +106,7 @@ signal F250ms : STD_LOGIC;
 signal FSec : STD_LOGIC;
 signal FMin : STD_LOGIC;
 signal FHour : STD_LOGIC;
-signal dot : STD_LOGIC;
+--signal dot : STD_LOGIC;
 signal chmod : STD_LOGIC;
 signal settime : STD_LOGIC;
 signal sethour : STD_LOGIC;
@@ -115,7 +115,7 @@ signal hr_clkin : STD_LOGIC;
 signal min_clkin : STD_LOGIC;
 signal showhr : STD_LOGIC := '0';
 signal setmode : STD_LOGIC := '0';
-signal secrst : STD_LOGIC;
+--signal secrst : STD_LOGIC;
 
 begin
 

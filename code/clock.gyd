@@ -1,0 +1,80 @@
+Pin Freeze File:  version P.20131013
+
+2C128100 XC2C128-6-VQ100
+KEY1 S:PIN96
+KEY2 S:PIN97
+KEY3 S:PIN49
+KEY4 S:PIN50
+MainClk S:PIN23
+DIG0<0> S:PIN12
+DIG0<1> S:PIN13
+DIG0<2> S:PIN6
+DIG0<3> S:PIN7
+DIG0<4> S:PIN8
+DIG0<5> S:PIN10
+DIG0<6> S:PIN9
+DIG0<7> S:PIN11
+DIG1<0> S:PIN22
+DIG1<1> S:PIN24
+DIG1<2> S:PIN14
+DIG1<3> S:PIN15
+DIG1<4> S:PIN16
+DIG1<5> S:PIN18
+DIG1<6> S:PIN17
+DIG1<7> S:PIN19
+DIG2<0> S:PIN34
+DIG2<1> S:PIN35
+DIG2<2> S:PIN27
+DIG2<3> S:PIN28
+DIG2<4> S:PIN29
+DIG2<5> S:PIN32
+DIG2<6> S:PIN30
+DIG2<7> S:PIN33
+DIG3<0> S:PIN43
+DIG3<1> S:PIN44
+DIG3<2> S:PIN36
+DIG3<3> S:PIN37
+DIG3<4> S:PIN39
+DIG3<5> S:PIN41
+DIG3<6> S:PIN40
+DIG3<7> S:PIN42
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 DIG0<1> hoursbcd<4> DIG0<0> DIG0<7>
+		 DIG0<5> DIG0<6> hourcount/intclk hoursbcd<3>
+		 hoursbcd<1> hoursbcd<2> DIG0<4> DIG0<3>
+		 DIG0<2> hoursbcd<0> hoursbcd<7> hoursbcd<6>
+		
+PARTITION FB2_1 secondsbcd<6> DIG1<2> DIG1<3> DIG1<4>
+		 DIG1<6> DIG1<5> secondsbcd<5> minutesbcd<7>
+		 minutesbcd<6> minutesbcd<5> DIG1<7> FHour
+		 DIG1<0> FMin DIG1<1> DIG2<2>
+		
+PARTITION FB3_1 F250ms dzielnik/FDivCnt<1> dzielnik/FDivCnt<2> dzielnik/FDivCnt<3>
+		 setBtn/ShiftRegister<0> modeBtn/ShiftRegister<0> dzielnik/FDivCnt<4> dzielnik/FDivCnt<11>
+		 dzielnik/FDivCnt<10> dzielnik/FDivCnt<9> dzielnik/FDivCnt<5> dzielnik/FDivCnt<8>
+		 dzielnik/FDivCnt<6> F8ms FSec dzielnik/FDivCnt<13>
+		
+PARTITION FB4_1 DIG2<3>
+PARTITION FB4_4 DIG2<4> DIG2<6> DIG2<5> DIG2<7>
+		 minutesbcd<0> dzielnik/FDivCnt<0> N_PZ_413 DIG2<0>
+		 DIG2<1> DIG3<2> DIG3<3> DIG3<4>
+		 DIG3<6>
+PARTITION FB5_1 setBtn/ShiftRegister<1> modeBtn/ShiftRegister<3> chmod secondsbcd<1>
+		 modeBtn/ShiftRegister<2> secondsbcd<2> modeBtn/ShiftRegister<1> secondsbcd<0>
+		 setmode minutesbcd<4> showhr secondsbcd<7>
+		 secondsbcd<4> seccount/intclk secondsbcd<3> hoursbcd<5>
+		
+PARTITION FB6_2 setMn/ShiftRegister<3> setminute setMn/ShiftRegister<2> setMn/ShiftRegister<1>
+		 setHr/ShiftRegister<3> settime setBtn/ShiftRegister<3> setBtn/ShiftRegister<2>
+		 minutesbcd<2> minutesbcd<3> sethour mincount/intclk
+		 setHr/ShiftRegister<2> minutesbcd<1> setHr/ShiftRegister<1>
+
+PARTITION FB8_4 setMn/ShiftRegister<0>
+PARTITION FB8_6 setHr/ShiftRegister<0>
+PARTITION FB8_13 DIG3<1> DIG3<0> DIG3<7> DIG3<5>
+		
+

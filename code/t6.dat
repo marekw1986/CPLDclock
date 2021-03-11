@@ -1,0 +1,2418 @@
+assert111.........
+name = ddddddd..
+assert333.........
+NDEBUG is defined
+__STDC__ is defined
+__MSVC__ is NOT defined
+XPLA_BORLANDC is NOT defined
+
+---------------------
+|  D E F A U L T S  |
+---------------------
+max_pt=28, min_pt=3
+max_fi=32, min_fi=4
+
+-----------------
+|  H E A D E R  |
+-----------------
+#$ MODULE clock
+#$ PINS 6 "MainClk":23 "KEY1":96 "KEY2":97 "KEY3":49 "KEY4":50 "DIG1<7>":19 
+#$ PINS 5 "DIG0<0>":12 "DIG0<1>":13 "DIG0<2>":6 "DIG0<3>":7 "DIG0<4>":8 
+#$ PINS 5 "DIG0<5>":10 "DIG0<6>":9 "DIG1<0>":22 "DIG1<1>":24 "DIG1<2>":14 
+#$ PINS 5 "DIG1<3>":15 "DIG1<4>":16 "DIG1<5>":18 "DIG1<6>":17 "DIG2<0>":34 
+#$ PINS 5 "DIG2<1>":35 "DIG2<2>":27 "DIG2<3>":28 "DIG2<4>":29 "DIG2<5>":32 
+#$ PINS 5 "DIG2<6>":30 "DIG3<0>":43 "DIG3<1>":44 "DIG3<2>":36 "DIG3<3>":37 
+#$ PINS 5 "DIG3<4>":39 "DIG3<5>":41 "DIG3<6>":40 "DIG3<7>":42 "DIG2<7>":33 
+#$ PINS 1 "DIG0<7>":11 
+#$ NODES 4 "hoursbcd<4>" "hoursbcd<5>" "hoursbcd<6>" "hoursbcd<7>" 
+#$ NODES 2 "hoursbcd<3>" "modeBtn/ShiftRegister<0>" 
+#$ NODES 2 "modeBtn/ShiftRegister<1>" "modeBtn/ShiftRegister<2>" 
+#$ NODES 2 "modeBtn/ShiftRegister<3>" "setBtn/ShiftRegister<0>" 
+#$ NODES 2 "setBtn/ShiftRegister<1>" "setBtn/ShiftRegister<2>" 
+#$ NODES 2 "setBtn/ShiftRegister<3>" "setHr/ShiftRegister<0>" 
+#$ NODES 2 "setHr/ShiftRegister<1>" "setHr/ShiftRegister<2>" 
+#$ NODES 2 "setHr/ShiftRegister<3>" "setMn/ShiftRegister<0>" 
+#$ NODES 2 "setMn/ShiftRegister<1>" "setMn/ShiftRegister<2>" 
+#$ NODES 3 "setMn/ShiftRegister<3>" "hoursbcd<0>" "hourcount/intclk" 
+#$ NODES 5 "hoursbcd<1>" "hoursbcd<2>" "seccount/intclk" "FSec" "settime" 
+#$ NODES 4 "secondsbcd<0>" "secondsbcd<4>" "secondsbcd<1>" "secondsbcd<2>" 
+#$ NODES 4 "secondsbcd<5>" "secondsbcd<6>" "secondsbcd<3>" "secondsbcd<7>" 
+#$ NODES 6 "FMin" "showhr" "chmod" "F8ms" "setmode" "mincount/intclk" 
+#$ NODES 4 "minutesbcd<0>" "minutesbcd<4>" "minutesbcd<1>" "minutesbcd<2>" 
+#$ NODES 4 "minutesbcd<5>" "minutesbcd<6>" "minutesbcd<3>" "minutesbcd<7>" 
+#$ NODES 3 "F250ms" "dzielnik/FDivCnt<0>" "dzielnik/FDivCnt<10>" 
+#$ NODES 2 "dzielnik/FDivCnt<11>" "dzielnik/FDivCnt<13>" 
+#$ NODES 3 "dzielnik/FDivCnt<1>" "dzielnik/FDivCnt<2>" "dzielnik/FDivCnt<3>" 
+#$ NODES 3 "dzielnik/FDivCnt<4>" "dzielnik/FDivCnt<5>" "dzielnik/FDivCnt<6>" 
+#$ NODES 4 "dzielnik/FDivCnt<8>" "dzielnik/FDivCnt<9>" "sethour" "setminute" 
+#$ NODES 4 "FHour" "N_PZ_412"'co' "N_PZ_413"'co' "N_PZ_435"'co' 
+#$ NODES 2 "N_PZ_436"'co' "N_PZ_453"'co' 
+
+---------------------------------------
+|  P I N    T a b l e    [count=108]  |
+---------------------------------------
+ setMn/ShiftRegister<0> setBtn/ShiftRegister<2> dzielnik/FDivCnt<4> secondsbcd<5> 
+ MainClk DIG1<4> DIG2<3> dzielnik/FDivCnt<9> secondsbcd<0> settime DIG0<5> DIG3<2> 
+ setmode N_PZ_413 minutesbcd<4> DIG0<0> N_PZ_412 dzielnik/FDivCnt<0> hoursbcd<3> 
+ DIG3<7> modeBtn/ShiftRegister<1> secondsbcd<4> dzielnik/FDivCnt<10> 
+ setMn/ShiftRegister<1> setminute setBtn/ShiftRegister<1> dzielnik/FDivCnt<5> DIG1<3> 
+ setHr/ShiftRegister<0> FSec DIG2<4> N_PZ_453 DIG0<4> DIG3<3> hoursbcd<7> chmod KEY1 
+ minutesbcd<3> KEY2 dzielnik/FDivCnt<1> KEY3 seccount/intclk hoursbcd<2> DIG1<7> KEY4 
+ DIG2<0> modeBtn/ShiftRegister<2> dzielnik/FDivCnt<11> setMn/ShiftRegister<2> 
+ setBtn/ShiftRegister<0> dzielnik/FDivCnt<6> secondsbcd<3> DIG1<2> 
+ setHr/ShiftRegister<1> DIG2<5> minutesbcd<7> DIG0<3> hoursbcd<6> DIG3<4> minutesbcd<2> 
+ showhr dzielnik/FDivCnt<2> secondsbcd<7> FMin hoursbcd<1> DIG1<6> DIG2<1> 
+ modeBtn/ShiftRegister<3> N_PZ_436 setMn/ShiftRegister<3> secondsbcd<2> N_PZ_435 
+ DIG0<7> DIG1<1> setHr/ShiftRegister<2> DIG3<0> DIG2<6> minutesbcd<6> sethour DIG0<2> 
+ DIG3<5> hoursbcd<5> minutesbcd<1> setBtn/ShiftRegister<3> dzielnik/FDivCnt<3> 
+ secondsbcd<6> hoursbcd<0> DIG1<5> hourcount/intclk DIG2<2> secondsbcd<1> 
+ mincount/intclk F8ms dzielnik/FDivCnt<13> dzielnik/FDivCnt<8> DIG0<6> DIG1<0> 
+ setHr/ShiftRegister<3> DIG3<1> DIG2<7> FHour minutesbcd<5> DIG0<1> DIG3<6> hoursbcd<4> 
+ minutesbcd<0> modeBtn/ShiftRegister<0> F250ms
+
+------------------------------------------
+|  P I N    E q n l i s t    [count=37]  |
+------------------------------------------
+MainClk (fi=0): 
+KEY1 (fi=0): 
+KEY2 (fi=0): 
+KEY3 (fi=0): 
+KEY4 (fi=0): 
+DIG1<7> (fi=3): (DIG1<7>/N_PZ_169, net=clock) 
+DIG0<0> (fi=5): (DIG0<0>/N_PZ_170, net=clock) 
+DIG0<1> (fi=5): (DIG0<1>/N_PZ_171, net=clock) 
+DIG0<2> (fi=5): (DIG0<2>/N_PZ_172, net=clock) 
+DIG0<3> (fi=5): (DIG0<3>/N_PZ_173, net=clock) 
+DIG0<4> (fi=5): (DIG0<4>/N_PZ_174, net=clock) 
+DIG0<5> (fi=5): (DIG0<5>/N_PZ_175, net=clock) 
+DIG0<6> (fi=5): (DIG0<6>/N_PZ_176, net=clock) 
+DIG1<0> (fi=5): (DIG1<0>/N_PZ_177, net=clock) 
+DIG1<1> (fi=5): (DIG1<1>/N_PZ_178, net=clock) 
+DIG1<2> (fi=5): (DIG1<2>/N_PZ_179, net=clock) 
+DIG1<3> (fi=5): (DIG1<3>/N_PZ_180, net=clock) 
+DIG1<4> (fi=5): (DIG1<4>/N_PZ_181, net=clock) 
+DIG1<5> (fi=5): (DIG1<5>/N_PZ_182, net=clock) 
+DIG1<6> (fi=5): (DIG1<6>/N_PZ_183, net=clock) 
+DIG2<0> (fi=10): (DIG2<0>/N_PZ_184, net=clock) 
+DIG2<1> (fi=9): (DIG2<1>/N_PZ_185, net=clock) 
+DIG2<2> (fi=9): (DIG2<2>/N_PZ_186, net=clock) 
+DIG2<3> (fi=11): (DIG2<3>/N_PZ_187, net=clock) 
+DIG2<4> (fi=9): (DIG2<4>/N_PZ_188, net=clock) 
+DIG2<5> (fi=10): (DIG2<5>/N_PZ_189, net=clock) 
+DIG2<6> (fi=9): (DIG2<6>/N_PZ_190, net=clock) 
+DIG3<0> (fi=10): (DIG3<0>/N_PZ_191, net=clock) 
+DIG3<1> (fi=9): (DIG3<1>/N_PZ_192, net=clock) 
+DIG3<2> (fi=9): (DIG3<2>/N_PZ_193, net=clock) 
+DIG3<3> (fi=10): (DIG3<3>/N_PZ_194, net=clock) 
+DIG3<4> (fi=9): (DIG3<4>/N_PZ_195, net=clock) 
+DIG3<5> (fi=10): (DIG3<5>/N_PZ_196, net=clock) 
+DIG3<6> (fi=10): (DIG3<6>/N_PZ_197, net=clock) 
+DIG3<7> (fi=0): (DIG3<7>/N_PZ_198, net=clock) 
+DIG2<7> (fi=0): (DIG2<7>/N_PZ_199, net=clock) 
+DIG0<7> (fi=0): (DIG0<7>/N_PZ_200, net=clock) 
+
+--------------------------------------------
+|  N O D E    E q n l i s t    [count=71]  |
+--------------------------------------------
+hoursbcd<4> (fi=9): hoursbcd<4>.CLK/N_PZ_4 hoursbcd<4>.AR/N_PZ_5 hoursbcd<4>.T/N_PZ_278 
+hoursbcd<5> (fi=9): hoursbcd<5>.CLK/N_PZ_13 hoursbcd<5>.AR/N_PZ_14 hoursbcd<5>.T/N_PZ_281 
+hoursbcd<6> (fi=9): hoursbcd<6>.CLK/N_PZ_16 hoursbcd<6>.AR/N_PZ_17 hoursbcd<6>.T/N_PZ_282 
+hoursbcd<7> (fi=9): hoursbcd<7>.CLK/N_PZ_34 hoursbcd<7>.AR/N_PZ_35 hoursbcd<7>.T/N_PZ_286 
+hoursbcd<3> (fi=9): hoursbcd<3>.CLK/N_PZ_31 hoursbcd<3>.AR/N_PZ_32 hoursbcd<3>.T/N_PZ_285 
+modeBtn/ShiftRegister<0> (fi=2): modeBtn/ShiftRegister<0>.D/N_PZ_88 modeBtn/ShiftRegister<0>.CLK/N_PZ_89 
+modeBtn/ShiftRegister<1> (fi=2): modeBtn/ShiftRegister<1>.D/N_PZ_90 modeBtn/ShiftRegister<1>.CLK/N_PZ_91 
+modeBtn/ShiftRegister<2> (fi=2): modeBtn/ShiftRegister<2>.D/N_PZ_92 modeBtn/ShiftRegister<2>.CLK/N_PZ_93 
+modeBtn/ShiftRegister<3> (fi=2): modeBtn/ShiftRegister<3>.D/N_PZ_117 modeBtn/ShiftRegister<3>.CLK/N_PZ_118 
+setBtn/ShiftRegister<0> (fi=2): setBtn/ShiftRegister<0>.D/N_PZ_94 setBtn/ShiftRegister<0>.CLK/N_PZ_95 
+setBtn/ShiftRegister<1> (fi=2): setBtn/ShiftRegister<1>.D/N_PZ_96 setBtn/ShiftRegister<1>.CLK/N_PZ_97 
+setBtn/ShiftRegister<2> (fi=2): setBtn/ShiftRegister<2>.D/N_PZ_98 setBtn/ShiftRegister<2>.CLK/N_PZ_99 
+setBtn/ShiftRegister<3> (fi=2): setBtn/ShiftRegister<3>.D/N_PZ_119 setBtn/ShiftRegister<3>.CLK/N_PZ_120 
+setHr/ShiftRegister<0> (fi=2): setHr/ShiftRegister<0>.D/N_PZ_100 setHr/ShiftRegister<0>.CLK/N_PZ_101 
+setHr/ShiftRegister<1> (fi=2): setHr/ShiftRegister<1>.D/N_PZ_102 setHr/ShiftRegister<1>.CLK/N_PZ_103 
+setHr/ShiftRegister<2> (fi=2): setHr/ShiftRegister<2>.D/N_PZ_104 setHr/ShiftRegister<2>.CLK/N_PZ_105 
+setHr/ShiftRegister<3> (fi=2): setHr/ShiftRegister<3>.D/N_PZ_121 setHr/ShiftRegister<3>.CLK/N_PZ_122 
+setMn/ShiftRegister<0> (fi=2): setMn/ShiftRegister<0>.D/N_PZ_106 setMn/ShiftRegister<0>.CLK/N_PZ_107 
+setMn/ShiftRegister<1> (fi=2): setMn/ShiftRegister<1>.D/N_PZ_108 setMn/ShiftRegister<1>.CLK/N_PZ_109 
+setMn/ShiftRegister<2> (fi=2): setMn/ShiftRegister<2>.D/N_PZ_110 setMn/ShiftRegister<2>.CLK/N_PZ_111 
+setMn/ShiftRegister<3> (fi=2): setMn/ShiftRegister<3>.D/N_PZ_123 setMn/ShiftRegister<3>.CLK/N_PZ_124 
+hoursbcd<0> (fi=9): hoursbcd<0>.CLK/N_PZ_1 hoursbcd<0>.AR/N_PZ_2 hoursbcd<0>.T/N_PZ_277 
+hourcount/intclk (fi=10): hourcount/intclk.CLK/N_PZ_28 hourcount/intclk.D/N_PZ_337 
+hoursbcd<1> (fi=9): hoursbcd<1>.D/N_PZ_6 hoursbcd<1>.CLK/N_PZ_7 hoursbcd<1>.AR/N_PZ_8 
+hoursbcd<2> (fi=9): hoursbcd<2>.CLK/N_PZ_10 hoursbcd<2>.AR/N_PZ_11 hoursbcd<2>.T/N_PZ_280 
+seccount/intclk (fi=7): seccount/intclk.CLK/N_PZ_19 seccount/intclk.D/N_PZ_336 
+FSec (fi=15): FSec.CLK/N_PZ_69 FSec.T/N_PZ_261 
+settime (fi=4): settime.D/N_PZ_62 settime.LH/N_PZ_63 settime.AR/N_PZ_64 
+secondsbcd<0> (fi=2): secondsbcd<0>.CLK/N_PZ_22 secondsbcd<0>.AR/N_PZ_23 secondsbcd<0>.T/N_PZ_283 
+secondsbcd<4> (fi=2): secondsbcd<4>.CLK/N_PZ_25 secondsbcd<4>.AR/N_PZ_26 secondsbcd<4>.T/N_PZ_284 
+secondsbcd<1> (fi=6): secondsbcd<1>.D/N_PZ_36 secondsbcd<1>.CLK/N_PZ_37 secondsbcd<1>.AR/N_PZ_38 
+secondsbcd<2> (fi=4): secondsbcd<2>.CLK/N_PZ_40 secondsbcd<2>.AR/N_PZ_41 secondsbcd<2>.T/N_PZ_288 
+secondsbcd<5> (fi=6): secondsbcd<5>.D/N_PZ_42 secondsbcd<5>.CLK/N_PZ_43 secondsbcd<5>.AR/N_PZ_44 
+secondsbcd<6> (fi=6): secondsbcd<6>.CLK/N_PZ_46 secondsbcd<6>.AR/N_PZ_47 secondsbcd<6>.T/N_PZ_290 
+secondsbcd<3> (fi=6): secondsbcd<3>.CLK/N_PZ_49 secondsbcd<3>.AR/N_PZ_50 secondsbcd<3>.T/N_PZ_291 
+secondsbcd<7> (fi=5): secondsbcd<7>.CLK/N_PZ_52 secondsbcd<7>.AR/N_PZ_53 secondsbcd<7>.T/N_PZ_292 
+FMin (fi=7): FMin.CLK/N_PZ_55 FMin.D/N_PZ_338 
+showhr (fi=1): showhr.CLK/N_PZ_58 showhr.T/N_PZ_231 
+chmod (fi=4): chmod.D/N_PZ_158 chmod.LH/N_PZ_159 chmod.AR/N_PZ_160 
+F8ms (fi=8): F8ms.CLK/N_PZ_61 F8ms.T/N_PZ_260 
+setmode (fi=1): setmode.CLK/N_PZ_66 setmode.T/N_PZ_232 
+mincount/intclk (fi=5): mincount/intclk.D/N_PZ_70 mincount/intclk.CLK/N_PZ_71 
+minutesbcd<0> (fi=1): minutesbcd<0>.CLK/N_PZ_73 minutesbcd<0>.T/N_PZ_294 
+minutesbcd<4> (fi=1): minutesbcd<4>.CLK/N_PZ_75 minutesbcd<4>.T/N_PZ_295 
+minutesbcd<1> (fi=5): minutesbcd<1>.D/N_PZ_76 minutesbcd<1>.CLK/N_PZ_77 
+minutesbcd<2> (fi=3): minutesbcd<2>.CLK/N_PZ_79 minutesbcd<2>.T/N_PZ_297 
+minutesbcd<5> (fi=5): minutesbcd<5>.D/N_PZ_80 minutesbcd<5>.CLK/N_PZ_81 
+minutesbcd<6> (fi=5): minutesbcd<6>.CLK/N_PZ_83 minutesbcd<6>.T/N_PZ_299 
+minutesbcd<3> (fi=5): minutesbcd<3>.CLK/N_PZ_85 minutesbcd<3>.T/N_PZ_300 
+minutesbcd<7> (fi=4): minutesbcd<7>.CLK/N_PZ_87 minutesbcd<7>.T/N_PZ_301 
+F250ms (fi=13): F250ms.CLK/N_PZ_114 F250ms.T/N_PZ_262 
+dzielnik/FDivCnt<0> (fi=1): dzielnik/FDivCnt<0>.CLK/N_PZ_116 dzielnik/FDivCnt<0>.T/N_PZ_254 
+dzielnik/FDivCnt<10> (fi=11): dzielnik/FDivCnt<10>.CLK/N_PZ_127 dzielnik/FDivCnt<10>.T/N_PZ_263 
+dzielnik/FDivCnt<11> (fi=12): dzielnik/FDivCnt<11>.CLK/N_PZ_130 dzielnik/FDivCnt<11>.T/N_PZ_264 
+dzielnik/FDivCnt<13> (fi=14): dzielnik/FDivCnt<13>.CLK/N_PZ_133 dzielnik/FDivCnt<13>.T/N_PZ_265 
+dzielnik/FDivCnt<1> (fi=2): dzielnik/FDivCnt<1>.CLK/N_PZ_136 dzielnik/FDivCnt<1>.T/N_PZ_266 
+dzielnik/FDivCnt<2> (fi=3): dzielnik/FDivCnt<2>.CLK/N_PZ_139 dzielnik/FDivCnt<2>.T/N_PZ_267 
+dzielnik/FDivCnt<3> (fi=4): dzielnik/FDivCnt<3>.CLK/N_PZ_142 dzielnik/FDivCnt<3>.T/N_PZ_268 
+dzielnik/FDivCnt<4> (fi=5): dzielnik/FDivCnt<4>.CLK/N_PZ_145 dzielnik/FDivCnt<4>.T/N_PZ_269 
+dzielnik/FDivCnt<5> (fi=6): dzielnik/FDivCnt<5>.CLK/N_PZ_148 dzielnik/FDivCnt<5>.T/N_PZ_270 
+dzielnik/FDivCnt<6> (fi=7): dzielnik/FDivCnt<6>.CLK/N_PZ_151 dzielnik/FDivCnt<6>.T/N_PZ_271 
+dzielnik/FDivCnt<8> (fi=9): dzielnik/FDivCnt<8>.CLK/N_PZ_154 dzielnik/FDivCnt<8>.T/N_PZ_272 
+dzielnik/FDivCnt<9> (fi=10): dzielnik/FDivCnt<9>.CLK/N_PZ_157 dzielnik/FDivCnt<9>.T/N_PZ_273 
+sethour (fi=4): sethour.D/N_PZ_161 sethour.LH/N_PZ_162 sethour.AR/N_PZ_163 
+setminute (fi=4): setminute.D/N_PZ_164 setminute.LH/N_PZ_165 setminute.AR/N_PZ_166 
+FHour (fi=5): FHour.D/N_PZ_167 FHour.CLK/N_PZ_168 
+N_PZ_412 (fi=7): N_PZ_412 
+N_PZ_413 (fi=7): N_PZ_413 
+N_PZ_435 (fi=3): N_PZ_435 
+N_PZ_436 (fi=3): N_PZ_436 
+N_PZ_453 (fi=9): N_PZ_453 
+
+---------------------------------
+|  D a t a   S t r u c t u r e  |
+---------------------------------
+PI ( 71) =  MainClk KEY1 KEY2 KEY3 KEY4 hoursbcd<0>.Q hoursbcd<4>.Q hoursbcd<1>.Q 
+            hoursbcd<2>.Q hoursbcd<5>.Q hoursbcd<6>.Q seccount/intclk.Q secondsbcd<0>.Q 
+            secondsbcd<4>.Q hourcount/intclk.Q hoursbcd<3>.Q hoursbcd<7>.Q 
+            secondsbcd<1>.Q secondsbcd<2>.Q secondsbcd<5>.Q secondsbcd<6>.Q 
+            secondsbcd<3>.Q secondsbcd<7>.Q FMin.Q showhr.Q settime.Q setmode.Q 
+            mincount/intclk.Q minutesbcd<0>.Q minutesbcd<4>.Q minutesbcd<1>.Q 
+            minutesbcd<2>.Q minutesbcd<5>.Q minutesbcd<6>.Q minutesbcd<3>.Q 
+            minutesbcd<7>.Q modeBtn/ShiftRegister<0>.Q modeBtn/ShiftRegister<1>.Q 
+            modeBtn/ShiftRegister<2>.Q setBtn/ShiftRegister<0>.Q 
+            setBtn/ShiftRegister<1>.Q setBtn/ShiftRegister<2>.Q 
+            setHr/ShiftRegister<0>.Q setHr/ShiftRegister<1>.Q setHr/ShiftRegister<2>.Q 
+            setMn/ShiftRegister<0>.Q setMn/ShiftRegister<1>.Q setMn/ShiftRegister<2>.Q 
+            dzielnik/FDivCnt<0>.Q modeBtn/ShiftRegister<3>.Q setBtn/ShiftRegister<3>.Q 
+            setHr/ShiftRegister<3>.Q setMn/ShiftRegister<3>.Q chmod.Q sethour.Q 
+            setminute.Q FHour.Q F8ms.Q FSec.Q F250ms.Q dzielnik/FDivCnt<10>.Q 
+            dzielnik/FDivCnt<11>.Q dzielnik/FDivCnt<13>.Q dzielnik/FDivCnt<1>.Q 
+            dzielnik/FDivCnt<2>.Q dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<4>.Q 
+            dzielnik/FDivCnt<5>.Q dzielnik/FDivCnt<6>.Q dzielnik/FDivCnt<8>.Q 
+            dzielnik/FDivCnt<9>.Q
+
+PO (184) =  hoursbcd<0>.CLK hoursbcd<0>.AR hoursbcd<4>.CLK hoursbcd<4>.AR hoursbcd<1>.D 
+            hoursbcd<1>.CLK hoursbcd<1>.AR hoursbcd<2>.CLK hoursbcd<2>.AR 
+            hoursbcd<5>.CLK hoursbcd<5>.AR hoursbcd<6>.CLK hoursbcd<6>.AR 
+            seccount/intclk.CLK secondsbcd<0>.CLK secondsbcd<0>.AR secondsbcd<4>.CLK 
+            secondsbcd<4>.AR hourcount/intclk.CLK hoursbcd<3>.CLK hoursbcd<3>.AR 
+            hoursbcd<7>.CLK hoursbcd<7>.AR secondsbcd<1>.D secondsbcd<1>.CLK 
+            secondsbcd<1>.AR secondsbcd<2>.CLK secondsbcd<2>.AR secondsbcd<5>.D 
+            secondsbcd<5>.CLK secondsbcd<5>.AR secondsbcd<6>.CLK secondsbcd<6>.AR 
+            secondsbcd<3>.CLK secondsbcd<3>.AR secondsbcd<7>.CLK secondsbcd<7>.AR 
+            FMin.CLK showhr.CLK F8ms.CLK settime.D settime.LH settime.AR setmode.CLK 
+            FSec.CLK mincount/intclk.D mincount/intclk.CLK minutesbcd<0>.CLK 
+            minutesbcd<4>.CLK minutesbcd<1>.D minutesbcd<1>.CLK minutesbcd<2>.CLK 
+            minutesbcd<5>.D minutesbcd<5>.CLK minutesbcd<6>.CLK minutesbcd<3>.CLK 
+            minutesbcd<7>.CLK modeBtn/ShiftRegister<0>.D modeBtn/ShiftRegister<0>.CLK 
+            modeBtn/ShiftRegister<1>.D modeBtn/ShiftRegister<1>.CLK 
+            modeBtn/ShiftRegister<2>.D modeBtn/ShiftRegister<2>.CLK 
+            setBtn/ShiftRegister<0>.D setBtn/ShiftRegister<0>.CLK 
+            setBtn/ShiftRegister<1>.D setBtn/ShiftRegister<1>.CLK 
+            setBtn/ShiftRegister<2>.D setBtn/ShiftRegister<2>.CLK 
+            setHr/ShiftRegister<0>.D setHr/ShiftRegister<0>.CLK 
+            setHr/ShiftRegister<1>.D setHr/ShiftRegister<1>.CLK 
+            setHr/ShiftRegister<2>.D setHr/ShiftRegister<2>.CLK 
+            setMn/ShiftRegister<0>.D setMn/ShiftRegister<0>.CLK 
+            setMn/ShiftRegister<1>.D setMn/ShiftRegister<1>.CLK 
+            setMn/ShiftRegister<2>.D setMn/ShiftRegister<2>.CLK F250ms.CLK 
+            dzielnik/FDivCnt<0>.CLK modeBtn/ShiftRegister<3>.D 
+            modeBtn/ShiftRegister<3>.CLK setBtn/ShiftRegister<3>.D 
+            setBtn/ShiftRegister<3>.CLK setHr/ShiftRegister<3>.D 
+            setHr/ShiftRegister<3>.CLK setMn/ShiftRegister<3>.D 
+            setMn/ShiftRegister<3>.CLK dzielnik/FDivCnt<10>.CLK 
+            dzielnik/FDivCnt<11>.CLK dzielnik/FDivCnt<13>.CLK dzielnik/FDivCnt<1>.CLK 
+            dzielnik/FDivCnt<2>.CLK dzielnik/FDivCnt<3>.CLK dzielnik/FDivCnt<4>.CLK 
+            dzielnik/FDivCnt<5>.CLK dzielnik/FDivCnt<6>.CLK dzielnik/FDivCnt<8>.CLK 
+            dzielnik/FDivCnt<9>.CLK chmod.D chmod.LH chmod.AR sethour.D sethour.LH 
+            sethour.AR setminute.D setminute.LH setminute.AR FHour.D FHour.CLK DIG1<7> 
+            DIG0<0> DIG0<1> DIG0<2> DIG0<3> DIG0<4> DIG0<5> DIG0<6> DIG1<0> DIG1<1> 
+            DIG1<2> DIG1<3> DIG1<4> DIG1<5> DIG1<6> DIG2<0> DIG2<1> DIG2<2> DIG2<3> 
+            DIG2<4> DIG2<5> DIG2<6> DIG3<0> DIG3<1> DIG3<2> DIG3<3> DIG3<4> DIG3<5> 
+            DIG3<6> DIG3<7> DIG2<7> DIG0<7> showhr.T setmode.T dzielnik/FDivCnt<0>.T 
+            F8ms.T FSec.T F250ms.T dzielnik/FDivCnt<10>.T dzielnik/FDivCnt<11>.T 
+            dzielnik/FDivCnt<13>.T dzielnik/FDivCnt<1>.T dzielnik/FDivCnt<2>.T 
+            dzielnik/FDivCnt<3>.T dzielnik/FDivCnt<4>.T dzielnik/FDivCnt<5>.T 
+            dzielnik/FDivCnt<6>.T dzielnik/FDivCnt<8>.T dzielnik/FDivCnt<9>.T 
+            hoursbcd<0>.T hoursbcd<4>.T hoursbcd<2>.T hoursbcd<5>.T hoursbcd<6>.T 
+            secondsbcd<0>.T secondsbcd<4>.T hoursbcd<3>.T hoursbcd<7>.T secondsbcd<2>.T 
+            secondsbcd<6>.T secondsbcd<3>.T secondsbcd<7>.T minutesbcd<0>.T 
+            minutesbcd<4>.T minutesbcd<2>.T minutesbcd<6>.T minutesbcd<3>.T 
+            minutesbcd<7>.T seccount/intclk.D hourcount/intclk.D FMin.D
+
+INT = (189) N_PZ_1 N_PZ_2 N_PZ_4 N_PZ_5 N_PZ_6 N_PZ_7 N_PZ_8 N_PZ_10 N_PZ_11 N_PZ_13 
+            N_PZ_14 N_PZ_16 N_PZ_17 N_PZ_19 N_PZ_22 N_PZ_23 N_PZ_25 N_PZ_26 N_PZ_28 
+            N_PZ_31 N_PZ_32 N_PZ_34 N_PZ_35 N_PZ_36 N_PZ_37 N_PZ_38 N_PZ_40 N_PZ_41 
+            N_PZ_42 N_PZ_43 N_PZ_44 N_PZ_46 N_PZ_47 N_PZ_49 N_PZ_50 N_PZ_52 N_PZ_53 
+            N_PZ_55 N_PZ_58 N_PZ_61 N_PZ_62 N_PZ_63 N_PZ_64 N_PZ_66 N_PZ_69 N_PZ_70 
+            N_PZ_71 N_PZ_73 N_PZ_75 N_PZ_76 N_PZ_77 N_PZ_79 N_PZ_80 N_PZ_81 N_PZ_83 
+            N_PZ_85 N_PZ_87 N_PZ_88 N_PZ_89 N_PZ_90 N_PZ_91 N_PZ_92 N_PZ_93 N_PZ_94 
+            N_PZ_95 N_PZ_96 N_PZ_97 N_PZ_98 N_PZ_99 N_PZ_100 N_PZ_101 N_PZ_102 N_PZ_103 
+            N_PZ_104 N_PZ_105 N_PZ_106 N_PZ_107 N_PZ_108 N_PZ_109 N_PZ_110 N_PZ_111 
+            N_PZ_114 N_PZ_116 N_PZ_117 N_PZ_118 N_PZ_119 N_PZ_120 N_PZ_121 N_PZ_122 
+            N_PZ_123 N_PZ_124 N_PZ_127 N_PZ_130 N_PZ_133 N_PZ_136 N_PZ_139 N_PZ_142 
+            N_PZ_145 N_PZ_148 N_PZ_151 N_PZ_154 N_PZ_157 N_PZ_158 N_PZ_159 N_PZ_160 
+            N_PZ_161 N_PZ_162 N_PZ_163 N_PZ_164 N_PZ_165 N_PZ_166 N_PZ_167 N_PZ_168 
+            N_PZ_169 N_PZ_170 N_PZ_171 N_PZ_172 N_PZ_173 N_PZ_174 N_PZ_175 N_PZ_176 
+            N_PZ_177 N_PZ_178 N_PZ_179 N_PZ_180 N_PZ_181 N_PZ_182 N_PZ_183 N_PZ_184 
+            N_PZ_185 N_PZ_186 N_PZ_187 N_PZ_188 N_PZ_189 N_PZ_190 N_PZ_191 N_PZ_192 
+            N_PZ_193 N_PZ_194 N_PZ_195 N_PZ_196 N_PZ_197 N_PZ_198 N_PZ_199 N_PZ_200 
+            N_PZ_231 N_PZ_232 N_PZ_254 N_PZ_260 N_PZ_261 N_PZ_262 N_PZ_263 N_PZ_264 
+            N_PZ_265 N_PZ_266 N_PZ_267 N_PZ_268 N_PZ_269 N_PZ_270 N_PZ_271 N_PZ_272 
+            N_PZ_273 N_PZ_277 N_PZ_278 N_PZ_280 N_PZ_281 N_PZ_282 N_PZ_283 N_PZ_284 
+            N_PZ_285 N_PZ_286 N_PZ_288 N_PZ_290 N_PZ_291 N_PZ_292 N_PZ_294 N_PZ_295 
+            N_PZ_297 N_PZ_299 N_PZ_300 N_PZ_301 N_PZ_336 N_PZ_337 N_PZ_338 N_PZ_412 
+            N_PZ_413 N_PZ_435 N_PZ_436 N_PZ_453
+
+PINT= (  5) N_PZ_412 N_PZ_413 N_PZ_435 N_PZ_436 N_PZ_453
+
+AINT= (184) N_PZ_1 N_PZ_2 N_PZ_4 N_PZ_5 N_PZ_6 N_PZ_7 N_PZ_8 N_PZ_10 N_PZ_11 N_PZ_13 
+            N_PZ_14 N_PZ_16 N_PZ_17 N_PZ_19 N_PZ_22 N_PZ_23 N_PZ_25 N_PZ_26 N_PZ_28 
+            N_PZ_31 N_PZ_32 N_PZ_34 N_PZ_35 N_PZ_36 N_PZ_37 N_PZ_38 N_PZ_40 N_PZ_41 
+            N_PZ_42 N_PZ_43 N_PZ_44 N_PZ_46 N_PZ_47 N_PZ_49 N_PZ_50 N_PZ_52 N_PZ_53 
+            N_PZ_55 N_PZ_58 N_PZ_61 N_PZ_62 N_PZ_63 N_PZ_64 N_PZ_66 N_PZ_69 N_PZ_70 
+            N_PZ_71 N_PZ_73 N_PZ_75 N_PZ_76 N_PZ_77 N_PZ_79 N_PZ_80 N_PZ_81 N_PZ_83 
+            N_PZ_85 N_PZ_87 N_PZ_88 N_PZ_89 N_PZ_90 N_PZ_91 N_PZ_92 N_PZ_93 N_PZ_94 
+            N_PZ_95 N_PZ_96 N_PZ_97 N_PZ_98 N_PZ_99 N_PZ_100 N_PZ_101 N_PZ_102 N_PZ_103 
+            N_PZ_104 N_PZ_105 N_PZ_106 N_PZ_107 N_PZ_108 N_PZ_109 N_PZ_110 N_PZ_111 
+            N_PZ_114 N_PZ_116 N_PZ_117 N_PZ_118 N_PZ_119 N_PZ_120 N_PZ_121 N_PZ_122 
+            N_PZ_123 N_PZ_124 N_PZ_127 N_PZ_130 N_PZ_133 N_PZ_136 N_PZ_139 N_PZ_142 
+            N_PZ_145 N_PZ_148 N_PZ_151 N_PZ_154 N_PZ_157 N_PZ_158 N_PZ_159 N_PZ_160 
+            N_PZ_161 N_PZ_162 N_PZ_163 N_PZ_164 N_PZ_165 N_PZ_166 N_PZ_167 N_PZ_168 
+            N_PZ_169 N_PZ_170 N_PZ_171 N_PZ_172 N_PZ_173 N_PZ_174 N_PZ_175 N_PZ_176 
+            N_PZ_177 N_PZ_178 N_PZ_179 N_PZ_180 N_PZ_181 N_PZ_182 N_PZ_183 N_PZ_184 
+            N_PZ_185 N_PZ_186 N_PZ_187 N_PZ_188 N_PZ_189 N_PZ_190 N_PZ_191 N_PZ_192 
+            N_PZ_193 N_PZ_194 N_PZ_195 N_PZ_196 N_PZ_197 N_PZ_198 N_PZ_199 N_PZ_200 
+            N_PZ_231 N_PZ_232 N_PZ_254 N_PZ_260 N_PZ_261 N_PZ_262 N_PZ_263 N_PZ_264 
+            N_PZ_265 N_PZ_266 N_PZ_267 N_PZ_268 N_PZ_269 N_PZ_270 N_PZ_271 N_PZ_272 
+            N_PZ_273 N_PZ_277 N_PZ_278 N_PZ_280 N_PZ_281 N_PZ_282 N_PZ_283 N_PZ_284 
+            N_PZ_285 N_PZ_286 N_PZ_288 N_PZ_290 N_PZ_291 N_PZ_292 N_PZ_294 N_PZ_295 
+            N_PZ_297 N_PZ_299 N_PZ_300 N_PZ_301 N_PZ_336 N_PZ_337 N_PZ_338
+
+
+----------------------------
+|  D F S    N e t w o r k  |
+----------------------------
+setmode.Q sethour.Q FHour.Q N_PZ_435 N_PZ_1 hoursbcd<0>.CLK hoursbcd<0>.Q  
+hoursbcd<4>.Q hoursbcd<1>.Q hoursbcd<2>.Q hoursbcd<5>.Q hoursbcd<6>.Q hoursbcd<3>.Q  
+hoursbcd<7>.Q N_PZ_2 hoursbcd<0>.AR hourcount/intclk.Q N_PZ_4 hoursbcd<4>.CLK N_PZ_5  
+hoursbcd<4>.AR N_PZ_6 hoursbcd<1>.D N_PZ_7 hoursbcd<1>.CLK N_PZ_8 hoursbcd<1>.AR  
+N_PZ_10 hoursbcd<2>.CLK N_PZ_11 hoursbcd<2>.AR N_PZ_13 hoursbcd<5>.CLK N_PZ_14  
+hoursbcd<5>.AR N_PZ_16 hoursbcd<6>.CLK N_PZ_17 hoursbcd<6>.AR FSec.Q N_PZ_19  
+seccount/intclk.CLK N_PZ_22 secondsbcd<0>.CLK settime.Q N_PZ_23 secondsbcd<0>.AR  
+seccount/intclk.Q N_PZ_25 secondsbcd<4>.CLK N_PZ_26 secondsbcd<4>.AR N_PZ_28  
+hourcount/intclk.CLK N_PZ_31 hoursbcd<3>.CLK N_PZ_32 hoursbcd<3>.AR N_PZ_34  
+hoursbcd<7>.CLK N_PZ_35 hoursbcd<7>.AR secondsbcd<0>.Q secondsbcd<1>.Q secondsbcd<2>.Q  
+secondsbcd<3>.Q N_PZ_36 secondsbcd<1>.D N_PZ_37 secondsbcd<1>.CLK N_PZ_38  
+secondsbcd<1>.AR N_PZ_40 secondsbcd<2>.CLK N_PZ_41 secondsbcd<2>.AR secondsbcd<4>.Q  
+secondsbcd<5>.Q secondsbcd<6>.Q secondsbcd<7>.Q N_PZ_42 secondsbcd<5>.D N_PZ_43  
+secondsbcd<5>.CLK N_PZ_44 secondsbcd<5>.AR N_PZ_46 secondsbcd<6>.CLK N_PZ_47  
+secondsbcd<6>.AR N_PZ_49 secondsbcd<3>.CLK N_PZ_50 secondsbcd<3>.AR N_PZ_52  
+secondsbcd<7>.CLK N_PZ_53 secondsbcd<7>.AR N_PZ_55 FMin.CLK chmod.Q N_PZ_58 showhr.CLK  
+MainClk N_PZ_61 F8ms.CLK N_PZ_62 settime.D setBtn/ShiftRegister<0>.Q  
+setBtn/ShiftRegister<1>.Q setBtn/ShiftRegister<2>.Q setBtn/ShiftRegister<3>.Q N_PZ_63  
+settime.LH N_PZ_64 settime.AR N_PZ_66 setmode.CLK N_PZ_69 FSec.CLK minutesbcd<0>.Q  
+minutesbcd<1>.Q minutesbcd<2>.Q minutesbcd<3>.Q N_PZ_70 mincount/intclk.D FMin.Q  
+setminute.Q N_PZ_436 N_PZ_71 mincount/intclk.CLK N_PZ_73 minutesbcd<0>.CLK  
+mincount/intclk.Q N_PZ_75 minutesbcd<4>.CLK N_PZ_76 minutesbcd<1>.D N_PZ_77  
+minutesbcd<1>.CLK N_PZ_79 minutesbcd<2>.CLK minutesbcd<4>.Q minutesbcd<5>.Q  
+minutesbcd<6>.Q minutesbcd<7>.Q N_PZ_80 minutesbcd<5>.D N_PZ_81 minutesbcd<5>.CLK  
+N_PZ_83 minutesbcd<6>.CLK N_PZ_85 minutesbcd<3>.CLK N_PZ_87 minutesbcd<7>.CLK KEY1  
+N_PZ_88 modeBtn/ShiftRegister<0>.D F8ms.Q N_PZ_89 modeBtn/ShiftRegister<0>.CLK  
+modeBtn/ShiftRegister<0>.Q N_PZ_90 modeBtn/ShiftRegister<1>.D N_PZ_91  
+modeBtn/ShiftRegister<1>.CLK modeBtn/ShiftRegister<1>.Q N_PZ_92  
+modeBtn/ShiftRegister<2>.D N_PZ_93 modeBtn/ShiftRegister<2>.CLK KEY2 N_PZ_94  
+setBtn/ShiftRegister<0>.D N_PZ_95 setBtn/ShiftRegister<0>.CLK N_PZ_96  
+setBtn/ShiftRegister<1>.D N_PZ_97 setBtn/ShiftRegister<1>.CLK N_PZ_98  
+setBtn/ShiftRegister<2>.D N_PZ_99 setBtn/ShiftRegister<2>.CLK KEY3 N_PZ_100  
+setHr/ShiftRegister<0>.D N_PZ_101 setHr/ShiftRegister<0>.CLK setHr/ShiftRegister<0>.Q  
+N_PZ_102 setHr/ShiftRegister<1>.D N_PZ_103 setHr/ShiftRegister<1>.CLK  
+setHr/ShiftRegister<1>.Q N_PZ_104 setHr/ShiftRegister<2>.D N_PZ_105  
+setHr/ShiftRegister<2>.CLK KEY4 N_PZ_106 setMn/ShiftRegister<0>.D N_PZ_107  
+setMn/ShiftRegister<0>.CLK setMn/ShiftRegister<0>.Q N_PZ_108 setMn/ShiftRegister<1>.D  
+N_PZ_109 setMn/ShiftRegister<1>.CLK setMn/ShiftRegister<1>.Q N_PZ_110  
+setMn/ShiftRegister<2>.D N_PZ_111 setMn/ShiftRegister<2>.CLK N_PZ_114 F250ms.CLK  
+N_PZ_116 dzielnik/FDivCnt<0>.CLK modeBtn/ShiftRegister<2>.Q N_PZ_117  
+modeBtn/ShiftRegister<3>.D N_PZ_118 modeBtn/ShiftRegister<3>.CLK N_PZ_119  
+setBtn/ShiftRegister<3>.D N_PZ_120 setBtn/ShiftRegister<3>.CLK  
+setHr/ShiftRegister<2>.Q N_PZ_121 setHr/ShiftRegister<3>.D N_PZ_122  
+setHr/ShiftRegister<3>.CLK setMn/ShiftRegister<2>.Q N_PZ_123 setMn/ShiftRegister<3>.D  
+N_PZ_124 setMn/ShiftRegister<3>.CLK N_PZ_127 dzielnik/FDivCnt<10>.CLK N_PZ_130  
+dzielnik/FDivCnt<11>.CLK N_PZ_133 dzielnik/FDivCnt<13>.CLK N_PZ_136  
+dzielnik/FDivCnt<1>.CLK N_PZ_139 dzielnik/FDivCnt<2>.CLK N_PZ_142  
+dzielnik/FDivCnt<3>.CLK N_PZ_145 dzielnik/FDivCnt<4>.CLK N_PZ_148  
+dzielnik/FDivCnt<5>.CLK N_PZ_151 dzielnik/FDivCnt<6>.CLK N_PZ_154  
+dzielnik/FDivCnt<8>.CLK N_PZ_157 dzielnik/FDivCnt<9>.CLK N_PZ_158 chmod.D  
+modeBtn/ShiftRegister<3>.Q N_PZ_159 chmod.LH N_PZ_160 chmod.AR N_PZ_161 sethour.D  
+setHr/ShiftRegister<3>.Q N_PZ_162 sethour.LH N_PZ_163 sethour.AR N_PZ_164 setminute.D  
+setMn/ShiftRegister<3>.Q N_PZ_165 setminute.LH N_PZ_166 setminute.AR N_PZ_167 FHour.D  
+N_PZ_168 FHour.CLK F250ms.Q N_PZ_169 DIG1<7> showhr.Q N_PZ_170 DIG0<0> N_PZ_171  
+DIG0<1> N_PZ_172 DIG0<2> N_PZ_173 DIG0<3> N_PZ_174 DIG0<4> N_PZ_175 DIG0<5> N_PZ_176  
+DIG0<6> N_PZ_177 DIG1<0> N_PZ_178 DIG1<1> N_PZ_179 DIG1<2> N_PZ_180 DIG1<3> N_PZ_181  
+DIG1<4> N_PZ_182 DIG1<5> N_PZ_183 DIG1<6> N_PZ_412 N_PZ_184 DIG2<0> N_PZ_185 DIG2<1>  
+N_PZ_186 DIG2<2> N_PZ_453 N_PZ_187 DIG2<3> N_PZ_188 DIG2<4> N_PZ_189 DIG2<5> N_PZ_190  
+DIG2<6> N_PZ_413 N_PZ_191 DIG3<0> N_PZ_192 DIG3<1> N_PZ_193 DIG3<2> N_PZ_194 DIG3<3>  
+N_PZ_195 DIG3<4> N_PZ_196 DIG3<5> N_PZ_197 DIG3<6> N_PZ_198 DIG3<7> N_PZ_199 DIG2<7>  
+N_PZ_200 DIG0<7> N_PZ_231 showhr.T N_PZ_232 setmode.T N_PZ_254 dzielnik/FDivCnt<0>.T  
+dzielnik/FDivCnt<0>.Q dzielnik/FDivCnt<1>.Q dzielnik/FDivCnt<2>.Q  
+dzielnik/FDivCnt<3>.Q dzielnik/FDivCnt<4>.Q dzielnik/FDivCnt<5>.Q  
+dzielnik/FDivCnt<6>.Q N_PZ_260 F8ms.T dzielnik/FDivCnt<10>.Q dzielnik/FDivCnt<11>.Q  
+dzielnik/FDivCnt<13>.Q dzielnik/FDivCnt<8>.Q dzielnik/FDivCnt<9>.Q N_PZ_261 FSec.T  
+N_PZ_262 F250ms.T N_PZ_263 dzielnik/FDivCnt<10>.T N_PZ_264 dzielnik/FDivCnt<11>.T  
+N_PZ_265 dzielnik/FDivCnt<13>.T N_PZ_266 dzielnik/FDivCnt<1>.T N_PZ_267  
+dzielnik/FDivCnt<2>.T N_PZ_268 dzielnik/FDivCnt<3>.T N_PZ_269 dzielnik/FDivCnt<4>.T  
+N_PZ_270 dzielnik/FDivCnt<5>.T N_PZ_271 dzielnik/FDivCnt<6>.T N_PZ_272  
+dzielnik/FDivCnt<8>.T N_PZ_273 dzielnik/FDivCnt<9>.T N_PZ_277 hoursbcd<0>.T N_PZ_278  
+hoursbcd<4>.T N_PZ_280 hoursbcd<2>.T N_PZ_281 hoursbcd<5>.T N_PZ_282 hoursbcd<6>.T  
+N_PZ_283 secondsbcd<0>.T N_PZ_284 secondsbcd<4>.T N_PZ_285 hoursbcd<3>.T N_PZ_286  
+hoursbcd<7>.T N_PZ_288 secondsbcd<2>.T N_PZ_290 secondsbcd<6>.T N_PZ_291  
+secondsbcd<3>.T N_PZ_292 secondsbcd<7>.T N_PZ_294 minutesbcd<0>.T N_PZ_295  
+minutesbcd<4>.T N_PZ_297 minutesbcd<2>.T N_PZ_299 minutesbcd<6>.T N_PZ_300  
+minutesbcd<3>.T N_PZ_301 minutesbcd<7>.T N_PZ_336 seccount/intclk.D N_PZ_337  
+hourcount/intclk.D N_PZ_338 FMin.D 
+
+                                  Short Name                 Collapsible
+          Name       Base   Ext   | TypePolOld pt/th fi/FI fo | min          Pair        pxapin
+       MainClk    MainClk        h1   PI  -  -  -| -  -| - 15 -   -             -             -
+          KEY1       KEY1        g3   PI  -  -  -| -  -| -  1 -   -             -             -
+          KEY2       KEY2        h3   PI  -  -  -| -  -| -  1 -   -             -             -
+          KEY3       KEY3        i3   PI  -  -  -| -  -| -  1 -   -             -             -
+          KEY4       KEY4        j3   PI  -  -  -| -  -| -  1 -   -             -             -
+        N_PZ_1     N_PZ_1     - g22 AINT  -  -  1|28  1|32  1 -   -hoursbcd<0>.CLK             -
+        N_PZ_2     N_PZ_2     - h22 AINT  -  -  1|28  8|32  1 -   -hoursbcd<0>.AR             -
+        N_PZ_4     N_PZ_4     - j22 AINT  L  -  1|28  1|32  1 -   -hoursbcd<4>.CLK             -
+        N_PZ_5     N_PZ_5     - k22 AINT  -  -  1|28  8|32  1 -   -hoursbcd<4>.AR             -
+        N_PZ_6     N_PZ_6     - l22 AINT  -  -  3|28  4|32  1 -   - hoursbcd<1>.D             -
+        N_PZ_7     N_PZ_7     - m22 AINT  -  -  1|28  1|32  1 -   -hoursbcd<1>.CLK             -
+        N_PZ_8     N_PZ_8     - n22 AINT  -  -  1|28  8|32  1 -   -hoursbcd<1>.AR             -
+       N_PZ_10    N_PZ_10     - p22 AINT  -  -  1|28  1|32  1 -   -hoursbcd<2>.CLK             -
+       N_PZ_11    N_PZ_11     - q22 AINT  -  -  1|28  8|32  1 -   -hoursbcd<2>.AR             -
+       N_PZ_13    N_PZ_13     - s22 AINT  L  -  1|28  1|32  1 -   -hoursbcd<5>.CLK             -
+       N_PZ_14    N_PZ_14     - t22 AINT  -  -  1|28  8|32  1 -   -hoursbcd<5>.AR             -
+       N_PZ_16    N_PZ_16     - v22 AINT  L  -  1|28  1|32  1 -   -hoursbcd<6>.CLK             -
+       N_PZ_17    N_PZ_17     - w22 AINT  -  -  1|28  8|32  1 -   -hoursbcd<6>.AR             -
+       N_PZ_19    N_PZ_19     - y22 AINT  L  -  1|28  1|32  1 -   -seccount/intclk.CLK             -
+       N_PZ_22    N_PZ_22     - b23 AINT  L  -  1|28  1|32  1 -   -secondsbcd<0>.CLK             -
+       N_PZ_23    N_PZ_23     - c23 AINT  -  -  1|28  1|32  1 -   -secondsbcd<0>.AR             -
+       N_PZ_25    N_PZ_25     - e23 AINT  L  -  1|28  1|32  1 -   -secondsbcd<4>.CLK             -
+       N_PZ_26    N_PZ_26     - f23 AINT  -  -  1|28  1|32  1 -   -secondsbcd<4>.AR             -
+       N_PZ_28    N_PZ_28     - h23 AINT  -  -  1|28  1|32  1 -   -hourcount/intclk.CLK             -
+       N_PZ_31    N_PZ_31     - k23 AINT  -  -  1|28  1|32  1 -   -hoursbcd<3>.CLK             -
+       N_PZ_32    N_PZ_32     - l23 AINT  -  -  1|28  8|32  1 -   -hoursbcd<3>.AR             -
+       N_PZ_34    N_PZ_34     - n23 AINT  L  -  1|28  1|32  1 -   -hoursbcd<7>.CLK             -
+       N_PZ_35    N_PZ_35     - o23 AINT  -  -  1|28  8|32  1 -   -hoursbcd<7>.AR             -
+       N_PZ_36    N_PZ_36     - p23 AINT  -  -  3|28  4|32  1 -   -secondsbcd<1>.D             -
+       N_PZ_37    N_PZ_37     - q23 AINT  L  -  1|28  1|32  1 -   -secondsbcd<1>.CLK             -
+       N_PZ_38    N_PZ_38     - r23 AINT  -  -  1|28  1|32  1 -   -secondsbcd<1>.AR             -
+       N_PZ_40    N_PZ_40     - t23 AINT  L  -  1|28  1|32  1 -   -secondsbcd<2>.CLK             -
+       N_PZ_41    N_PZ_41     - u23 AINT  -  -  1|28  1|32  1 -   -secondsbcd<2>.AR             -
+       N_PZ_42    N_PZ_42     - v23 AINT  -  -  3|28  4|32  1 -   -secondsbcd<5>.D             -
+       N_PZ_43    N_PZ_43     - w23 AINT  L  -  1|28  1|32  1 -   -secondsbcd<5>.CLK             -
+       N_PZ_44    N_PZ_44     - x23 AINT  -  -  1|28  1|32  1 -   -secondsbcd<5>.AR             -
+       N_PZ_46    N_PZ_46     - z23 AINT  L  -  1|28  1|32  1 -   -secondsbcd<6>.CLK             -
+       N_PZ_47    N_PZ_47     - a24 AINT  -  -  1|28  1|32  1 -   -secondsbcd<6>.AR             -
+       N_PZ_49    N_PZ_49     - c24 AINT  L  -  1|28  1|32  1 -   -secondsbcd<3>.CLK             -
+       N_PZ_50    N_PZ_50     - d24 AINT  -  -  1|28  1|32  1 -   -secondsbcd<3>.AR             -
+       N_PZ_52    N_PZ_52     - f24 AINT  L  -  1|28  1|32  1 -   -secondsbcd<7>.CLK             -
+       N_PZ_53    N_PZ_53     - g24 AINT  -  -  1|28  1|32  1 -   -secondsbcd<7>.AR             -
+       N_PZ_55    N_PZ_55     - i24 AINT  L  -  1|28  1|32  1 -   -      FMin.CLK             -
+       N_PZ_58    N_PZ_58     - l24 AINT  -  -  1|28  1|32  1 -   -    showhr.CLK             -
+       N_PZ_61    N_PZ_61     - o24 AINT  -  -  1|28  1|32  1 -   -      F8ms.CLK             -
+       N_PZ_62    N_PZ_62     - p24 AINT  -  -  1|28  0|32  1 -   -     settime.D             -
+       N_PZ_63    N_PZ_63     - q24 AINT  -  -  1|28  4|32  1 -   -    settime.LH             -
+       N_PZ_64    N_PZ_64     - r24 AINT  -  -  1|28  4|32  1 -   -    settime.AR             -
+       N_PZ_66    N_PZ_66     - t24 AINT  -  -  1|28  1|32  1 -   -   setmode.CLK             -
+       N_PZ_69    N_PZ_69     - w24 AINT  -  -  1|28  1|32  1 -   -      FSec.CLK             -
+       N_PZ_70    N_PZ_70     - x24 AINT  L  -  1|28  4|32  1 -   -mincount/intclk.D             -
+       N_PZ_71    N_PZ_71     - y24 AINT  -  -  1|28  1|32  1 -   -mincount/intclk.CLK             -
+       N_PZ_73    N_PZ_73     - a25 AINT  -  -  1|28  1|32  1 -   -minutesbcd<0>.CLK             -
+       N_PZ_75    N_PZ_75     - c25 AINT  L  -  1|28  1|32  1 -   -minutesbcd<4>.CLK             -
+       N_PZ_76    N_PZ_76     - d25 AINT  -  -  3|28  4|32  1 -   -minutesbcd<1>.D             -
+       N_PZ_77    N_PZ_77     - e25 AINT  -  -  1|28  1|32  1 -   -minutesbcd<1>.CLK             -
+       N_PZ_79    N_PZ_79     - g25 AINT  -  -  1|28  1|32  1 -   -minutesbcd<2>.CLK             -
+       N_PZ_80    N_PZ_80     - h25 AINT  -  -  3|28  4|32  1 -   -minutesbcd<5>.D             -
+       N_PZ_81    N_PZ_81     - i25 AINT  L  -  1|28  1|32  1 -   -minutesbcd<5>.CLK             -
+       N_PZ_83    N_PZ_83     - k25 AINT  L  -  1|28  1|32  1 -   -minutesbcd<6>.CLK             -
+       N_PZ_85    N_PZ_85     - m25 AINT  -  -  1|28  1|32  1 -   -minutesbcd<3>.CLK             -
+       N_PZ_87    N_PZ_87     - o25 AINT  L  -  1|28  1|32  1 -   -minutesbcd<7>.CLK             -
+       N_PZ_88    N_PZ_88     - p25 AINT  -  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<0>.D             -
+       N_PZ_89    N_PZ_89     - q25 AINT  L  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<0>.CLK             -
+       N_PZ_90    N_PZ_90     - r25 AINT  -  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<1>.D             -
+       N_PZ_91    N_PZ_91     - s25 AINT  L  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<1>.CLK             -
+       N_PZ_92    N_PZ_92     - t25 AINT  -  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<2>.D             -
+       N_PZ_93    N_PZ_93     - u25 AINT  L  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<2>.CLK             -
+       N_PZ_94    N_PZ_94     - v25 AINT  -  -  1|28  1|32  1 -   -setBtn/ShiftRegister<0>.D             -
+       N_PZ_95    N_PZ_95     - w25 AINT  L  -  1|28  1|32  1 -   -setBtn/ShiftRegister<0>.CLK             -
+       N_PZ_96    N_PZ_96     - x25 AINT  -  -  1|28  1|32  1 -   -setBtn/ShiftRegister<1>.D             -
+       N_PZ_97    N_PZ_97     - y25 AINT  L  -  1|28  1|32  1 -   -setBtn/ShiftRegister<1>.CLK             -
+       N_PZ_98    N_PZ_98     - z25 AINT  -  -  1|28  1|32  1 -   -setBtn/ShiftRegister<2>.D             -
+       N_PZ_99    N_PZ_99     - a26 AINT  L  -  1|28  1|32  1 -   -setBtn/ShiftRegister<2>.CLK             -
+      N_PZ_100   N_PZ_100     - b26 AINT  -  -  1|28  1|32  1 -   -setHr/ShiftRegister<0>.D             -
+      N_PZ_101   N_PZ_101     - c26 AINT  L  -  1|28  1|32  1 -   -setHr/ShiftRegister<0>.CLK             -
+      N_PZ_102   N_PZ_102     - d26 AINT  -  -  1|28  1|32  1 -   -setHr/ShiftRegister<1>.D             -
+      N_PZ_103   N_PZ_103     - e26 AINT  L  -  1|28  1|32  1 -   -setHr/ShiftRegister<1>.CLK             -
+      N_PZ_104   N_PZ_104     - f26 AINT  -  -  1|28  1|32  1 -   -setHr/ShiftRegister<2>.D             -
+      N_PZ_105   N_PZ_105     - g26 AINT  L  -  1|28  1|32  1 -   -setHr/ShiftRegister<2>.CLK             -
+      N_PZ_106   N_PZ_106     - h26 AINT  -  -  1|28  1|32  1 -   -setMn/ShiftRegister<0>.D             -
+      N_PZ_107   N_PZ_107     - i26 AINT  L  -  1|28  1|32  1 -   -setMn/ShiftRegister<0>.CLK             -
+      N_PZ_108   N_PZ_108     - j26 AINT  -  -  1|28  1|32  1 -   -setMn/ShiftRegister<1>.D             -
+      N_PZ_109   N_PZ_109     - k26 AINT  L  -  1|28  1|32  1 -   -setMn/ShiftRegister<1>.CLK             -
+      N_PZ_110   N_PZ_110     - l26 AINT  -  -  1|28  1|32  1 -   -setMn/ShiftRegister<2>.D             -
+      N_PZ_111   N_PZ_111     - m26 AINT  L  -  1|28  1|32  1 -   -setMn/ShiftRegister<2>.CLK             -
+      N_PZ_114   N_PZ_114     - p26 AINT  -  -  1|28  1|32  1 -   -    F250ms.CLK             -
+      N_PZ_116   N_PZ_116     - r26 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<0>.CLK             -
+      N_PZ_117   N_PZ_117     - s26 AINT  -  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<3>.D             -
+      N_PZ_118   N_PZ_118     - t26 AINT  L  -  1|28  1|32  1 -   -modeBtn/ShiftRegister<3>.CLK             -
+      N_PZ_119   N_PZ_119     - u26 AINT  -  -  1|28  1|32  1 -   -setBtn/ShiftRegister<3>.D             -
+      N_PZ_120   N_PZ_120     - v26 AINT  L  -  1|28  1|32  1 -   -setBtn/ShiftRegister<3>.CLK             -
+      N_PZ_121   N_PZ_121     - w26 AINT  -  -  1|28  1|32  1 -   -setHr/ShiftRegister<3>.D             -
+      N_PZ_122   N_PZ_122     - x26 AINT  L  -  1|28  1|32  1 -   -setHr/ShiftRegister<3>.CLK             -
+      N_PZ_123   N_PZ_123     - y26 AINT  -  -  1|28  1|32  1 -   -setMn/ShiftRegister<3>.D             -
+      N_PZ_124   N_PZ_124     - z26 AINT  L  -  1|28  1|32  1 -   -setMn/ShiftRegister<3>.CLK             -
+      N_PZ_127   N_PZ_127     - c27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<10>.CLK             -
+      N_PZ_130   N_PZ_130     - f27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<11>.CLK             -
+      N_PZ_133   N_PZ_133     - i27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<13>.CLK             -
+      N_PZ_136   N_PZ_136     - l27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<1>.CLK             -
+      N_PZ_139   N_PZ_139     - o27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<2>.CLK             -
+      N_PZ_142   N_PZ_142     - r27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<3>.CLK             -
+      N_PZ_145   N_PZ_145     - u27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<4>.CLK             -
+      N_PZ_148   N_PZ_148     - x27 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<5>.CLK             -
+      N_PZ_151   N_PZ_151     - a28 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<6>.CLK             -
+      N_PZ_154   N_PZ_154     - d28 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<8>.CLK             -
+      N_PZ_157   N_PZ_157     - g28 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<9>.CLK             -
+      N_PZ_158   N_PZ_158     - h28 AINT  -  -  1|28  0|32  1 -   -       chmod.D             -
+      N_PZ_159   N_PZ_159     - i28 AINT  -  -  1|28  4|32  1 -   -      chmod.LH             -
+      N_PZ_160   N_PZ_160     - j28 AINT  -  -  1|28  4|32  1 -   -      chmod.AR             -
+      N_PZ_161   N_PZ_161     - k28 AINT  -  -  1|28  0|32  1 -   -     sethour.D             -
+      N_PZ_162   N_PZ_162     - l28 AINT  -  -  1|28  4|32  1 -   -    sethour.LH             -
+      N_PZ_163   N_PZ_163     - m28 AINT  -  -  1|28  4|32  1 -   -    sethour.AR             -
+      N_PZ_164   N_PZ_164     - n28 AINT  -  -  1|28  0|32  1 -   -   setminute.D             -
+      N_PZ_165   N_PZ_165     - o28 AINT  -  -  1|28  4|32  1 -   -  setminute.LH             -
+      N_PZ_166   N_PZ_166     - p28 AINT  -  -  1|28  4|32  1 -   -  setminute.AR             -
+      N_PZ_167   N_PZ_167     - q28 AINT  L  -  1|28  4|32  1 -   -       FHour.D             -
+      N_PZ_168   N_PZ_168     - r28 AINT  L  -  1|28  1|32  1 -   -     FHour.CLK             -
+      N_PZ_169   N_PZ_169     - s28 AINT  L  -  2|28  3|32  1 -   -       DIG1<7>             -
+      N_PZ_170   N_PZ_170     - t28 AINT  -  -  4|28  5|32  1 -   -       DIG0<0>             -
+      N_PZ_171   N_PZ_171     - u28 AINT  -  -  4|28  5|32  1 -   -       DIG0<1>             -
+      N_PZ_172   N_PZ_172     - v28 AINT  -  -  3|28  5|32  1 -   -       DIG0<2>             -
+      N_PZ_173   N_PZ_173     - w28 AINT  -  -  5|28  5|32  1 -   -       DIG0<3>             -
+      N_PZ_174   N_PZ_174     - x28 AINT  -  -  2|28  5|32  1 -   -       DIG0<4>             -
+      N_PZ_175   N_PZ_175     - y28 AINT  -  -  4|28  5|32  1 -   -       DIG0<5>             -
+      N_PZ_176   N_PZ_176     - z28 AINT  -  -  4|28  5|32  1 -   -       DIG0<6>             -
+      N_PZ_177   N_PZ_177     - a29 AINT  -  -  4|28  5|32  1 -   -       DIG1<0>             -
+      N_PZ_178   N_PZ_178     - b29 AINT  -  -  4|28  5|32  1 -   -       DIG1<1>             -
+      N_PZ_179   N_PZ_179     - c29 AINT  -  -  3|28  5|32  1 -   -       DIG1<2>             -
+      N_PZ_180   N_PZ_180     - d29 AINT  -  -  5|28  5|32  1 -   -       DIG1<3>             -
+      N_PZ_181   N_PZ_181     - e29 AINT  -  -  2|28  5|32  1 -   -       DIG1<4>             -
+      N_PZ_182   N_PZ_182     - f29 AINT  -  -  4|28  5|32  1 -   -       DIG1<5>             -
+      N_PZ_183   N_PZ_183     - g29 AINT  -  -  4|28  5|32  1 -   -       DIG1<6>             -
+      N_PZ_184   N_PZ_184     - h29 AINT  -  -  7|28 10|32  1 -   -       DIG2<0>             -
+      N_PZ_185   N_PZ_185     - i29 AINT  -  -  8|28  9|32  1 -   -       DIG2<1>             -
+      N_PZ_186   N_PZ_186     - j29 AINT  -  -  6|28  9|32  1 -   -       DIG2<2>             -
+      N_PZ_187   N_PZ_187     - k29 AINT  -  -  6|28 11|32  1 -   -       DIG2<3>             -
+      N_PZ_188   N_PZ_188     - l29 AINT  -  -  4|28  9|32  1 -   -       DIG2<4>             -
+      N_PZ_189   N_PZ_189     - m29 AINT  -  -  7|28 10|32  1 -   -       DIG2<5>             -
+      N_PZ_190   N_PZ_190     - n29 AINT  -  -  4|28  9|32  1 -   -       DIG2<6>             -
+      N_PZ_191   N_PZ_191     - o29 AINT  -  -  7|28 10|32  1 -   -       DIG3<0>             -
+      N_PZ_192   N_PZ_192     - p29 AINT  -  -  8|28  9|32  1 -   -       DIG3<1>             -
+      N_PZ_193   N_PZ_193     - q29 AINT  -  -  6|28  9|32  1 -   -       DIG3<2>             -
+      N_PZ_194   N_PZ_194     - r29 AINT  -  -  9|28 10|32  1 -   -       DIG3<3>             -
+      N_PZ_195   N_PZ_195     - s29 AINT  -  -  4|28  9|32  1 -   -       DIG3<4>             -
+      N_PZ_196   N_PZ_196     - t29 AINT  -  -  7|28 10|32  1 -   -       DIG3<5>             -
+      N_PZ_197   N_PZ_197     - u29 AINT  -  -  7|28 10|32  1 -   -       DIG3<6>             -
+      N_PZ_198   N_PZ_198     - v29 AINT  -  -  0|28  0|32  1 -   -       DIG3<7>             -
+      N_PZ_199   N_PZ_199     - w29 AINT  -  -  0|28  0|32  1 -   -       DIG2<7>             -
+      N_PZ_200   N_PZ_200     - x29 AINT  -  -  0|28  0|32  1 -   -       DIG0<7>             -
+hoursbcd<0>.CLKhoursbcd<0>  .CLK d13   PO  -  -  -| -  -| -  0 -   -        N_PZ_1   hoursbcd<0>
+hoursbcd<0>.ARhoursbcd<0>   .AR e13   PO  -  -  -| -  -| -  0 -   -        N_PZ_2   hoursbcd<0>
+hoursbcd<4>.CLKhoursbcd<4>  .CLK g13   PO  -  -  -| -  -| -  0 -   -        N_PZ_4   hoursbcd<4>
+hoursbcd<4>.ARhoursbcd<4>   .AR h13   PO  -  -  -| -  -| -  0 -   -        N_PZ_5   hoursbcd<4>
+ hoursbcd<1>.Dhoursbcd<1>    .D i13   PO  -  -  -| -  -| -  0 -   -        N_PZ_6   hoursbcd<1>
+hoursbcd<1>.CLKhoursbcd<1>  .CLK j13   PO  -  -  -| -  -| -  0 -   -        N_PZ_7   hoursbcd<1>
+hoursbcd<1>.ARhoursbcd<1>   .AR k13   PO  -  -  -| -  -| -  0 -   -        N_PZ_8   hoursbcd<1>
+hoursbcd<2>.CLKhoursbcd<2>  .CLK m13   PO  -  -  -| -  -| -  0 -   -       N_PZ_10   hoursbcd<2>
+hoursbcd<2>.ARhoursbcd<2>   .AR n13   PO  -  -  -| -  -| -  0 -   -       N_PZ_11   hoursbcd<2>
+hoursbcd<5>.CLKhoursbcd<5>  .CLK p13   PO  -  -  -| -  -| -  0 -   -       N_PZ_13   hoursbcd<5>
+hoursbcd<5>.ARhoursbcd<5>   .AR q13   PO  -  -  -| -  -| -  0 -   -       N_PZ_14   hoursbcd<5>
+hoursbcd<6>.CLKhoursbcd<6>  .CLK s13   PO  -  -  -| -  -| -  0 -   -       N_PZ_16   hoursbcd<6>
+hoursbcd<6>.ARhoursbcd<6>   .AR t13   PO  -  -  -| -  -| -  0 -   -       N_PZ_17   hoursbcd<6>
+seccount/intclk.CLKseccount/intclk  .CLK v13   PO  -  -  -| -  -| -  0 -   -       N_PZ_19seccount/intclk
+secondsbcd<0>.CLKsecondsbcd<0>  .CLK y13   PO  -  -  -| -  -| -  0 -   -       N_PZ_22 secondsbcd<0>
+secondsbcd<0>.ARsecondsbcd<0>   .AR z13   PO  -  -  -| -  -| -  0 -   -       N_PZ_23 secondsbcd<0>
+secondsbcd<4>.CLKsecondsbcd<4>  .CLK b14   PO  -  -  -| -  -| -  0 -   -       N_PZ_25 secondsbcd<4>
+secondsbcd<4>.ARsecondsbcd<4>   .AR c14   PO  -  -  -| -  -| -  0 -   -       N_PZ_26 secondsbcd<4>
+hourcount/intclk.CLKhourcount/intclk  .CLK e14   PO  -  -  -| -  -| -  0 -   -       N_PZ_28hourcount/intclk
+hoursbcd<3>.CLKhoursbcd<3>  .CLK h14   PO  -  -  -| -  -| -  0 -   -       N_PZ_31   hoursbcd<3>
+hoursbcd<3>.ARhoursbcd<3>   .AR i14   PO  -  -  -| -  -| -  0 -   -       N_PZ_32   hoursbcd<3>
+hoursbcd<7>.CLKhoursbcd<7>  .CLK k14   PO  -  -  -| -  -| -  0 -   -       N_PZ_34   hoursbcd<7>
+hoursbcd<7>.ARhoursbcd<7>   .AR l14   PO  -  -  -| -  -| -  0 -   -       N_PZ_35   hoursbcd<7>
+secondsbcd<1>.Dsecondsbcd<1>    .D m14   PO  -  -  -| -  -| -  0 -   -       N_PZ_36 secondsbcd<1>
+secondsbcd<1>.CLKsecondsbcd<1>  .CLK n14   PO  -  -  -| -  -| -  0 -   -       N_PZ_37 secondsbcd<1>
+secondsbcd<1>.ARsecondsbcd<1>   .AR o14   PO  -  -  -| -  -| -  0 -   -       N_PZ_38 secondsbcd<1>
+secondsbcd<2>.CLKsecondsbcd<2>  .CLK q14   PO  -  -  -| -  -| -  0 -   -       N_PZ_40 secondsbcd<2>
+secondsbcd<2>.ARsecondsbcd<2>   .AR r14   PO  -  -  -| -  -| -  0 -   -       N_PZ_41 secondsbcd<2>
+secondsbcd<5>.Dsecondsbcd<5>    .D s14   PO  -  -  -| -  -| -  0 -   -       N_PZ_42 secondsbcd<5>
+secondsbcd<5>.CLKsecondsbcd<5>  .CLK t14   PO  -  -  -| -  -| -  0 -   -       N_PZ_43 secondsbcd<5>
+secondsbcd<5>.ARsecondsbcd<5>   .AR u14   PO  -  -  -| -  -| -  0 -   -       N_PZ_44 secondsbcd<5>
+secondsbcd<6>.CLKsecondsbcd<6>  .CLK w14   PO  -  -  -| -  -| -  0 -   -       N_PZ_46 secondsbcd<6>
+secondsbcd<6>.ARsecondsbcd<6>   .AR x14   PO  -  -  -| -  -| -  0 -   -       N_PZ_47 secondsbcd<6>
+secondsbcd<3>.CLKsecondsbcd<3>  .CLK z14   PO  -  -  -| -  -| -  0 -   -       N_PZ_49 secondsbcd<3>
+secondsbcd<3>.ARsecondsbcd<3>   .AR a15   PO  -  -  -| -  -| -  0 -   -       N_PZ_50 secondsbcd<3>
+secondsbcd<7>.CLKsecondsbcd<7>  .CLK c15   PO  -  -  -| -  -| -  0 -   -       N_PZ_52 secondsbcd<7>
+secondsbcd<7>.ARsecondsbcd<7>   .AR d15   PO  -  -  -| -  -| -  0 -   -       N_PZ_53 secondsbcd<7>
+      FMin.CLK       FMin  .CLK f15   PO  -  -  -| -  -| -  0 -   -       N_PZ_55          FMin
+    showhr.CLK     showhr  .CLK i15   PO  -  -  -| -  -| -  0 -   -       N_PZ_58        showhr
+      F8ms.CLK       F8ms  .CLK l15   PO  -  -  -| -  -| -  0 -   -       N_PZ_61          F8ms
+     settime.D    settime    .D m15   PO  -  -  -| -  -| -  0 -   -       N_PZ_62       settime
+    settime.LH    settime   .LH n15   PO  -  -  -| -  -| -  0 -   -       N_PZ_63       settime
+    settime.AR    settime   .AR o15   PO  -  -  -| -  -| -  0 -   -       N_PZ_64       settime
+   setmode.CLK    setmode  .CLK q15   PO  -  -  -| -  -| -  0 -   -       N_PZ_66       setmode
+      FSec.CLK       FSec  .CLK t15   PO  -  -  -| -  -| -  0 -   -       N_PZ_69          FSec
+mincount/intclk.Dmincount/intclk    .D u15   PO  -  -  -| -  -| -  0 -   -       N_PZ_70mincount/intclk
+mincount/intclk.CLKmincount/intclk  .CLK v15   PO  -  -  -| -  -| -  0 -   -       N_PZ_71mincount/intclk
+minutesbcd<0>.CLKminutesbcd<0>  .CLK x15   PO  -  -  -| -  -| -  0 -   -       N_PZ_73 minutesbcd<0>
+minutesbcd<4>.CLKminutesbcd<4>  .CLK z15   PO  -  -  -| -  -| -  0 -   -       N_PZ_75 minutesbcd<4>
+minutesbcd<1>.Dminutesbcd<1>    .D a16   PO  -  -  -| -  -| -  0 -   -       N_PZ_76 minutesbcd<1>
+minutesbcd<1>.CLKminutesbcd<1>  .CLK b16   PO  -  -  -| -  -| -  0 -   -       N_PZ_77 minutesbcd<1>
+minutesbcd<2>.CLKminutesbcd<2>  .CLK d16   PO  -  -  -| -  -| -  0 -   -       N_PZ_79 minutesbcd<2>
+minutesbcd<5>.Dminutesbcd<5>    .D e16   PO  -  -  -| -  -| -  0 -   -       N_PZ_80 minutesbcd<5>
+minutesbcd<5>.CLKminutesbcd<5>  .CLK f16   PO  -  -  -| -  -| -  0 -   -       N_PZ_81 minutesbcd<5>
+minutesbcd<6>.CLKminutesbcd<6>  .CLK h16   PO  -  -  -| -  -| -  0 -   -       N_PZ_83 minutesbcd<6>
+minutesbcd<3>.CLKminutesbcd<3>  .CLK j16   PO  -  -  -| -  -| -  0 -   -       N_PZ_85 minutesbcd<3>
+minutesbcd<7>.CLKminutesbcd<7>  .CLK l16   PO  -  -  -| -  -| -  0 -   -       N_PZ_87 minutesbcd<7>
+modeBtn/ShiftRegister<0>.DmodeBtn/ShiftRegister<0>    .D m16   PO  -  -  -| -  -| -  0 -   -       N_PZ_88modeBtn/ShiftRegister<0>
+modeBtn/ShiftRegister<0>.CLKmodeBtn/ShiftRegister<0>  .CLK n16   PO  -  -  -| -  -| -  0 -   -       N_PZ_89modeBtn/ShiftRegister<0>
+modeBtn/ShiftRegister<1>.DmodeBtn/ShiftRegister<1>    .D o16   PO  -  -  -| -  -| -  0 -   -       N_PZ_90modeBtn/ShiftRegister<1>
+modeBtn/ShiftRegister<1>.CLKmodeBtn/ShiftRegister<1>  .CLK p16   PO  -  -  -| -  -| -  0 -   -       N_PZ_91modeBtn/ShiftRegister<1>
+modeBtn/ShiftRegister<2>.DmodeBtn/ShiftRegister<2>    .D q16   PO  -  -  -| -  -| -  0 -   -       N_PZ_92modeBtn/ShiftRegister<2>
+modeBtn/ShiftRegister<2>.CLKmodeBtn/ShiftRegister<2>  .CLK r16   PO  -  -  -| -  -| -  0 -   -       N_PZ_93modeBtn/ShiftRegister<2>
+setBtn/ShiftRegister<0>.DsetBtn/ShiftRegister<0>    .D s16   PO  -  -  -| -  -| -  0 -   -       N_PZ_94setBtn/ShiftRegister<0>
+setBtn/ShiftRegister<0>.CLKsetBtn/ShiftRegister<0>  .CLK t16   PO  -  -  -| -  -| -  0 -   -       N_PZ_95setBtn/ShiftRegister<0>
+setBtn/ShiftRegister<1>.DsetBtn/ShiftRegister<1>    .D u16   PO  -  -  -| -  -| -  0 -   -       N_PZ_96setBtn/ShiftRegister<1>
+setBtn/ShiftRegister<1>.CLKsetBtn/ShiftRegister<1>  .CLK v16   PO  -  -  -| -  -| -  0 -   -       N_PZ_97setBtn/ShiftRegister<1>
+setBtn/ShiftRegister<2>.DsetBtn/ShiftRegister<2>    .D w16   PO  -  -  -| -  -| -  0 -   -       N_PZ_98setBtn/ShiftRegister<2>
+setBtn/ShiftRegister<2>.CLKsetBtn/ShiftRegister<2>  .CLK x16   PO  -  -  -| -  -| -  0 -   -       N_PZ_99setBtn/ShiftRegister<2>
+setHr/ShiftRegister<0>.DsetHr/ShiftRegister<0>    .D y16   PO  -  -  -| -  -| -  0 -   -      N_PZ_100setHr/ShiftRegister<0>
+setHr/ShiftRegister<0>.CLKsetHr/ShiftRegister<0>  .CLK z16   PO  -  -  -| -  -| -  0 -   -      N_PZ_101setHr/ShiftRegister<0>
+setHr/ShiftRegister<1>.DsetHr/ShiftRegister<1>    .D a17   PO  -  -  -| -  -| -  0 -   -      N_PZ_102setHr/ShiftRegister<1>
+setHr/ShiftRegister<1>.CLKsetHr/ShiftRegister<1>  .CLK b17   PO  -  -  -| -  -| -  0 -   -      N_PZ_103setHr/ShiftRegister<1>
+setHr/ShiftRegister<2>.DsetHr/ShiftRegister<2>    .D c17   PO  -  -  -| -  -| -  0 -   -      N_PZ_104setHr/ShiftRegister<2>
+setHr/ShiftRegister<2>.CLKsetHr/ShiftRegister<2>  .CLK d17   PO  -  -  -| -  -| -  0 -   -      N_PZ_105setHr/ShiftRegister<2>
+setMn/ShiftRegister<0>.DsetMn/ShiftRegister<0>    .D e17   PO  -  -  -| -  -| -  0 -   -      N_PZ_106setMn/ShiftRegister<0>
+setMn/ShiftRegister<0>.CLKsetMn/ShiftRegister<0>  .CLK f17   PO  -  -  -| -  -| -  0 -   -      N_PZ_107setMn/ShiftRegister<0>
+setMn/ShiftRegister<1>.DsetMn/ShiftRegister<1>    .D g17   PO  -  -  -| -  -| -  0 -   -      N_PZ_108setMn/ShiftRegister<1>
+setMn/ShiftRegister<1>.CLKsetMn/ShiftRegister<1>  .CLK h17   PO  -  -  -| -  -| -  0 -   -      N_PZ_109setMn/ShiftRegister<1>
+setMn/ShiftRegister<2>.DsetMn/ShiftRegister<2>    .D i17   PO  -  -  -| -  -| -  0 -   -      N_PZ_110setMn/ShiftRegister<2>
+setMn/ShiftRegister<2>.CLKsetMn/ShiftRegister<2>  .CLK j17   PO  -  -  -| -  -| -  0 -   -      N_PZ_111setMn/ShiftRegister<2>
+    F250ms.CLK     F250ms  .CLK m17   PO  -  -  -| -  -| -  0 -   -      N_PZ_114        F250ms
+dzielnik/FDivCnt<0>.CLKdzielnik/FDivCnt<0>  .CLK o17   PO  -  -  -| -  -| -  0 -   -      N_PZ_116dzielnik/FDivCnt<0>
+modeBtn/ShiftRegister<3>.DmodeBtn/ShiftRegister<3>    .D p17   PO  -  -  -| -  -| -  0 -   -      N_PZ_117modeBtn/ShiftRegister<3>
+modeBtn/ShiftRegister<3>.CLKmodeBtn/ShiftRegister<3>  .CLK q17   PO  -  -  -| -  -| -  0 -   -      N_PZ_118modeBtn/ShiftRegister<3>
+setBtn/ShiftRegister<3>.DsetBtn/ShiftRegister<3>    .D r17   PO  -  -  -| -  -| -  0 -   -      N_PZ_119setBtn/ShiftRegister<3>
+setBtn/ShiftRegister<3>.CLKsetBtn/ShiftRegister<3>  .CLK s17   PO  -  -  -| -  -| -  0 -   -      N_PZ_120setBtn/ShiftRegister<3>
+setHr/ShiftRegister<3>.DsetHr/ShiftRegister<3>    .D t17   PO  -  -  -| -  -| -  0 -   -      N_PZ_121setHr/ShiftRegister<3>
+setHr/ShiftRegister<3>.CLKsetHr/ShiftRegister<3>  .CLK u17   PO  -  -  -| -  -| -  0 -   -      N_PZ_122setHr/ShiftRegister<3>
+setMn/ShiftRegister<3>.DsetMn/ShiftRegister<3>    .D v17   PO  -  -  -| -  -| -  0 -   -      N_PZ_123setMn/ShiftRegister<3>
+setMn/ShiftRegister<3>.CLKsetMn/ShiftRegister<3>  .CLK w17   PO  -  -  -| -  -| -  0 -   -      N_PZ_124setMn/ShiftRegister<3>
+dzielnik/FDivCnt<10>.CLKdzielnik/FDivCnt<10>  .CLK z17   PO  -  -  -| -  -| -  0 -   -      N_PZ_127dzielnik/FDivCnt<10>
+dzielnik/FDivCnt<11>.CLKdzielnik/FDivCnt<11>  .CLK c18   PO  -  -  -| -  -| -  0 -   -      N_PZ_130dzielnik/FDivCnt<11>
+dzielnik/FDivCnt<13>.CLKdzielnik/FDivCnt<13>  .CLK f18   PO  -  -  -| -  -| -  0 -   -      N_PZ_133dzielnik/FDivCnt<13>
+dzielnik/FDivCnt<1>.CLKdzielnik/FDivCnt<1>  .CLK i18   PO  -  -  -| -  -| -  0 -   -      N_PZ_136dzielnik/FDivCnt<1>
+dzielnik/FDivCnt<2>.CLKdzielnik/FDivCnt<2>  .CLK l18   PO  -  -  -| -  -| -  0 -   -      N_PZ_139dzielnik/FDivCnt<2>
+dzielnik/FDivCnt<3>.CLKdzielnik/FDivCnt<3>  .CLK o18   PO  -  -  -| -  -| -  0 -   -      N_PZ_142dzielnik/FDivCnt<3>
+dzielnik/FDivCnt<4>.CLKdzielnik/FDivCnt<4>  .CLK r18   PO  -  -  -| -  -| -  0 -   -      N_PZ_145dzielnik/FDivCnt<4>
+dzielnik/FDivCnt<5>.CLKdzielnik/FDivCnt<5>  .CLK u18   PO  -  -  -| -  -| -  0 -   -      N_PZ_148dzielnik/FDivCnt<5>
+dzielnik/FDivCnt<6>.CLKdzielnik/FDivCnt<6>  .CLK x18   PO  -  -  -| -  -| -  0 -   -      N_PZ_151dzielnik/FDivCnt<6>
+dzielnik/FDivCnt<8>.CLKdzielnik/FDivCnt<8>  .CLK a19   PO  -  -  -| -  -| -  0 -   -      N_PZ_154dzielnik/FDivCnt<8>
+dzielnik/FDivCnt<9>.CLKdzielnik/FDivCnt<9>  .CLK d19   PO  -  -  -| -  -| -  0 -   -      N_PZ_157dzielnik/FDivCnt<9>
+       chmod.D      chmod    .D e19   PO  -  -  -| -  -| -  0 -   -      N_PZ_158         chmod
+      chmod.LH      chmod   .LH f19   PO  -  -  -| -  -| -  0 -   -      N_PZ_159         chmod
+      chmod.AR      chmod   .AR g19   PO  -  -  -| -  -| -  0 -   -      N_PZ_160         chmod
+     sethour.D    sethour    .D h19   PO  -  -  -| -  -| -  0 -   -      N_PZ_161       sethour
+    sethour.LH    sethour   .LH i19   PO  -  -  -| -  -| -  0 -   -      N_PZ_162       sethour
+    sethour.AR    sethour   .AR j19   PO  -  -  -| -  -| -  0 -   -      N_PZ_163       sethour
+   setminute.D  setminute    .D k19   PO  -  -  -| -  -| -  0 -   -      N_PZ_164     setminute
+  setminute.LH  setminute   .LH l19   PO  -  -  -| -  -| -  0 -   -      N_PZ_165     setminute
+  setminute.AR  setminute   .AR m19   PO  -  -  -| -  -| -  0 -   -      N_PZ_166     setminute
+       FHour.D      FHour    .D n19   PO  -  -  -| -  -| -  0 -   -      N_PZ_167         FHour
+     FHour.CLK      FHour  .CLK o19   PO  -  -  -| -  -| -  0 -   -      N_PZ_168         FHour
+       DIG1<7>    DIG1<7>       z20   PO  -  -  -| -  -| -  0 -   -      N_PZ_169       DIG1<7>
+       DIG0<0>    DIG0<0>       a21   PO  -  -  -| -  -| -  0 -   -      N_PZ_170       DIG0<0>
+       DIG0<1>    DIG0<1>       b21   PO  -  -  -| -  -| -  0 -   -      N_PZ_171       DIG0<1>
+       DIG0<2>    DIG0<2>       c21   PO  -  -  -| -  -| -  0 -   -      N_PZ_172       DIG0<2>
+       DIG0<3>    DIG0<3>       d21   PO  -  -  -| -  -| -  0 -   -      N_PZ_173       DIG0<3>
+       DIG0<4>    DIG0<4>       e21   PO  -  -  -| -  -| -  0 -   -      N_PZ_174       DIG0<4>
+       DIG0<5>    DIG0<5>       f21   PO  -  -  -| -  -| -  0 -   -      N_PZ_175       DIG0<5>
+       DIG0<6>    DIG0<6>       g21   PO  -  -  -| -  -| -  0 -   -      N_PZ_176       DIG0<6>
+       DIG1<0>    DIG1<0>       h21   PO  -  -  -| -  -| -  0 -   -      N_PZ_177       DIG1<0>
+       DIG1<1>    DIG1<1>       i21   PO  -  -  -| -  -| -  0 -   -      N_PZ_178       DIG1<1>
+       DIG1<2>    DIG1<2>       j21   PO  -  -  -| -  -| -  0 -   -      N_PZ_179       DIG1<2>
+       DIG1<3>    DIG1<3>       k21   PO  -  -  -| -  -| -  0 -   -      N_PZ_180       DIG1<3>
+       DIG1<4>    DIG1<4>       l21   PO  -  -  -| -  -| -  0 -   -      N_PZ_181       DIG1<4>
+       DIG1<5>    DIG1<5>       m21   PO  -  -  -| -  -| -  0 -   -      N_PZ_182       DIG1<5>
+       DIG1<6>    DIG1<6>       n21   PO  -  -  -| -  -| -  0 -   -      N_PZ_183       DIG1<6>
+       DIG2<0>    DIG2<0>       o21   PO  -  -  -| -  -| -  0 -   -      N_PZ_184       DIG2<0>
+       DIG2<1>    DIG2<1>       p21   PO  -  -  -| -  -| -  0 -   -      N_PZ_185       DIG2<1>
+       DIG2<2>    DIG2<2>       q21   PO  -  -  -| -  -| -  0 -   -      N_PZ_186       DIG2<2>
+       DIG2<3>    DIG2<3>       r21   PO  -  -  -| -  -| -  0 -   -      N_PZ_187       DIG2<3>
+       DIG2<4>    DIG2<4>       s21   PO  -  -  -| -  -| -  0 -   -      N_PZ_188       DIG2<4>
+       DIG2<5>    DIG2<5>       t21   PO  -  -  -| -  -| -  0 -   -      N_PZ_189       DIG2<5>
+       DIG2<6>    DIG2<6>       u21   PO  -  -  -| -  -| -  0 -   -      N_PZ_190       DIG2<6>
+       DIG3<0>    DIG3<0>       v21   PO  -  -  -| -  -| -  0 -   -      N_PZ_191       DIG3<0>
+       DIG3<1>    DIG3<1>       w21   PO  -  -  -| -  -| -  0 -   -      N_PZ_192       DIG3<1>
+       DIG3<2>    DIG3<2>       x21   PO  -  -  -| -  -| -  0 -   -      N_PZ_193       DIG3<2>
+       DIG3<3>    DIG3<3>       y21   PO  -  -  -| -  -| -  0 -   -      N_PZ_194       DIG3<3>
+       DIG3<4>    DIG3<4>       z21   PO  -  -  -| -  -| -  0 -   -      N_PZ_195       DIG3<4>
+       DIG3<5>    DIG3<5>       a22   PO  -  -  -| -  -| -  0 -   -      N_PZ_196       DIG3<5>
+       DIG3<6>    DIG3<6>       b22   PO  -  -  -| -  -| -  0 -   -      N_PZ_197       DIG3<6>
+       DIG3<7>    DIG3<7>       c22   PO  -  -  -| -  -| -  0 -   -      N_PZ_198       DIG3<7>
+       DIG2<7>    DIG2<7>       d22   PO  -  -  -| -  -| -  0 -   -      N_PZ_199       DIG2<7>
+       DIG0<7>    DIG0<7>       e22   PO  -  -  -| -  -| -  0 -   -      N_PZ_200       DIG0<7>
+ hoursbcd<0>.Qhoursbcd<0>    .Q a31   PI  -  -  -| -  -| - 19 -   -             -             -
+ hoursbcd<4>.Qhoursbcd<4>    .Q b31   PI  -  -  -| -  -| - 20 -   -             -             -
+ hoursbcd<1>.Qhoursbcd<1>    .Q c31   PI  -  -  -| -  -| - 19 -   -             -             -
+ hoursbcd<2>.Qhoursbcd<2>    .Q d31   PI  -  -  -| -  -| - 18 -   -             -             -
+ hoursbcd<5>.Qhoursbcd<5>    .Q e31   PI  -  -  -| -  -| - 20 -   -             -             -
+ hoursbcd<6>.Qhoursbcd<6>    .Q f31   PI  -  -  -| -  -| - 19 -   -             -             -
+seccount/intclk.Qseccount/intclk    .Q g31   PI  -  -  -| -  -| -  6 -   -             -             -
+secondsbcd<0>.Qsecondsbcd<0>    .Q h31   PI  -  -  -| -  -| - 11 -   -             -             -
+secondsbcd<4>.Qsecondsbcd<4>    .Q i31   PI  -  -  -| -  -| - 11 -   -             -             -
+hourcount/intclk.Qhourcount/intclk    .Q j31   PI  -  -  -| -  -| -  5 -   -             -             -
+ hoursbcd<3>.Qhoursbcd<3>    .Q k31   PI  -  -  -| -  -| - 18 -   -             -             -
+ hoursbcd<7>.Qhoursbcd<7>    .Q l31   PI  -  -  -| -  -| - 18 -   -             -             -
+secondsbcd<1>.Qsecondsbcd<1>    .Q m31   PI  -  -  -| -  -| - 12 -   -             -             -
+secondsbcd<2>.Qsecondsbcd<2>    .Q n31   PI  -  -  -| -  -| - 11 -   -             -             -
+secondsbcd<5>.Qsecondsbcd<5>    .Q o31   PI  -  -  -| -  -| - 13 -   -             -             -
+secondsbcd<6>.Qsecondsbcd<6>    .Q p31   PI  -  -  -| -  -| - 13 -   -             -             -
+secondsbcd<3>.Qsecondsbcd<3>    .Q q31   PI  -  -  -| -  -| - 11 -   -             -             -
+secondsbcd<7>.Qsecondsbcd<7>    .Q r31   PI  -  -  -| -  -| - 12 -   -             -             -
+        FMin.Q       FMin    .Q s31   PI  -  -  -| -  -| -  2 -   -             -             -
+      showhr.Q     showhr    .Q t31   PI  -  -  -| -  -| - 31 -   -             -             -
+     settime.Q    settime    .Q u31   PI  -  -  -| -  -| - 11 -   -             -             -
+     setmode.Q    setmode    .Q v31   PI  -  -  -| -  -| -  3 -   -             -             -
+mincount/intclk.Qmincount/intclk    .Q w31   PI  -  -  -| -  -| -  5 -   -             -             -
+minutesbcd<0>.Qminutesbcd<0>    .Q x31   PI  -  -  -| -  -| - 11 -   -             -             -
+minutesbcd<4>.Qminutesbcd<4>    .Q y31   PI  -  -  -| -  -| - 11 -   -             -             -
+minutesbcd<1>.Qminutesbcd<1>    .Q z31   PI  -  -  -| -  -| - 12 -   -             -             -
+minutesbcd<2>.Qminutesbcd<2>    .Q a32   PI  -  -  -| -  -| - 11 -   -             -             -
+minutesbcd<5>.Qminutesbcd<5>    .Q b32   PI  -  -  -| -  -| - 13 -   -             -             -
+minutesbcd<6>.Qminutesbcd<6>    .Q c32   PI  -  -  -| -  -| - 13 -   -             -             -
+minutesbcd<3>.Qminutesbcd<3>    .Q d32   PI  -  -  -| -  -| - 11 -   -             -             -
+minutesbcd<7>.Qminutesbcd<7>    .Q e32   PI  -  -  -| -  -| - 12 -   -             -             -
+modeBtn/ShiftRegister<0>.QmodeBtn/ShiftRegister<0>    .Q f32   PI  -  -  -| -  -| -  3 -   -             -             -
+modeBtn/ShiftRegister<1>.QmodeBtn/ShiftRegister<1>    .Q g32   PI  -  -  -| -  -| -  3 -   -             -             -
+modeBtn/ShiftRegister<2>.QmodeBtn/ShiftRegister<2>    .Q h32   PI  -  -  -| -  -| -  3 -   -             -             -
+setBtn/ShiftRegister<0>.QsetBtn/ShiftRegister<0>    .Q i32   PI  -  -  -| -  -| -  3 -   -             -             -
+setBtn/ShiftRegister<1>.QsetBtn/ShiftRegister<1>    .Q j32   PI  -  -  -| -  -| -  3 -   -             -             -
+setBtn/ShiftRegister<2>.QsetBtn/ShiftRegister<2>    .Q k32   PI  -  -  -| -  -| -  3 -   -             -             -
+setHr/ShiftRegister<0>.QsetHr/ShiftRegister<0>    .Q l32   PI  -  -  -| -  -| -  3 -   -             -             -
+setHr/ShiftRegister<1>.QsetHr/ShiftRegister<1>    .Q m32   PI  -  -  -| -  -| -  3 -   -             -             -
+setHr/ShiftRegister<2>.QsetHr/ShiftRegister<2>    .Q n32   PI  -  -  -| -  -| -  3 -   -             -             -
+setMn/ShiftRegister<0>.QsetMn/ShiftRegister<0>    .Q o32   PI  -  -  -| -  -| -  3 -   -             -             -
+setMn/ShiftRegister<1>.QsetMn/ShiftRegister<1>    .Q p32   PI  -  -  -| -  -| -  3 -   -             -             -
+setMn/ShiftRegister<2>.QsetMn/ShiftRegister<2>    .Q q32   PI  -  -  -| -  -| -  3 -   -             -             -
+dzielnik/FDivCnt<0>.Qdzielnik/FDivCnt<0>    .Q r32   PI  -  -  -| -  -| - 14 -   -             -             -
+modeBtn/ShiftRegister<3>.QmodeBtn/ShiftRegister<3>    .Q s32   PI  -  -  -| -  -| -  2 -   -             -             -
+setBtn/ShiftRegister<3>.QsetBtn/ShiftRegister<3>    .Q t32   PI  -  -  -| -  -| -  2 -   -             -             -
+setHr/ShiftRegister<3>.QsetHr/ShiftRegister<3>    .Q u32   PI  -  -  -| -  -| -  2 -   -             -             -
+setMn/ShiftRegister<3>.QsetMn/ShiftRegister<3>    .Q v32   PI  -  -  -| -  -| -  2 -   -             -             -
+       chmod.Q      chmod    .Q w32   PI  -  -  -| -  -| -  1 -   -             -             -
+     sethour.Q    sethour    .Q x32   PI  -  -  -| -  -| -  1 -   -             -             -
+   setminute.Q  setminute    .Q y32   PI  -  -  -| -  -| -  1 -   -             -             -
+       FHour.Q      FHour    .Q z32   PI  -  -  -| -  -| -  1 -   -             -             -
+        F8ms.Q       F8ms    .Q a33   PI  -  -  -| -  -| - 23 -   -             -             -
+        FSec.Q       FSec    .Q b33   PI  -  -  -| -  -| -  6 -   -             -             -
+      F250ms.Q     F250ms    .Q c33   PI  -  -  -| -  -| -  3 -   -             -             -
+dzielnik/FDivCnt<10>.Qdzielnik/FDivCnt<10>    .Q d33   PI  -  -  -| -  -| -  4 -   -             -             -
+dzielnik/FDivCnt<11>.Qdzielnik/FDivCnt<11>    .Q e33   PI  -  -  -| -  -| -  3 -   -             -             -
+dzielnik/FDivCnt<13>.Qdzielnik/FDivCnt<13>    .Q f33   PI  -  -  -| -  -| -  1 -   -             -             -
+dzielnik/FDivCnt<1>.Qdzielnik/FDivCnt<1>    .Q g33   PI  -  -  -| -  -| - 13 -   -             -             -
+dzielnik/FDivCnt<2>.Qdzielnik/FDivCnt<2>    .Q h33   PI  -  -  -| -  -| - 12 -   -             -             -
+dzielnik/FDivCnt<3>.Qdzielnik/FDivCnt<3>    .Q i33   PI  -  -  -| -  -| - 11 -   -             -             -
+dzielnik/FDivCnt<4>.Qdzielnik/FDivCnt<4>    .Q j33   PI  -  -  -| -  -| - 10 -   -             -             -
+dzielnik/FDivCnt<5>.Qdzielnik/FDivCnt<5>    .Q k33   PI  -  -  -| -  -| -  9 -   -             -             -
+dzielnik/FDivCnt<6>.Qdzielnik/FDivCnt<6>    .Q l33   PI  -  -  -| -  -| -  8 -   -             -             -
+dzielnik/FDivCnt<8>.Qdzielnik/FDivCnt<8>    .Q m33   PI  -  -  -| -  -| -  6 -   -             -             -
+dzielnik/FDivCnt<9>.Qdzielnik/FDivCnt<9>    .Q n33   PI  -  -  -| -  -| -  5 -   -             -             -
+      N_PZ_231   N_PZ_231     - l36 AINT  -  -  1|28  0|32  1 -   -      showhr.T             -
+      N_PZ_232   N_PZ_232     - m36 AINT  -  -  1|28  0|32  1 -   -     setmode.T             -
+      N_PZ_254   N_PZ_254     - i37 AINT  -  -  1|28  0|32  1 -   -dzielnik/FDivCnt<0>.T             -
+      N_PZ_260   N_PZ_260     - o37 AINT  -  -  1|28  7|32  1 -   -        F8ms.T             -
+      N_PZ_261   N_PZ_261     - p37 AINT  -  -  1|28 14|32  1 -   -        FSec.T             -
+      N_PZ_262   N_PZ_262     - q37 AINT  -  -  1|28 12|32  1 -   -      F250ms.T             -
+      N_PZ_263   N_PZ_263     - r37 AINT  -  -  1|28 10|32  1 -   -dzielnik/FDivCnt<10>.T             -
+      N_PZ_264   N_PZ_264     - s37 AINT  -  -  1|28 11|32  1 -   -dzielnik/FDivCnt<11>.T             -
+      N_PZ_265   N_PZ_265     - t37 AINT  -  -  1|28 13|32  1 -   -dzielnik/FDivCnt<13>.T             -
+      N_PZ_266   N_PZ_266     - u37 AINT  -  -  1|28  1|32  1 -   -dzielnik/FDivCnt<1>.T             -
+      N_PZ_267   N_PZ_267     - v37 AINT  -  -  1|28  2|32  1 -   -dzielnik/FDivCnt<2>.T             -
+      N_PZ_268   N_PZ_268     - w37 AINT  -  -  1|28  3|32  1 -   -dzielnik/FDivCnt<3>.T             -
+      N_PZ_269   N_PZ_269     - x37 AINT  -  -  1|28  4|32  1 -   -dzielnik/FDivCnt<4>.T             -
+      N_PZ_270   N_PZ_270     - y37 AINT  -  -  1|28  5|32  1 -   -dzielnik/FDivCnt<5>.T             -
+      N_PZ_271   N_PZ_271     - z37 AINT  -  -  1|28  6|32  1 -   -dzielnik/FDivCnt<6>.T             -
+      N_PZ_272   N_PZ_272     - a38 AINT  -  -  1|28  8|32  1 -   -dzielnik/FDivCnt<8>.T             -
+      N_PZ_273   N_PZ_273     - b38 AINT  -  -  1|28  9|32  1 -   -dzielnik/FDivCnt<9>.T             -
+      showhr.T     showhr    .T e34   PO  -  -  -| -  -| -  0 -   -      N_PZ_231        showhr
+     setmode.T    setmode    .T f34   PO  -  -  -| -  -| -  0 -   -      N_PZ_232       setmode
+dzielnik/FDivCnt<0>.Tdzielnik/FDivCnt<0>    .T b35   PO  -  -  -| -  -| -  0 -   -      N_PZ_254dzielnik/FDivCnt<0>
+        F8ms.T       F8ms    .T h35   PO  -  -  -| -  -| -  0 -   -      N_PZ_260          F8ms
+        FSec.T       FSec    .T i35   PO  -  -  -| -  -| -  0 -   -      N_PZ_261          FSec
+      F250ms.T     F250ms    .T j35   PO  -  -  -| -  -| -  0 -   -      N_PZ_262        F250ms
+dzielnik/FDivCnt<10>.Tdzielnik/FDivCnt<10>    .T k35   PO  -  -  -| -  -| -  0 -   -      N_PZ_263dzielnik/FDivCnt<10>
+dzielnik/FDivCnt<11>.Tdzielnik/FDivCnt<11>    .T l35   PO  -  -  -| -  -| -  0 -   -      N_PZ_264dzielnik/FDivCnt<11>
+dzielnik/FDivCnt<13>.Tdzielnik/FDivCnt<13>    .T m35   PO  -  -  -| -  -| -  0 -   -      N_PZ_265dzielnik/FDivCnt<13>
+dzielnik/FDivCnt<1>.Tdzielnik/FDivCnt<1>    .T n35   PO  -  -  -| -  -| -  0 -   -      N_PZ_266dzielnik/FDivCnt<1>
+dzielnik/FDivCnt<2>.Tdzielnik/FDivCnt<2>    .T o35   PO  -  -  -| -  -| -  0 -   -      N_PZ_267dzielnik/FDivCnt<2>
+dzielnik/FDivCnt<3>.Tdzielnik/FDivCnt<3>    .T p35   PO  -  -  -| -  -| -  0 -   -      N_PZ_268dzielnik/FDivCnt<3>
+dzielnik/FDivCnt<4>.Tdzielnik/FDivCnt<4>    .T q35   PO  -  -  -| -  -| -  0 -   -      N_PZ_269dzielnik/FDivCnt<4>
+dzielnik/FDivCnt<5>.Tdzielnik/FDivCnt<5>    .T r35   PO  -  -  -| -  -| -  0 -   -      N_PZ_270dzielnik/FDivCnt<5>
+dzielnik/FDivCnt<6>.Tdzielnik/FDivCnt<6>    .T s35   PO  -  -  -| -  -| -  0 -   -      N_PZ_271dzielnik/FDivCnt<6>
+dzielnik/FDivCnt<8>.Tdzielnik/FDivCnt<8>    .T t35   PO  -  -  -| -  -| -  0 -   -      N_PZ_272dzielnik/FDivCnt<8>
+dzielnik/FDivCnt<9>.Tdzielnik/FDivCnt<9>    .T u35   PO  -  -  -| -  -| -  0 -   -      N_PZ_273dzielnik/FDivCnt<9>
+      N_PZ_277   N_PZ_277     - s40 AINT  -  -  1|28  0|32  1 -   - hoursbcd<0>.T             -
+      N_PZ_278   N_PZ_278     - t40 AINT  L  -  1|28  4|32  1 -   - hoursbcd<4>.T             -
+      N_PZ_280   N_PZ_280     - v40 AINT  -  -  1|28  2|32  1 -   - hoursbcd<2>.T             -
+      N_PZ_281   N_PZ_281     - w40 AINT  -  -  2|28  4|32  1 -   - hoursbcd<5>.T             -
+      N_PZ_282   N_PZ_282     - x40 AINT  -  -  1|28  2|32  1 -   - hoursbcd<6>.T             -
+      N_PZ_283   N_PZ_283     - y40 AINT  -  -  1|28  0|32  1 -   -secondsbcd<0>.T             -
+      N_PZ_284   N_PZ_284     - z40 AINT  -  -  1|28  0|32  1 -   -secondsbcd<4>.T             -
+      N_PZ_285   N_PZ_285     - a41 AINT  -  -  2|28  4|32  1 -   - hoursbcd<3>.T             -
+      N_PZ_286   N_PZ_286     - b41 AINT  -  -  1|28  3|32  1 -   - hoursbcd<7>.T             -
+      N_PZ_288   N_PZ_288     - d41 AINT  -  -  1|28  2|32  1 -   -secondsbcd<2>.T             -
+      N_PZ_290   N_PZ_290     - f41 AINT  -  -  2|28  4|32  1 -   -secondsbcd<6>.T             -
+      N_PZ_291   N_PZ_291     - g41 AINT  -  -  2|28  4|32  1 -   -secondsbcd<3>.T             -
+      N_PZ_292   N_PZ_292     - h41 AINT  -  -  1|28  3|32  1 -   -secondsbcd<7>.T             -
+      N_PZ_294   N_PZ_294     - j41 AINT  -  -  1|28  0|32  1 -   -minutesbcd<0>.T             -
+      N_PZ_295   N_PZ_295     - k41 AINT  -  -  1|28  0|32  1 -   -minutesbcd<4>.T             -
+      N_PZ_297   N_PZ_297     - m41 AINT  -  -  1|28  2|32  1 -   -minutesbcd<2>.T             -
+      N_PZ_299   N_PZ_299     - o41 AINT  -  -  2|28  4|32  1 -   -minutesbcd<6>.T             -
+      N_PZ_300   N_PZ_300     - p41 AINT  -  -  2|28  4|32  1 -   -minutesbcd<3>.T             -
+      N_PZ_301   N_PZ_301     - q41 AINT  -  -  1|28  3|32  1 -   -minutesbcd<7>.T             -
+      N_PZ_336   N_PZ_336     - z42 AINT  L  -  2|28  6|32  1 -   -seccount/intclk.D             -
+      N_PZ_337   N_PZ_337     - a43 AINT  L  -  2|28  9|32  1 -   -hourcount/intclk.D             -
+      N_PZ_338   N_PZ_338     - b43 AINT  L  -  2|28  6|32  1 -   -        FMin.D             -
+ hoursbcd<0>.Thoursbcd<0>    .T i38   PO  -  -  -| -  -| -  0 -   -      N_PZ_277   hoursbcd<0>
+ hoursbcd<4>.Thoursbcd<4>    .T j38   PO  -  -  -| -  -| -  0 -   -      N_PZ_278   hoursbcd<4>
+ hoursbcd<2>.Thoursbcd<2>    .T l38   PO  -  -  -| -  -| -  0 -   -      N_PZ_280   hoursbcd<2>
+ hoursbcd<5>.Thoursbcd<5>    .T m38   PO  -  -  -| -  -| -  0 -   -      N_PZ_281   hoursbcd<5>
+ hoursbcd<6>.Thoursbcd<6>    .T n38   PO  -  -  -| -  -| -  0 -   -      N_PZ_282   hoursbcd<6>
+secondsbcd<0>.Tsecondsbcd<0>    .T o38   PO  -  -  -| -  -| -  0 -   -      N_PZ_283 secondsbcd<0>
+secondsbcd<4>.Tsecondsbcd<4>    .T p38   PO  -  -  -| -  -| -  0 -   -      N_PZ_284 secondsbcd<4>
+ hoursbcd<3>.Thoursbcd<3>    .T q38   PO  -  -  -| -  -| -  0 -   -      N_PZ_285   hoursbcd<3>
+ hoursbcd<7>.Thoursbcd<7>    .T r38   PO  -  -  -| -  -| -  0 -   -      N_PZ_286   hoursbcd<7>
+secondsbcd<2>.Tsecondsbcd<2>    .T t38   PO  -  -  -| -  -| -  0 -   -      N_PZ_288 secondsbcd<2>
+secondsbcd<6>.Tsecondsbcd<6>    .T v38   PO  -  -  -| -  -| -  0 -   -      N_PZ_290 secondsbcd<6>
+secondsbcd<3>.Tsecondsbcd<3>    .T w38   PO  -  -  -| -  -| -  0 -   -      N_PZ_291 secondsbcd<3>
+secondsbcd<7>.Tsecondsbcd<7>    .T x38   PO  -  -  -| -  -| -  0 -   -      N_PZ_292 secondsbcd<7>
+minutesbcd<0>.Tminutesbcd<0>    .T z38   PO  -  -  -| -  -| -  0 -   -      N_PZ_294 minutesbcd<0>
+minutesbcd<4>.Tminutesbcd<4>    .T a39   PO  -  -  -| -  -| -  0 -   -      N_PZ_295 minutesbcd<4>
+minutesbcd<2>.Tminutesbcd<2>    .T c39   PO  -  -  -| -  -| -  0 -   -      N_PZ_297 minutesbcd<2>
+minutesbcd<6>.Tminutesbcd<6>    .T e39   PO  -  -  -| -  -| -  0 -   -      N_PZ_299 minutesbcd<6>
+minutesbcd<3>.Tminutesbcd<3>    .T f39   PO  -  -  -| -  -| -  0 -   -      N_PZ_300 minutesbcd<3>
+minutesbcd<7>.Tminutesbcd<7>    .T g39   PO  -  -  -| -  -| -  0 -   -      N_PZ_301 minutesbcd<7>
+seccount/intclk.Dseccount/intclk    .D p40   PO  -  -  -| -  -| -  0 -   -      N_PZ_336seccount/intclk
+hourcount/intclk.Dhourcount/intclk    .D q40   PO  -  -  -| -  -| -  0 -   -      N_PZ_337hourcount/intclk
+        FMin.D       FMin    .D r40   PO  -  -  -| -  -| -  0 -   -      N_PZ_338          FMin
+      N_PZ_412   N_PZ_412     - x45 PINT  -  -  2|28  7|32  4 Y   -             -      N_PZ_412
+      N_PZ_413   N_PZ_413     - y45 PINT  -  -  2|28  7|32  4 Y   -             -      N_PZ_413
+      N_PZ_435   N_PZ_435     - u46 PINT  -  -  3|28  3|32  5 Y   -             -      N_PZ_435
+      N_PZ_436   N_PZ_436     - v46 PINT  -  -  3|28  3|32  5 Y   -             -      N_PZ_436
+      N_PZ_453   N_PZ_453     - m47 PINT  -  -  4|28  9|32  2 Y   -             -      N_PZ_453
+
+----------------------------------------------------------
+|  PinCnt = 37, NodeCnt = 71, Total = 108, TotalPt = 329 |
+----------------------------------------------------------
+MainClk,net=clock: PI
+  <--0-- 
+  --15--> (N_PZ_61, clock) (N_PZ_69, clock) (N_PZ_114, clock) (N_PZ_116, clock)  
+          (N_PZ_127, clock) (N_PZ_130, clock) (N_PZ_133, clock) (N_PZ_136, clock)  
+          (N_PZ_139, clock) (N_PZ_142, clock) (N_PZ_145, clock) (N_PZ_148, clock)  
+          (N_PZ_151, clock) (N_PZ_154, clock) (N_PZ_157, clock) 
+KEY1,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_88, clock) 
+KEY2,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_94, clock) 
+KEY3,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_100, clock) 
+KEY4,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_106, clock) 
+N_PZ_1,net=clock: PINT ( hoursbcd<0>.CLK )
+  <--1--  (N_PZ_435, clock)
+  --1--> (hoursbcd<0>.CLK, clock) 
+N_PZ_2,net=clock: PINT ( hoursbcd<0>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<0>.AR, clock) 
+N_PZ_4,net=clock: PINT ( hoursbcd<4>.CLK )
+  <--1--  (hourcount/intclk.Q, clock)
+  --1--> (hoursbcd<4>.CLK, clock) 
+N_PZ_5,net=clock: PINT ( hoursbcd<4>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<4>.AR, clock) 
+N_PZ_6,net=clock: PINT ( hoursbcd<1>.D )
+  <--4--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock)
+  --1--> (hoursbcd<1>.D, clock) 
+N_PZ_7,net=clock: PINT ( hoursbcd<1>.CLK )
+  <--1--  (N_PZ_435, clock)
+  --1--> (hoursbcd<1>.CLK, clock) 
+N_PZ_8,net=clock: PINT ( hoursbcd<1>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<1>.AR, clock) 
+N_PZ_10,net=clock: PINT ( hoursbcd<2>.CLK )
+  <--1--  (N_PZ_435, clock)
+  --1--> (hoursbcd<2>.CLK, clock) 
+N_PZ_11,net=clock: PINT ( hoursbcd<2>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<2>.AR, clock) 
+N_PZ_13,net=clock: PINT ( hoursbcd<5>.CLK )
+  <--1--  (hourcount/intclk.Q, clock)
+  --1--> (hoursbcd<5>.CLK, clock) 
+N_PZ_14,net=clock: PINT ( hoursbcd<5>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<5>.AR, clock) 
+N_PZ_16,net=clock: PINT ( hoursbcd<6>.CLK )
+  <--1--  (hourcount/intclk.Q, clock)
+  --1--> (hoursbcd<6>.CLK, clock) 
+N_PZ_17,net=clock: PINT ( hoursbcd<6>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<6>.AR, clock) 
+N_PZ_19,net=clock: PINT ( seccount/intclk.CLK )
+  <--1--  (FSec.Q, clock)
+  --1--> (seccount/intclk.CLK, clock) 
+N_PZ_22,net=clock: PINT ( secondsbcd<0>.CLK )
+  <--1--  (FSec.Q, clock)
+  --1--> (secondsbcd<0>.CLK, clock) 
+N_PZ_23,net=clock: PINT ( secondsbcd<0>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<0>.AR, clock) 
+N_PZ_25,net=clock: PINT ( secondsbcd<4>.CLK )
+  <--1--  (seccount/intclk.Q, clock)
+  --1--> (secondsbcd<4>.CLK, clock) 
+N_PZ_26,net=clock: PINT ( secondsbcd<4>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<4>.AR, clock) 
+N_PZ_28,net=clock: PINT ( hourcount/intclk.CLK )
+  <--1--  (N_PZ_435, clock)
+  --1--> (hourcount/intclk.CLK, clock) 
+N_PZ_31,net=clock: PINT ( hoursbcd<3>.CLK )
+  <--1--  (N_PZ_435, clock)
+  --1--> (hoursbcd<3>.CLK, clock) 
+N_PZ_32,net=clock: PINT ( hoursbcd<3>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<3>.AR, clock) 
+N_PZ_34,net=clock: PINT ( hoursbcd<7>.CLK )
+  <--1--  (hourcount/intclk.Q, clock)
+  --1--> (hoursbcd<7>.CLK, clock) 
+N_PZ_35,net=clock: PINT ( hoursbcd<7>.AR )
+  <--8--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<7>.AR, clock) 
+N_PZ_36,net=clock: PINT ( secondsbcd<1>.D )
+  <--4--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+          (secondsbcd<3>.Q, clock)
+  --1--> (secondsbcd<1>.D, clock) 
+N_PZ_37,net=clock: PINT ( secondsbcd<1>.CLK )
+  <--1--  (FSec.Q, clock)
+  --1--> (secondsbcd<1>.CLK, clock) 
+N_PZ_38,net=clock: PINT ( secondsbcd<1>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<1>.AR, clock) 
+N_PZ_40,net=clock: PINT ( secondsbcd<2>.CLK )
+  <--1--  (FSec.Q, clock)
+  --1--> (secondsbcd<2>.CLK, clock) 
+N_PZ_41,net=clock: PINT ( secondsbcd<2>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<2>.AR, clock) 
+N_PZ_42,net=clock: PINT ( secondsbcd<5>.D )
+  <--4--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock)
+  --1--> (secondsbcd<5>.D, clock) 
+N_PZ_43,net=clock: PINT ( secondsbcd<5>.CLK )
+  <--1--  (seccount/intclk.Q, clock)
+  --1--> (secondsbcd<5>.CLK, clock) 
+N_PZ_44,net=clock: PINT ( secondsbcd<5>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<5>.AR, clock) 
+N_PZ_46,net=clock: PINT ( secondsbcd<6>.CLK )
+  <--1--  (seccount/intclk.Q, clock)
+  --1--> (secondsbcd<6>.CLK, clock) 
+N_PZ_47,net=clock: PINT ( secondsbcd<6>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<6>.AR, clock) 
+N_PZ_49,net=clock: PINT ( secondsbcd<3>.CLK )
+  <--1--  (FSec.Q, clock)
+  --1--> (secondsbcd<3>.CLK, clock) 
+N_PZ_50,net=clock: PINT ( secondsbcd<3>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<3>.AR, clock) 
+N_PZ_52,net=clock: PINT ( secondsbcd<7>.CLK )
+  <--1--  (seccount/intclk.Q, clock)
+  --1--> (secondsbcd<7>.CLK, clock) 
+N_PZ_53,net=clock: PINT ( secondsbcd<7>.AR )
+  <--1--  (settime.Q, clock)
+  --1--> (secondsbcd<7>.AR, clock) 
+N_PZ_55,net=clock: PINT ( FMin.CLK )
+  <--1--  (seccount/intclk.Q, clock)
+  --1--> (FMin.CLK, clock) 
+N_PZ_58,net=clock: PINT ( showhr.CLK )
+  <--1--  (chmod.Q, clock)
+  --1--> (showhr.CLK, clock) 
+N_PZ_61,net=clock: PINT ( F8ms.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (F8ms.CLK, clock) 
+N_PZ_62,net=clock: PINT ( settime.D )
+  <--0-- 
+  --1--> (settime.D, clock) 
+N_PZ_63,net=clock: PINT ( settime.LH )
+  <--4--  (setBtn/ShiftRegister<0>.Q, clock) (setBtn/ShiftRegister<1>.Q, clock) 
+          (setBtn/ShiftRegister<2>.Q, clock) (setBtn/ShiftRegister<3>.Q, clock)
+  --1--> (settime.LH, clock) 
+N_PZ_64,net=clock: PINT ( settime.AR )
+  <--4--  (setBtn/ShiftRegister<0>.Q, clock) (setBtn/ShiftRegister<1>.Q, clock) 
+          (setBtn/ShiftRegister<2>.Q, clock) (setBtn/ShiftRegister<3>.Q, clock)
+  --1--> (settime.AR, clock) 
+N_PZ_66,net=clock: PINT ( setmode.CLK )
+  <--1--  (settime.Q, clock)
+  --1--> (setmode.CLK, clock) 
+N_PZ_69,net=clock: PINT ( FSec.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (FSec.CLK, clock) 
+N_PZ_70,net=clock: PINT ( mincount/intclk.D )
+  <--4--  (minutesbcd<0>.Q, clock) (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) 
+          (minutesbcd<3>.Q, clock)
+  --1--> (mincount/intclk.D, clock) 
+N_PZ_71,net=clock: PINT ( mincount/intclk.CLK )
+  <--1--  (N_PZ_436, clock)
+  --1--> (mincount/intclk.CLK, clock) 
+N_PZ_73,net=clock: PINT ( minutesbcd<0>.CLK )
+  <--1--  (N_PZ_436, clock)
+  --1--> (minutesbcd<0>.CLK, clock) 
+N_PZ_75,net=clock: PINT ( minutesbcd<4>.CLK )
+  <--1--  (mincount/intclk.Q, clock)
+  --1--> (minutesbcd<4>.CLK, clock) 
+N_PZ_76,net=clock: PINT ( minutesbcd<1>.D )
+  <--4--  (minutesbcd<0>.Q, clock) (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) 
+          (minutesbcd<3>.Q, clock)
+  --1--> (minutesbcd<1>.D, clock) 
+N_PZ_77,net=clock: PINT ( minutesbcd<1>.CLK )
+  <--1--  (N_PZ_436, clock)
+  --1--> (minutesbcd<1>.CLK, clock) 
+N_PZ_79,net=clock: PINT ( minutesbcd<2>.CLK )
+  <--1--  (N_PZ_436, clock)
+  --1--> (minutesbcd<2>.CLK, clock) 
+N_PZ_80,net=clock: PINT ( minutesbcd<5>.D )
+  <--4--  (minutesbcd<4>.Q, clock) (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) 
+          (minutesbcd<7>.Q, clock)
+  --1--> (minutesbcd<5>.D, clock) 
+N_PZ_81,net=clock: PINT ( minutesbcd<5>.CLK )
+  <--1--  (mincount/intclk.Q, clock)
+  --1--> (minutesbcd<5>.CLK, clock) 
+N_PZ_83,net=clock: PINT ( minutesbcd<6>.CLK )
+  <--1--  (mincount/intclk.Q, clock)
+  --1--> (minutesbcd<6>.CLK, clock) 
+N_PZ_85,net=clock: PINT ( minutesbcd<3>.CLK )
+  <--1--  (N_PZ_436, clock)
+  --1--> (minutesbcd<3>.CLK, clock) 
+N_PZ_87,net=clock: PINT ( minutesbcd<7>.CLK )
+  <--1--  (mincount/intclk.Q, clock)
+  --1--> (minutesbcd<7>.CLK, clock) 
+N_PZ_88,net=clock: PINT ( modeBtn/ShiftRegister<0>.D )
+  <--1--  (KEY1, clock)
+  --1--> (modeBtn/ShiftRegister<0>.D, clock) 
+N_PZ_89,net=clock: PINT ( modeBtn/ShiftRegister<0>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (modeBtn/ShiftRegister<0>.CLK, clock) 
+N_PZ_90,net=clock: PINT ( modeBtn/ShiftRegister<1>.D )
+  <--1--  (modeBtn/ShiftRegister<0>.Q, clock)
+  --1--> (modeBtn/ShiftRegister<1>.D, clock) 
+N_PZ_91,net=clock: PINT ( modeBtn/ShiftRegister<1>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (modeBtn/ShiftRegister<1>.CLK, clock) 
+N_PZ_92,net=clock: PINT ( modeBtn/ShiftRegister<2>.D )
+  <--1--  (modeBtn/ShiftRegister<1>.Q, clock)
+  --1--> (modeBtn/ShiftRegister<2>.D, clock) 
+N_PZ_93,net=clock: PINT ( modeBtn/ShiftRegister<2>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (modeBtn/ShiftRegister<2>.CLK, clock) 
+N_PZ_94,net=clock: PINT ( setBtn/ShiftRegister<0>.D )
+  <--1--  (KEY2, clock)
+  --1--> (setBtn/ShiftRegister<0>.D, clock) 
+N_PZ_95,net=clock: PINT ( setBtn/ShiftRegister<0>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setBtn/ShiftRegister<0>.CLK, clock) 
+N_PZ_96,net=clock: PINT ( setBtn/ShiftRegister<1>.D )
+  <--1--  (setBtn/ShiftRegister<0>.Q, clock)
+  --1--> (setBtn/ShiftRegister<1>.D, clock) 
+N_PZ_97,net=clock: PINT ( setBtn/ShiftRegister<1>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setBtn/ShiftRegister<1>.CLK, clock) 
+N_PZ_98,net=clock: PINT ( setBtn/ShiftRegister<2>.D )
+  <--1--  (setBtn/ShiftRegister<1>.Q, clock)
+  --1--> (setBtn/ShiftRegister<2>.D, clock) 
+N_PZ_99,net=clock: PINT ( setBtn/ShiftRegister<2>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setBtn/ShiftRegister<2>.CLK, clock) 
+N_PZ_100,net=clock: PINT ( setHr/ShiftRegister<0>.D )
+  <--1--  (KEY3, clock)
+  --1--> (setHr/ShiftRegister<0>.D, clock) 
+N_PZ_101,net=clock: PINT ( setHr/ShiftRegister<0>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setHr/ShiftRegister<0>.CLK, clock) 
+N_PZ_102,net=clock: PINT ( setHr/ShiftRegister<1>.D )
+  <--1--  (setHr/ShiftRegister<0>.Q, clock)
+  --1--> (setHr/ShiftRegister<1>.D, clock) 
+N_PZ_103,net=clock: PINT ( setHr/ShiftRegister<1>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setHr/ShiftRegister<1>.CLK, clock) 
+N_PZ_104,net=clock: PINT ( setHr/ShiftRegister<2>.D )
+  <--1--  (setHr/ShiftRegister<1>.Q, clock)
+  --1--> (setHr/ShiftRegister<2>.D, clock) 
+N_PZ_105,net=clock: PINT ( setHr/ShiftRegister<2>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setHr/ShiftRegister<2>.CLK, clock) 
+N_PZ_106,net=clock: PINT ( setMn/ShiftRegister<0>.D )
+  <--1--  (KEY4, clock)
+  --1--> (setMn/ShiftRegister<0>.D, clock) 
+N_PZ_107,net=clock: PINT ( setMn/ShiftRegister<0>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setMn/ShiftRegister<0>.CLK, clock) 
+N_PZ_108,net=clock: PINT ( setMn/ShiftRegister<1>.D )
+  <--1--  (setMn/ShiftRegister<0>.Q, clock)
+  --1--> (setMn/ShiftRegister<1>.D, clock) 
+N_PZ_109,net=clock: PINT ( setMn/ShiftRegister<1>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setMn/ShiftRegister<1>.CLK, clock) 
+N_PZ_110,net=clock: PINT ( setMn/ShiftRegister<2>.D )
+  <--1--  (setMn/ShiftRegister<1>.Q, clock)
+  --1--> (setMn/ShiftRegister<2>.D, clock) 
+N_PZ_111,net=clock: PINT ( setMn/ShiftRegister<2>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setMn/ShiftRegister<2>.CLK, clock) 
+N_PZ_114,net=clock: PINT ( F250ms.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (F250ms.CLK, clock) 
+N_PZ_116,net=clock: PINT ( dzielnik/FDivCnt<0>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<0>.CLK, clock) 
+N_PZ_117,net=clock: PINT ( modeBtn/ShiftRegister<3>.D )
+  <--1--  (modeBtn/ShiftRegister<2>.Q, clock)
+  --1--> (modeBtn/ShiftRegister<3>.D, clock) 
+N_PZ_118,net=clock: PINT ( modeBtn/ShiftRegister<3>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (modeBtn/ShiftRegister<3>.CLK, clock) 
+N_PZ_119,net=clock: PINT ( setBtn/ShiftRegister<3>.D )
+  <--1--  (setBtn/ShiftRegister<2>.Q, clock)
+  --1--> (setBtn/ShiftRegister<3>.D, clock) 
+N_PZ_120,net=clock: PINT ( setBtn/ShiftRegister<3>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setBtn/ShiftRegister<3>.CLK, clock) 
+N_PZ_121,net=clock: PINT ( setHr/ShiftRegister<3>.D )
+  <--1--  (setHr/ShiftRegister<2>.Q, clock)
+  --1--> (setHr/ShiftRegister<3>.D, clock) 
+N_PZ_122,net=clock: PINT ( setHr/ShiftRegister<3>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setHr/ShiftRegister<3>.CLK, clock) 
+N_PZ_123,net=clock: PINT ( setMn/ShiftRegister<3>.D )
+  <--1--  (setMn/ShiftRegister<2>.Q, clock)
+  --1--> (setMn/ShiftRegister<3>.D, clock) 
+N_PZ_124,net=clock: PINT ( setMn/ShiftRegister<3>.CLK )
+  <--1--  (F8ms.Q, clock)
+  --1--> (setMn/ShiftRegister<3>.CLK, clock) 
+N_PZ_127,net=clock: PINT ( dzielnik/FDivCnt<10>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<10>.CLK, clock) 
+N_PZ_130,net=clock: PINT ( dzielnik/FDivCnt<11>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<11>.CLK, clock) 
+N_PZ_133,net=clock: PINT ( dzielnik/FDivCnt<13>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<13>.CLK, clock) 
+N_PZ_136,net=clock: PINT ( dzielnik/FDivCnt<1>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<1>.CLK, clock) 
+N_PZ_139,net=clock: PINT ( dzielnik/FDivCnt<2>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<2>.CLK, clock) 
+N_PZ_142,net=clock: PINT ( dzielnik/FDivCnt<3>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<3>.CLK, clock) 
+N_PZ_145,net=clock: PINT ( dzielnik/FDivCnt<4>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<4>.CLK, clock) 
+N_PZ_148,net=clock: PINT ( dzielnik/FDivCnt<5>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<5>.CLK, clock) 
+N_PZ_151,net=clock: PINT ( dzielnik/FDivCnt<6>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<6>.CLK, clock) 
+N_PZ_154,net=clock: PINT ( dzielnik/FDivCnt<8>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<8>.CLK, clock) 
+N_PZ_157,net=clock: PINT ( dzielnik/FDivCnt<9>.CLK )
+  <--1--  (MainClk, clock)
+  --1--> (dzielnik/FDivCnt<9>.CLK, clock) 
+N_PZ_158,net=clock: PINT ( chmod.D )
+  <--0-- 
+  --1--> (chmod.D, clock) 
+N_PZ_159,net=clock: PINT ( chmod.LH )
+  <--4--  (modeBtn/ShiftRegister<0>.Q, clock) (modeBtn/ShiftRegister<1>.Q, clock) 
+          (modeBtn/ShiftRegister<2>.Q, clock) (modeBtn/ShiftRegister<3>.Q, clock)
+  --1--> (chmod.LH, clock) 
+N_PZ_160,net=clock: PINT ( chmod.AR )
+  <--4--  (modeBtn/ShiftRegister<0>.Q, clock) (modeBtn/ShiftRegister<1>.Q, clock) 
+          (modeBtn/ShiftRegister<2>.Q, clock) (modeBtn/ShiftRegister<3>.Q, clock)
+  --1--> (chmod.AR, clock) 
+N_PZ_161,net=clock: PINT ( sethour.D )
+  <--0-- 
+  --1--> (sethour.D, clock) 
+N_PZ_162,net=clock: PINT ( sethour.LH )
+  <--4--  (setHr/ShiftRegister<0>.Q, clock) (setHr/ShiftRegister<1>.Q, clock) 
+          (setHr/ShiftRegister<2>.Q, clock) (setHr/ShiftRegister<3>.Q, clock)
+  --1--> (sethour.LH, clock) 
+N_PZ_163,net=clock: PINT ( sethour.AR )
+  <--4--  (setHr/ShiftRegister<0>.Q, clock) (setHr/ShiftRegister<1>.Q, clock) 
+          (setHr/ShiftRegister<2>.Q, clock) (setHr/ShiftRegister<3>.Q, clock)
+  --1--> (sethour.AR, clock) 
+N_PZ_164,net=clock: PINT ( setminute.D )
+  <--0-- 
+  --1--> (setminute.D, clock) 
+N_PZ_165,net=clock: PINT ( setminute.LH )
+  <--4--  (setMn/ShiftRegister<0>.Q, clock) (setMn/ShiftRegister<1>.Q, clock) 
+          (setMn/ShiftRegister<2>.Q, clock) (setMn/ShiftRegister<3>.Q, clock)
+  --1--> (setminute.LH, clock) 
+N_PZ_166,net=clock: PINT ( setminute.AR )
+  <--4--  (setMn/ShiftRegister<0>.Q, clock) (setMn/ShiftRegister<1>.Q, clock) 
+          (setMn/ShiftRegister<2>.Q, clock) (setMn/ShiftRegister<3>.Q, clock)
+  --1--> (setminute.AR, clock) 
+N_PZ_167,net=clock: PINT ( FHour.D )
+  <--4--  (minutesbcd<4>.Q, clock) (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) 
+          (minutesbcd<7>.Q, clock)
+  --1--> (FHour.D, clock) 
+N_PZ_168,net=clock: PINT ( FHour.CLK )
+  <--1--  (mincount/intclk.Q, clock)
+  --1--> (FHour.CLK, clock) 
+N_PZ_169,net=clock: PINT ( DIG1<7> )
+  <--3--  (setmode.Q, clock) (FSec.Q, clock) (F250ms.Q, clock)
+  --1--> (DIG1<7>, clock) 
+N_PZ_170,net=clock: PINT ( DIG0<0> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<0>, clock) 
+N_PZ_171,net=clock: PINT ( DIG0<1> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<1>, clock) 
+N_PZ_172,net=clock: PINT ( DIG0<2> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<2>, clock) 
+N_PZ_173,net=clock: PINT ( DIG0<3> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<3>, clock) 
+N_PZ_174,net=clock: PINT ( DIG0<4> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<4>, clock) 
+N_PZ_175,net=clock: PINT ( DIG0<5> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<5>, clock) 
+N_PZ_176,net=clock: PINT ( DIG0<6> )
+  <--5--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG0<6>, clock) 
+N_PZ_177,net=clock: PINT ( DIG1<0> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<0>, clock) 
+N_PZ_178,net=clock: PINT ( DIG1<1> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<1>, clock) 
+N_PZ_179,net=clock: PINT ( DIG1<2> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<2>, clock) 
+N_PZ_180,net=clock: PINT ( DIG1<3> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<3>, clock) 
+N_PZ_181,net=clock: PINT ( DIG1<4> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<4>, clock) 
+N_PZ_182,net=clock: PINT ( DIG1<5> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<5>, clock) 
+N_PZ_183,net=clock: PINT ( DIG1<6> )
+  <--5--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock) (showhr.Q, clock)
+  --1--> (DIG1<6>, clock) 
+N_PZ_184,net=clock: PINT ( DIG2<0> )
+  <--10--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+           (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+           (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock) 
+           (N_PZ_412, clock)
+  --1--> (DIG2<0>, clock) 
+N_PZ_185,net=clock: PINT ( DIG2<1> )
+  <--9--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+          (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock)
+  --1--> (DIG2<1>, clock) 
+N_PZ_186,net=clock: PINT ( DIG2<2> )
+  <--9--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+          (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock)
+  --1--> (DIG2<2>, clock) 
+N_PZ_187,net=clock: PINT ( DIG2<3> )
+  <--11--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+           (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+           (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock) 
+           (N_PZ_412, clock) (N_PZ_453, clock)
+  --1--> (DIG2<3>, clock) 
+N_PZ_188,net=clock: PINT ( DIG2<4> )
+  <--9--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+          (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock)
+  --1--> (DIG2<4>, clock) 
+N_PZ_189,net=clock: PINT ( DIG2<5> )
+  <--10--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+           (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+           (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock) 
+           (N_PZ_412, clock)
+  --1--> (DIG2<5>, clock) 
+N_PZ_190,net=clock: PINT ( DIG2<6> )
+  <--9--  (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) (secondsbcd<7>.Q, clock) 
+          (showhr.Q, clock) (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) 
+          (minutesbcd<7>.Q, clock) (N_PZ_412, clock) (N_PZ_453, clock)
+  --1--> (DIG2<6>, clock) 
+N_PZ_191,net=clock: PINT ( DIG3<0> )
+  <--10--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+           (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+           (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock) 
+           (N_PZ_413, clock)
+  --1--> (DIG3<0>, clock) 
+N_PZ_192,net=clock: PINT ( DIG3<1> )
+  <--9--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+          (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+          (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock)
+  --1--> (DIG3<1>, clock) 
+N_PZ_193,net=clock: PINT ( DIG3<2> )
+  <--9--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+          (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+          (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock)
+  --1--> (DIG3<2>, clock) 
+N_PZ_194,net=clock: PINT ( DIG3<3> )
+  <--10--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+           (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+           (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock) 
+           (N_PZ_413, clock)
+  --1--> (DIG3<3>, clock) 
+N_PZ_195,net=clock: PINT ( DIG3<4> )
+  <--9--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+          (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+          (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock)
+  --1--> (DIG3<4>, clock) 
+N_PZ_196,net=clock: PINT ( DIG3<5> )
+  <--10--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+           (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+           (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock) 
+           (N_PZ_413, clock)
+  --1--> (DIG3<5>, clock) 
+N_PZ_197,net=clock: PINT ( DIG3<6> )
+  <--10--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+           (secondsbcd<3>.Q, clock) (showhr.Q, clock) (minutesbcd<0>.Q, clock) 
+           (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) (minutesbcd<3>.Q, clock) 
+           (N_PZ_413, clock)
+  --1--> (DIG3<6>, clock) 
+N_PZ_198,net=clock: PINT ( DIG3<7> )
+  <--0-- 
+  --1--> (DIG3<7>, clock) 
+N_PZ_199,net=clock: PINT ( DIG2<7> )
+  <--0-- 
+  --1--> (DIG2<7>, clock) 
+N_PZ_200,net=clock: PINT ( DIG0<7> )
+  <--0-- 
+  --1--> (DIG0<7>, clock) 
+hoursbcd<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_1, clock)
+  --0--> 
+hoursbcd<0>.AR,net=clock: PO
+  <--1--  (N_PZ_2, clock)
+  --0--> 
+hoursbcd<4>.CLK,net=clock: PO
+  <--1--  (N_PZ_4, clock)
+  --0--> 
+hoursbcd<4>.AR,net=clock: PO
+  <--1--  (N_PZ_5, clock)
+  --0--> 
+hoursbcd<1>.D,net=clock: PO
+  <--1--  (N_PZ_6, clock)
+  --0--> 
+hoursbcd<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_7, clock)
+  --0--> 
+hoursbcd<1>.AR,net=clock: PO
+  <--1--  (N_PZ_8, clock)
+  --0--> 
+hoursbcd<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_10, clock)
+  --0--> 
+hoursbcd<2>.AR,net=clock: PO
+  <--1--  (N_PZ_11, clock)
+  --0--> 
+hoursbcd<5>.CLK,net=clock: PO
+  <--1--  (N_PZ_13, clock)
+  --0--> 
+hoursbcd<5>.AR,net=clock: PO
+  <--1--  (N_PZ_14, clock)
+  --0--> 
+hoursbcd<6>.CLK,net=clock: PO
+  <--1--  (N_PZ_16, clock)
+  --0--> 
+hoursbcd<6>.AR,net=clock: PO
+  <--1--  (N_PZ_17, clock)
+  --0--> 
+seccount/intclk.CLK,net=clock: PO
+  <--1--  (N_PZ_19, clock)
+  --0--> 
+secondsbcd<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_22, clock)
+  --0--> 
+secondsbcd<0>.AR,net=clock: PO
+  <--1--  (N_PZ_23, clock)
+  --0--> 
+secondsbcd<4>.CLK,net=clock: PO
+  <--1--  (N_PZ_25, clock)
+  --0--> 
+secondsbcd<4>.AR,net=clock: PO
+  <--1--  (N_PZ_26, clock)
+  --0--> 
+hourcount/intclk.CLK,net=clock: PO
+  <--1--  (N_PZ_28, clock)
+  --0--> 
+hoursbcd<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_31, clock)
+  --0--> 
+hoursbcd<3>.AR,net=clock: PO
+  <--1--  (N_PZ_32, clock)
+  --0--> 
+hoursbcd<7>.CLK,net=clock: PO
+  <--1--  (N_PZ_34, clock)
+  --0--> 
+hoursbcd<7>.AR,net=clock: PO
+  <--1--  (N_PZ_35, clock)
+  --0--> 
+secondsbcd<1>.D,net=clock: PO
+  <--1--  (N_PZ_36, clock)
+  --0--> 
+secondsbcd<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_37, clock)
+  --0--> 
+secondsbcd<1>.AR,net=clock: PO
+  <--1--  (N_PZ_38, clock)
+  --0--> 
+secondsbcd<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_40, clock)
+  --0--> 
+secondsbcd<2>.AR,net=clock: PO
+  <--1--  (N_PZ_41, clock)
+  --0--> 
+secondsbcd<5>.D,net=clock: PO
+  <--1--  (N_PZ_42, clock)
+  --0--> 
+secondsbcd<5>.CLK,net=clock: PO
+  <--1--  (N_PZ_43, clock)
+  --0--> 
+secondsbcd<5>.AR,net=clock: PO
+  <--1--  (N_PZ_44, clock)
+  --0--> 
+secondsbcd<6>.CLK,net=clock: PO
+  <--1--  (N_PZ_46, clock)
+  --0--> 
+secondsbcd<6>.AR,net=clock: PO
+  <--1--  (N_PZ_47, clock)
+  --0--> 
+secondsbcd<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_49, clock)
+  --0--> 
+secondsbcd<3>.AR,net=clock: PO
+  <--1--  (N_PZ_50, clock)
+  --0--> 
+secondsbcd<7>.CLK,net=clock: PO
+  <--1--  (N_PZ_52, clock)
+  --0--> 
+secondsbcd<7>.AR,net=clock: PO
+  <--1--  (N_PZ_53, clock)
+  --0--> 
+FMin.CLK,net=clock: PO
+  <--1--  (N_PZ_55, clock)
+  --0--> 
+showhr.CLK,net=clock: PO
+  <--1--  (N_PZ_58, clock)
+  --0--> 
+F8ms.CLK,net=clock: PO
+  <--1--  (N_PZ_61, clock)
+  --0--> 
+settime.D,net=clock: PO
+  <--1--  (N_PZ_62, clock)
+  --0--> 
+settime.LH,net=clock: PO
+  <--1--  (N_PZ_63, clock)
+  --0--> 
+settime.AR,net=clock: PO
+  <--1--  (N_PZ_64, clock)
+  --0--> 
+setmode.CLK,net=clock: PO
+  <--1--  (N_PZ_66, clock)
+  --0--> 
+FSec.CLK,net=clock: PO
+  <--1--  (N_PZ_69, clock)
+  --0--> 
+mincount/intclk.D,net=clock: PO
+  <--1--  (N_PZ_70, clock)
+  --0--> 
+mincount/intclk.CLK,net=clock: PO
+  <--1--  (N_PZ_71, clock)
+  --0--> 
+minutesbcd<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_73, clock)
+  --0--> 
+minutesbcd<4>.CLK,net=clock: PO
+  <--1--  (N_PZ_75, clock)
+  --0--> 
+minutesbcd<1>.D,net=clock: PO
+  <--1--  (N_PZ_76, clock)
+  --0--> 
+minutesbcd<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_77, clock)
+  --0--> 
+minutesbcd<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_79, clock)
+  --0--> 
+minutesbcd<5>.D,net=clock: PO
+  <--1--  (N_PZ_80, clock)
+  --0--> 
+minutesbcd<5>.CLK,net=clock: PO
+  <--1--  (N_PZ_81, clock)
+  --0--> 
+minutesbcd<6>.CLK,net=clock: PO
+  <--1--  (N_PZ_83, clock)
+  --0--> 
+minutesbcd<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_85, clock)
+  --0--> 
+minutesbcd<7>.CLK,net=clock: PO
+  <--1--  (N_PZ_87, clock)
+  --0--> 
+modeBtn/ShiftRegister<0>.D,net=clock: PO
+  <--1--  (N_PZ_88, clock)
+  --0--> 
+modeBtn/ShiftRegister<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_89, clock)
+  --0--> 
+modeBtn/ShiftRegister<1>.D,net=clock: PO
+  <--1--  (N_PZ_90, clock)
+  --0--> 
+modeBtn/ShiftRegister<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_91, clock)
+  --0--> 
+modeBtn/ShiftRegister<2>.D,net=clock: PO
+  <--1--  (N_PZ_92, clock)
+  --0--> 
+modeBtn/ShiftRegister<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_93, clock)
+  --0--> 
+setBtn/ShiftRegister<0>.D,net=clock: PO
+  <--1--  (N_PZ_94, clock)
+  --0--> 
+setBtn/ShiftRegister<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_95, clock)
+  --0--> 
+setBtn/ShiftRegister<1>.D,net=clock: PO
+  <--1--  (N_PZ_96, clock)
+  --0--> 
+setBtn/ShiftRegister<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_97, clock)
+  --0--> 
+setBtn/ShiftRegister<2>.D,net=clock: PO
+  <--1--  (N_PZ_98, clock)
+  --0--> 
+setBtn/ShiftRegister<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_99, clock)
+  --0--> 
+setHr/ShiftRegister<0>.D,net=clock: PO
+  <--1--  (N_PZ_100, clock)
+  --0--> 
+setHr/ShiftRegister<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_101, clock)
+  --0--> 
+setHr/ShiftRegister<1>.D,net=clock: PO
+  <--1--  (N_PZ_102, clock)
+  --0--> 
+setHr/ShiftRegister<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_103, clock)
+  --0--> 
+setHr/ShiftRegister<2>.D,net=clock: PO
+  <--1--  (N_PZ_104, clock)
+  --0--> 
+setHr/ShiftRegister<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_105, clock)
+  --0--> 
+setMn/ShiftRegister<0>.D,net=clock: PO
+  <--1--  (N_PZ_106, clock)
+  --0--> 
+setMn/ShiftRegister<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_107, clock)
+  --0--> 
+setMn/ShiftRegister<1>.D,net=clock: PO
+  <--1--  (N_PZ_108, clock)
+  --0--> 
+setMn/ShiftRegister<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_109, clock)
+  --0--> 
+setMn/ShiftRegister<2>.D,net=clock: PO
+  <--1--  (N_PZ_110, clock)
+  --0--> 
+setMn/ShiftRegister<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_111, clock)
+  --0--> 
+F250ms.CLK,net=clock: PO
+  <--1--  (N_PZ_114, clock)
+  --0--> 
+dzielnik/FDivCnt<0>.CLK,net=clock: PO
+  <--1--  (N_PZ_116, clock)
+  --0--> 
+modeBtn/ShiftRegister<3>.D,net=clock: PO
+  <--1--  (N_PZ_117, clock)
+  --0--> 
+modeBtn/ShiftRegister<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_118, clock)
+  --0--> 
+setBtn/ShiftRegister<3>.D,net=clock: PO
+  <--1--  (N_PZ_119, clock)
+  --0--> 
+setBtn/ShiftRegister<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_120, clock)
+  --0--> 
+setHr/ShiftRegister<3>.D,net=clock: PO
+  <--1--  (N_PZ_121, clock)
+  --0--> 
+setHr/ShiftRegister<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_122, clock)
+  --0--> 
+setMn/ShiftRegister<3>.D,net=clock: PO
+  <--1--  (N_PZ_123, clock)
+  --0--> 
+setMn/ShiftRegister<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_124, clock)
+  --0--> 
+dzielnik/FDivCnt<10>.CLK,net=clock: PO
+  <--1--  (N_PZ_127, clock)
+  --0--> 
+dzielnik/FDivCnt<11>.CLK,net=clock: PO
+  <--1--  (N_PZ_130, clock)
+  --0--> 
+dzielnik/FDivCnt<13>.CLK,net=clock: PO
+  <--1--  (N_PZ_133, clock)
+  --0--> 
+dzielnik/FDivCnt<1>.CLK,net=clock: PO
+  <--1--  (N_PZ_136, clock)
+  --0--> 
+dzielnik/FDivCnt<2>.CLK,net=clock: PO
+  <--1--  (N_PZ_139, clock)
+  --0--> 
+dzielnik/FDivCnt<3>.CLK,net=clock: PO
+  <--1--  (N_PZ_142, clock)
+  --0--> 
+dzielnik/FDivCnt<4>.CLK,net=clock: PO
+  <--1--  (N_PZ_145, clock)
+  --0--> 
+dzielnik/FDivCnt<5>.CLK,net=clock: PO
+  <--1--  (N_PZ_148, clock)
+  --0--> 
+dzielnik/FDivCnt<6>.CLK,net=clock: PO
+  <--1--  (N_PZ_151, clock)
+  --0--> 
+dzielnik/FDivCnt<8>.CLK,net=clock: PO
+  <--1--  (N_PZ_154, clock)
+  --0--> 
+dzielnik/FDivCnt<9>.CLK,net=clock: PO
+  <--1--  (N_PZ_157, clock)
+  --0--> 
+chmod.D,net=clock: PO
+  <--1--  (N_PZ_158, clock)
+  --0--> 
+chmod.LH,net=clock: PO
+  <--1--  (N_PZ_159, clock)
+  --0--> 
+chmod.AR,net=clock: PO
+  <--1--  (N_PZ_160, clock)
+  --0--> 
+sethour.D,net=clock: PO
+  <--1--  (N_PZ_161, clock)
+  --0--> 
+sethour.LH,net=clock: PO
+  <--1--  (N_PZ_162, clock)
+  --0--> 
+sethour.AR,net=clock: PO
+  <--1--  (N_PZ_163, clock)
+  --0--> 
+setminute.D,net=clock: PO
+  <--1--  (N_PZ_164, clock)
+  --0--> 
+setminute.LH,net=clock: PO
+  <--1--  (N_PZ_165, clock)
+  --0--> 
+setminute.AR,net=clock: PO
+  <--1--  (N_PZ_166, clock)
+  --0--> 
+FHour.D,net=clock: PO
+  <--1--  (N_PZ_167, clock)
+  --0--> 
+FHour.CLK,net=clock: PO
+  <--1--  (N_PZ_168, clock)
+  --0--> 
+DIG1<7>,net=clock: PO
+  <--1--  (N_PZ_169, clock)
+  --0--> 
+DIG0<0>,net=clock: PO
+  <--1--  (N_PZ_170, clock)
+  --0--> 
+DIG0<1>,net=clock: PO
+  <--1--  (N_PZ_171, clock)
+  --0--> 
+DIG0<2>,net=clock: PO
+  <--1--  (N_PZ_172, clock)
+  --0--> 
+DIG0<3>,net=clock: PO
+  <--1--  (N_PZ_173, clock)
+  --0--> 
+DIG0<4>,net=clock: PO
+  <--1--  (N_PZ_174, clock)
+  --0--> 
+DIG0<5>,net=clock: PO
+  <--1--  (N_PZ_175, clock)
+  --0--> 
+DIG0<6>,net=clock: PO
+  <--1--  (N_PZ_176, clock)
+  --0--> 
+DIG1<0>,net=clock: PO
+  <--1--  (N_PZ_177, clock)
+  --0--> 
+DIG1<1>,net=clock: PO
+  <--1--  (N_PZ_178, clock)
+  --0--> 
+DIG1<2>,net=clock: PO
+  <--1--  (N_PZ_179, clock)
+  --0--> 
+DIG1<3>,net=clock: PO
+  <--1--  (N_PZ_180, clock)
+  --0--> 
+DIG1<4>,net=clock: PO
+  <--1--  (N_PZ_181, clock)
+  --0--> 
+DIG1<5>,net=clock: PO
+  <--1--  (N_PZ_182, clock)
+  --0--> 
+DIG1<6>,net=clock: PO
+  <--1--  (N_PZ_183, clock)
+  --0--> 
+DIG2<0>,net=clock: PO
+  <--1--  (N_PZ_184, clock)
+  --0--> 
+DIG2<1>,net=clock: PO
+  <--1--  (N_PZ_185, clock)
+  --0--> 
+DIG2<2>,net=clock: PO
+  <--1--  (N_PZ_186, clock)
+  --0--> 
+DIG2<3>,net=clock: PO
+  <--1--  (N_PZ_187, clock)
+  --0--> 
+DIG2<4>,net=clock: PO
+  <--1--  (N_PZ_188, clock)
+  --0--> 
+DIG2<5>,net=clock: PO
+  <--1--  (N_PZ_189, clock)
+  --0--> 
+DIG2<6>,net=clock: PO
+  <--1--  (N_PZ_190, clock)
+  --0--> 
+DIG3<0>,net=clock: PO
+  <--1--  (N_PZ_191, clock)
+  --0--> 
+DIG3<1>,net=clock: PO
+  <--1--  (N_PZ_192, clock)
+  --0--> 
+DIG3<2>,net=clock: PO
+  <--1--  (N_PZ_193, clock)
+  --0--> 
+DIG3<3>,net=clock: PO
+  <--1--  (N_PZ_194, clock)
+  --0--> 
+DIG3<4>,net=clock: PO
+  <--1--  (N_PZ_195, clock)
+  --0--> 
+DIG3<5>,net=clock: PO
+  <--1--  (N_PZ_196, clock)
+  --0--> 
+DIG3<6>,net=clock: PO
+  <--1--  (N_PZ_197, clock)
+  --0--> 
+DIG3<7>,net=clock: PO
+  <--1--  (N_PZ_198, clock)
+  --0--> 
+DIG2<7>,net=clock: PO
+  <--1--  (N_PZ_199, clock)
+  --0--> 
+DIG0<7>,net=clock: PO
+  <--1--  (N_PZ_200, clock)
+  --0--> 
+hoursbcd<0>.Q,net=clock: PI
+  <--0-- 
+  --19--> (N_PZ_280, clock) (N_PZ_11, clock) (N_PZ_14, clock) (N_PZ_17, clock)  
+          (N_PZ_2, clock) (N_PZ_32, clock) (N_PZ_35, clock) (N_PZ_5, clock)  
+          (N_PZ_8, clock) (N_PZ_6, clock) (N_PZ_285, clock) (N_PZ_337, clock)  
+          (N_PZ_181, clock) (N_PZ_182, clock) (N_PZ_177, clock) (N_PZ_178, clock)  
+          (N_PZ_179, clock) (N_PZ_180, clock) (N_PZ_183, clock) 
+hoursbcd<4>.Q,net=clock: PI
+  <--0-- 
+  --20--> (N_PZ_281, clock) (N_PZ_278, clock) (N_PZ_11, clock) (N_PZ_14, clock)  
+          (N_PZ_17, clock) (N_PZ_2, clock) (N_PZ_32, clock) (N_PZ_35, clock)  
+          (N_PZ_5, clock) (N_PZ_8, clock) (N_PZ_286, clock) (N_PZ_174, clock)  
+          (N_PZ_172, clock) (N_PZ_170, clock) (N_PZ_175, clock) (N_PZ_282, clock)  
+          (N_PZ_171, clock) (N_PZ_337, clock) (N_PZ_173, clock) (N_PZ_176, clock) 
+hoursbcd<1>.Q,net=clock: PI
+  <--0-- 
+  --19--> (N_PZ_280, clock) (N_PZ_11, clock) (N_PZ_14, clock) (N_PZ_17, clock)  
+          (N_PZ_2, clock) (N_PZ_32, clock) (N_PZ_35, clock) (N_PZ_5, clock)  
+          (N_PZ_8, clock) (N_PZ_6, clock) (N_PZ_285, clock) (N_PZ_337, clock)  
+          (N_PZ_181, clock) (N_PZ_182, clock) (N_PZ_177, clock) (N_PZ_178, clock)  
+          (N_PZ_179, clock) (N_PZ_180, clock) (N_PZ_183, clock) 
+hoursbcd<2>.Q,net=clock: PI
+  <--0-- 
+  --18--> (N_PZ_11, clock) (N_PZ_14, clock) (N_PZ_17, clock) (N_PZ_2, clock)  
+          (N_PZ_32, clock) (N_PZ_35, clock) (N_PZ_5, clock) (N_PZ_8, clock)  
+          (N_PZ_6, clock) (N_PZ_285, clock) (N_PZ_337, clock) (N_PZ_181, clock)  
+          (N_PZ_182, clock) (N_PZ_177, clock) (N_PZ_178, clock) (N_PZ_179, clock)  
+          (N_PZ_180, clock) (N_PZ_183, clock) 
+hoursbcd<5>.Q,net=clock: PI
+  <--0-- 
+  --20--> (N_PZ_281, clock) (N_PZ_278, clock) (N_PZ_11, clock) (N_PZ_14, clock)  
+          (N_PZ_17, clock) (N_PZ_2, clock) (N_PZ_32, clock) (N_PZ_35, clock)  
+          (N_PZ_5, clock) (N_PZ_8, clock) (N_PZ_286, clock) (N_PZ_174, clock)  
+          (N_PZ_172, clock) (N_PZ_170, clock) (N_PZ_175, clock) (N_PZ_282, clock)  
+          (N_PZ_171, clock) (N_PZ_337, clock) (N_PZ_173, clock) (N_PZ_176, clock) 
+hoursbcd<6>.Q,net=clock: PI
+  <--0-- 
+  --19--> (N_PZ_281, clock) (N_PZ_278, clock) (N_PZ_11, clock) (N_PZ_14, clock)  
+          (N_PZ_17, clock) (N_PZ_2, clock) (N_PZ_32, clock) (N_PZ_35, clock)  
+          (N_PZ_5, clock) (N_PZ_8, clock) (N_PZ_286, clock) (N_PZ_174, clock)  
+          (N_PZ_172, clock) (N_PZ_170, clock) (N_PZ_175, clock) (N_PZ_171, clock)  
+          (N_PZ_337, clock) (N_PZ_173, clock) (N_PZ_176, clock) 
+seccount/intclk.Q,net=clock: PI
+  <--0-- 
+  --6--> (N_PZ_25, clock) (N_PZ_43, clock) (N_PZ_46, clock) (N_PZ_52, clock)  
+         (N_PZ_55, clock) (N_PZ_336, clock) 
+secondsbcd<0>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_336, clock) (N_PZ_36, clock) (N_PZ_191, clock) (N_PZ_193, clock)  
+          (N_PZ_288, clock) (N_PZ_291, clock) (N_PZ_196, clock) (N_PZ_192, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+secondsbcd<4>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_42, clock) (N_PZ_290, clock) (N_PZ_292, clock) (N_PZ_338, clock)  
+          (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock) (N_PZ_186, clock)  
+          (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock) 
+hourcount/intclk.Q,net=clock: PI
+  <--0-- 
+  --5--> (N_PZ_4, clock) (N_PZ_13, clock) (N_PZ_16, clock) (N_PZ_34, clock)  
+         (N_PZ_337, clock) 
+hoursbcd<3>.Q,net=clock: PI
+  <--0-- 
+  --18--> (N_PZ_11, clock) (N_PZ_14, clock) (N_PZ_17, clock) (N_PZ_2, clock)  
+          (N_PZ_32, clock) (N_PZ_35, clock) (N_PZ_5, clock) (N_PZ_8, clock)  
+          (N_PZ_6, clock) (N_PZ_285, clock) (N_PZ_337, clock) (N_PZ_181, clock)  
+          (N_PZ_182, clock) (N_PZ_177, clock) (N_PZ_178, clock) (N_PZ_179, clock)  
+          (N_PZ_180, clock) (N_PZ_183, clock) 
+hoursbcd<7>.Q,net=clock: PI
+  <--0-- 
+  --18--> (N_PZ_281, clock) (N_PZ_278, clock) (N_PZ_11, clock) (N_PZ_14, clock)  
+          (N_PZ_17, clock) (N_PZ_2, clock) (N_PZ_32, clock) (N_PZ_35, clock)  
+          (N_PZ_5, clock) (N_PZ_8, clock) (N_PZ_174, clock) (N_PZ_172, clock)  
+          (N_PZ_170, clock) (N_PZ_175, clock) (N_PZ_171, clock) (N_PZ_337, clock)  
+          (N_PZ_173, clock) (N_PZ_176, clock) 
+secondsbcd<1>.Q,net=clock: PI
+  <--0-- 
+  --12--> (N_PZ_336, clock) (N_PZ_36, clock) (N_PZ_413, clock) (N_PZ_191, clock)  
+          (N_PZ_193, clock) (N_PZ_288, clock) (N_PZ_291, clock) (N_PZ_196, clock)  
+          (N_PZ_192, clock) (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+secondsbcd<2>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_336, clock) (N_PZ_36, clock) (N_PZ_413, clock) (N_PZ_191, clock)  
+          (N_PZ_193, clock) (N_PZ_291, clock) (N_PZ_196, clock) (N_PZ_192, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+secondsbcd<5>.Q,net=clock: PI
+  <--0-- 
+  --13--> (N_PZ_42, clock) (N_PZ_412, clock) (N_PZ_290, clock) (N_PZ_292, clock)  
+          (N_PZ_338, clock) (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock)  
+          (N_PZ_186, clock) (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock)  
+          (N_PZ_190, clock) 
+secondsbcd<6>.Q,net=clock: PI
+  <--0-- 
+  --13--> (N_PZ_42, clock) (N_PZ_412, clock) (N_PZ_290, clock) (N_PZ_292, clock)  
+          (N_PZ_338, clock) (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock)  
+          (N_PZ_186, clock) (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock)  
+          (N_PZ_190, clock) 
+secondsbcd<3>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_336, clock) (N_PZ_36, clock) (N_PZ_413, clock) (N_PZ_191, clock)  
+          (N_PZ_193, clock) (N_PZ_291, clock) (N_PZ_196, clock) (N_PZ_192, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+secondsbcd<7>.Q,net=clock: PI
+  <--0-- 
+  --12--> (N_PZ_42, clock) (N_PZ_412, clock) (N_PZ_290, clock) (N_PZ_338, clock)  
+          (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock) (N_PZ_186, clock)  
+          (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock) (N_PZ_190, clock) 
+FMin.Q,net=clock: PI
+  <--0-- 
+  --2--> (N_PZ_436, clock) (N_PZ_338, clock) 
+showhr.Q,net=clock: PI
+  <--0-- 
+  --31--> (N_PZ_174, clock) (N_PZ_172, clock) (N_PZ_170, clock) (N_PZ_175, clock)  
+          (N_PZ_171, clock) (N_PZ_181, clock) (N_PZ_182, clock) (N_PZ_177, clock)  
+          (N_PZ_178, clock) (N_PZ_179, clock) (N_PZ_180, clock) (N_PZ_183, clock)  
+          (N_PZ_412, clock) (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock)  
+          (N_PZ_186, clock) (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock)  
+          (N_PZ_190, clock) (N_PZ_413, clock) (N_PZ_191, clock) (N_PZ_193, clock)  
+          (N_PZ_196, clock) (N_PZ_192, clock) (N_PZ_173, clock) (N_PZ_176, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+settime.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_23, clock) (N_PZ_26, clock) (N_PZ_38, clock) (N_PZ_41, clock)  
+          (N_PZ_44, clock) (N_PZ_47, clock) (N_PZ_50, clock) (N_PZ_53, clock)  
+          (N_PZ_66, clock) (N_PZ_336, clock) (N_PZ_338, clock) 
+setmode.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_169, clock) (N_PZ_435, clock) (N_PZ_436, clock) 
+mincount/intclk.Q,net=clock: PI
+  <--0-- 
+  --5--> (N_PZ_75, clock) (N_PZ_81, clock) (N_PZ_83, clock) (N_PZ_87, clock)  
+         (N_PZ_168, clock) 
+minutesbcd<0>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_70, clock) (N_PZ_76, clock) (N_PZ_191, clock) (N_PZ_193, clock)  
+          (N_PZ_297, clock) (N_PZ_300, clock) (N_PZ_196, clock) (N_PZ_192, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+minutesbcd<4>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_80, clock) (N_PZ_167, clock) (N_PZ_299, clock) (N_PZ_301, clock)  
+          (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock) (N_PZ_186, clock)  
+          (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock) 
+minutesbcd<1>.Q,net=clock: PI
+  <--0-- 
+  --12--> (N_PZ_70, clock) (N_PZ_76, clock) (N_PZ_413, clock) (N_PZ_191, clock)  
+          (N_PZ_193, clock) (N_PZ_297, clock) (N_PZ_300, clock) (N_PZ_196, clock)  
+          (N_PZ_192, clock) (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+minutesbcd<2>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_70, clock) (N_PZ_76, clock) (N_PZ_413, clock) (N_PZ_191, clock)  
+          (N_PZ_193, clock) (N_PZ_300, clock) (N_PZ_196, clock) (N_PZ_192, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+minutesbcd<5>.Q,net=clock: PI
+  <--0-- 
+  --13--> (N_PZ_80, clock) (N_PZ_167, clock) (N_PZ_299, clock) (N_PZ_301, clock)  
+          (N_PZ_412, clock) (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock)  
+          (N_PZ_186, clock) (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock)  
+          (N_PZ_190, clock) 
+minutesbcd<6>.Q,net=clock: PI
+  <--0-- 
+  --13--> (N_PZ_80, clock) (N_PZ_167, clock) (N_PZ_299, clock) (N_PZ_301, clock)  
+          (N_PZ_412, clock) (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock)  
+          (N_PZ_186, clock) (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock)  
+          (N_PZ_190, clock) 
+minutesbcd<3>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_70, clock) (N_PZ_76, clock) (N_PZ_413, clock) (N_PZ_191, clock)  
+          (N_PZ_193, clock) (N_PZ_300, clock) (N_PZ_196, clock) (N_PZ_192, clock)  
+          (N_PZ_194, clock) (N_PZ_195, clock) (N_PZ_197, clock) 
+minutesbcd<7>.Q,net=clock: PI
+  <--0-- 
+  --12--> (N_PZ_80, clock) (N_PZ_167, clock) (N_PZ_299, clock) (N_PZ_412, clock)  
+          (N_PZ_188, clock) (N_PZ_184, clock) (N_PZ_453, clock) (N_PZ_186, clock)  
+          (N_PZ_185, clock) (N_PZ_187, clock) (N_PZ_189, clock) (N_PZ_190, clock) 
+modeBtn/ShiftRegister<0>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_90, clock) (N_PZ_159, clock) (N_PZ_160, clock) 
+modeBtn/ShiftRegister<1>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_92, clock) (N_PZ_159, clock) (N_PZ_160, clock) 
+modeBtn/ShiftRegister<2>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_117, clock) (N_PZ_159, clock) (N_PZ_160, clock) 
+setBtn/ShiftRegister<0>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_63, clock) (N_PZ_64, clock) (N_PZ_96, clock) 
+setBtn/ShiftRegister<1>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_63, clock) (N_PZ_64, clock) (N_PZ_98, clock) 
+setBtn/ShiftRegister<2>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_63, clock) (N_PZ_64, clock) (N_PZ_119, clock) 
+setHr/ShiftRegister<0>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_102, clock) (N_PZ_162, clock) (N_PZ_163, clock) 
+setHr/ShiftRegister<1>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_104, clock) (N_PZ_162, clock) (N_PZ_163, clock) 
+setHr/ShiftRegister<2>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_121, clock) (N_PZ_162, clock) (N_PZ_163, clock) 
+setMn/ShiftRegister<0>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_108, clock) (N_PZ_165, clock) (N_PZ_166, clock) 
+setMn/ShiftRegister<1>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_110, clock) (N_PZ_165, clock) (N_PZ_166, clock) 
+setMn/ShiftRegister<2>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_123, clock) (N_PZ_165, clock) (N_PZ_166, clock) 
+dzielnik/FDivCnt<0>.Q,net=clock: PI
+  <--0-- 
+  --14--> (N_PZ_266, clock) (N_PZ_267, clock) (N_PZ_268, clock) (N_PZ_269, clock)  
+          (N_PZ_270, clock) (N_PZ_271, clock) (N_PZ_260, clock) (N_PZ_272, clock)  
+          (N_PZ_273, clock) (N_PZ_263, clock) (N_PZ_264, clock) (N_PZ_261, clock)  
+          (N_PZ_262, clock) (N_PZ_265, clock) 
+modeBtn/ShiftRegister<3>.Q,net=clock: PI
+  <--0-- 
+  --2--> (N_PZ_159, clock) (N_PZ_160, clock) 
+setBtn/ShiftRegister<3>.Q,net=clock: PI
+  <--0-- 
+  --2--> (N_PZ_63, clock) (N_PZ_64, clock) 
+setHr/ShiftRegister<3>.Q,net=clock: PI
+  <--0-- 
+  --2--> (N_PZ_162, clock) (N_PZ_163, clock) 
+setMn/ShiftRegister<3>.Q,net=clock: PI
+  <--0-- 
+  --2--> (N_PZ_165, clock) (N_PZ_166, clock) 
+chmod.Q,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_58, clock) 
+sethour.Q,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_435, clock) 
+setminute.Q,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_436, clock) 
+FHour.Q,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_435, clock) 
+F8ms.Q,net=clock: PI
+  <--0-- 
+  --23--> (N_PZ_89, clock) (N_PZ_91, clock) (N_PZ_93, clock) (N_PZ_95, clock)  
+          (N_PZ_97, clock) (N_PZ_99, clock) (N_PZ_101, clock) (N_PZ_103, clock)  
+          (N_PZ_105, clock) (N_PZ_107, clock) (N_PZ_109, clock) (N_PZ_111, clock)  
+          (N_PZ_118, clock) (N_PZ_120, clock) (N_PZ_122, clock) (N_PZ_124, clock)  
+          (N_PZ_272, clock) (N_PZ_273, clock) (N_PZ_263, clock) (N_PZ_264, clock)  
+          (N_PZ_261, clock) (N_PZ_262, clock) (N_PZ_265, clock) 
+FSec.Q,net=clock: PI
+  <--0-- 
+  --6--> (N_PZ_19, clock) (N_PZ_22, clock) (N_PZ_37, clock) (N_PZ_40, clock)  
+         (N_PZ_49, clock) (N_PZ_169, clock) 
+F250ms.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_169, clock) (N_PZ_261, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<10>.Q,net=clock: PI
+  <--0-- 
+  --4--> (N_PZ_264, clock) (N_PZ_261, clock) (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<11>.Q,net=clock: PI
+  <--0-- 
+  --3--> (N_PZ_261, clock) (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<13>.Q,net=clock: PI
+  <--0-- 
+  --1--> (N_PZ_261, clock) 
+dzielnik/FDivCnt<1>.Q,net=clock: PI
+  <--0-- 
+  --13--> (N_PZ_267, clock) (N_PZ_268, clock) (N_PZ_269, clock) (N_PZ_270, clock)  
+          (N_PZ_271, clock) (N_PZ_260, clock) (N_PZ_272, clock) (N_PZ_273, clock)  
+          (N_PZ_263, clock) (N_PZ_264, clock) (N_PZ_261, clock) (N_PZ_262, clock)  
+          (N_PZ_265, clock) 
+dzielnik/FDivCnt<2>.Q,net=clock: PI
+  <--0-- 
+  --12--> (N_PZ_268, clock) (N_PZ_269, clock) (N_PZ_270, clock) (N_PZ_271, clock)  
+          (N_PZ_260, clock) (N_PZ_272, clock) (N_PZ_273, clock) (N_PZ_263, clock)  
+          (N_PZ_264, clock) (N_PZ_261, clock) (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<3>.Q,net=clock: PI
+  <--0-- 
+  --11--> (N_PZ_269, clock) (N_PZ_270, clock) (N_PZ_271, clock) (N_PZ_260, clock)  
+          (N_PZ_272, clock) (N_PZ_273, clock) (N_PZ_263, clock) (N_PZ_264, clock)  
+          (N_PZ_261, clock) (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<4>.Q,net=clock: PI
+  <--0-- 
+  --10--> (N_PZ_270, clock) (N_PZ_271, clock) (N_PZ_260, clock) (N_PZ_272, clock)  
+          (N_PZ_273, clock) (N_PZ_263, clock) (N_PZ_264, clock) (N_PZ_261, clock)  
+          (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<5>.Q,net=clock: PI
+  <--0-- 
+  --9--> (N_PZ_271, clock) (N_PZ_260, clock) (N_PZ_272, clock) (N_PZ_273, clock)  
+         (N_PZ_263, clock) (N_PZ_264, clock) (N_PZ_261, clock) (N_PZ_262, clock)  
+         (N_PZ_265, clock) 
+dzielnik/FDivCnt<6>.Q,net=clock: PI
+  <--0-- 
+  --8--> (N_PZ_260, clock) (N_PZ_272, clock) (N_PZ_273, clock) (N_PZ_263, clock)  
+         (N_PZ_264, clock) (N_PZ_261, clock) (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<8>.Q,net=clock: PI
+  <--0-- 
+  --6--> (N_PZ_273, clock) (N_PZ_263, clock) (N_PZ_264, clock) (N_PZ_261, clock)  
+         (N_PZ_262, clock) (N_PZ_265, clock) 
+dzielnik/FDivCnt<9>.Q,net=clock: PI
+  <--0-- 
+  --5--> (N_PZ_263, clock) (N_PZ_264, clock) (N_PZ_261, clock) (N_PZ_262, clock)  
+         (N_PZ_265, clock) 
+N_PZ_231,net=clock: PINT ( showhr.T )
+  <--0-- 
+  --1--> (showhr.T, clock) 
+N_PZ_232,net=clock: PINT ( setmode.T )
+  <--0-- 
+  --1--> (setmode.T, clock) 
+N_PZ_254,net=clock: PINT ( dzielnik/FDivCnt<0>.T )
+  <--0-- 
+  --1--> (dzielnik/FDivCnt<0>.T, clock) 
+N_PZ_260,net=clock: PINT ( F8ms.T )
+  <--7--  (dzielnik/FDivCnt<0>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+          (dzielnik/FDivCnt<4>.Q, clock) (dzielnik/FDivCnt<5>.Q, clock) 
+          (dzielnik/FDivCnt<6>.Q, clock)
+  --1--> (F8ms.T, clock) 
+N_PZ_261,net=clock: PINT ( FSec.T )
+  <--14--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) (F250ms.Q, clock) 
+           (dzielnik/FDivCnt<10>.Q, clock) (dzielnik/FDivCnt<11>.Q, clock) 
+           (dzielnik/FDivCnt<13>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+           (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+           (dzielnik/FDivCnt<4>.Q, clock) (dzielnik/FDivCnt<5>.Q, clock) 
+           (dzielnik/FDivCnt<6>.Q, clock) (dzielnik/FDivCnt<8>.Q, clock) 
+           (dzielnik/FDivCnt<9>.Q, clock)
+  --1--> (FSec.T, clock) 
+N_PZ_262,net=clock: PINT ( F250ms.T )
+  <--12--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) 
+           (dzielnik/FDivCnt<10>.Q, clock) (dzielnik/FDivCnt<11>.Q, clock) 
+           (dzielnik/FDivCnt<1>.Q, clock) (dzielnik/FDivCnt<2>.Q, clock) 
+           (dzielnik/FDivCnt<3>.Q, clock) (dzielnik/FDivCnt<4>.Q, clock) 
+           (dzielnik/FDivCnt<5>.Q, clock) (dzielnik/FDivCnt<6>.Q, clock) 
+           (dzielnik/FDivCnt<8>.Q, clock) (dzielnik/FDivCnt<9>.Q, clock)
+  --1--> (F250ms.T, clock) 
+N_PZ_263,net=clock: PINT ( dzielnik/FDivCnt<10>.T )
+  <--10--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) 
+           (dzielnik/FDivCnt<1>.Q, clock) (dzielnik/FDivCnt<2>.Q, clock) 
+           (dzielnik/FDivCnt<3>.Q, clock) (dzielnik/FDivCnt<4>.Q, clock) 
+           (dzielnik/FDivCnt<5>.Q, clock) (dzielnik/FDivCnt<6>.Q, clock) 
+           (dzielnik/FDivCnt<8>.Q, clock) (dzielnik/FDivCnt<9>.Q, clock)
+  --1--> (dzielnik/FDivCnt<10>.T, clock) 
+N_PZ_264,net=clock: PINT ( dzielnik/FDivCnt<11>.T )
+  <--11--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) 
+           (dzielnik/FDivCnt<10>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+           (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+           (dzielnik/FDivCnt<4>.Q, clock) (dzielnik/FDivCnt<5>.Q, clock) 
+           (dzielnik/FDivCnt<6>.Q, clock) (dzielnik/FDivCnt<8>.Q, clock) 
+           (dzielnik/FDivCnt<9>.Q, clock)
+  --1--> (dzielnik/FDivCnt<11>.T, clock) 
+N_PZ_265,net=clock: PINT ( dzielnik/FDivCnt<13>.T )
+  <--13--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) (F250ms.Q, clock) 
+           (dzielnik/FDivCnt<10>.Q, clock) (dzielnik/FDivCnt<11>.Q, clock) 
+           (dzielnik/FDivCnt<1>.Q, clock) (dzielnik/FDivCnt<2>.Q, clock) 
+           (dzielnik/FDivCnt<3>.Q, clock) (dzielnik/FDivCnt<4>.Q, clock) 
+           (dzielnik/FDivCnt<5>.Q, clock) (dzielnik/FDivCnt<6>.Q, clock) 
+           (dzielnik/FDivCnt<8>.Q, clock) (dzielnik/FDivCnt<9>.Q, clock)
+  --1--> (dzielnik/FDivCnt<13>.T, clock) 
+N_PZ_266,net=clock: PINT ( dzielnik/FDivCnt<1>.T )
+  <--1--  (dzielnik/FDivCnt<0>.Q, clock)
+  --1--> (dzielnik/FDivCnt<1>.T, clock) 
+N_PZ_267,net=clock: PINT ( dzielnik/FDivCnt<2>.T )
+  <--2--  (dzielnik/FDivCnt<0>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock)
+  --1--> (dzielnik/FDivCnt<2>.T, clock) 
+N_PZ_268,net=clock: PINT ( dzielnik/FDivCnt<3>.T )
+  <--3--  (dzielnik/FDivCnt<0>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock)
+  --1--> (dzielnik/FDivCnt<3>.T, clock) 
+N_PZ_269,net=clock: PINT ( dzielnik/FDivCnt<4>.T )
+  <--4--  (dzielnik/FDivCnt<0>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock)
+  --1--> (dzielnik/FDivCnt<4>.T, clock) 
+N_PZ_270,net=clock: PINT ( dzielnik/FDivCnt<5>.T )
+  <--5--  (dzielnik/FDivCnt<0>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+          (dzielnik/FDivCnt<4>.Q, clock)
+  --1--> (dzielnik/FDivCnt<5>.T, clock) 
+N_PZ_271,net=clock: PINT ( dzielnik/FDivCnt<6>.T )
+  <--6--  (dzielnik/FDivCnt<0>.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+          (dzielnik/FDivCnt<4>.Q, clock) (dzielnik/FDivCnt<5>.Q, clock)
+  --1--> (dzielnik/FDivCnt<6>.T, clock) 
+N_PZ_272,net=clock: PINT ( dzielnik/FDivCnt<8>.T )
+  <--8--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+          (dzielnik/FDivCnt<4>.Q, clock) (dzielnik/FDivCnt<5>.Q, clock) 
+          (dzielnik/FDivCnt<6>.Q, clock)
+  --1--> (dzielnik/FDivCnt<8>.T, clock) 
+N_PZ_273,net=clock: PINT ( dzielnik/FDivCnt<9>.T )
+  <--9--  (dzielnik/FDivCnt<0>.Q, clock) (F8ms.Q, clock) (dzielnik/FDivCnt<1>.Q, clock) 
+          (dzielnik/FDivCnt<2>.Q, clock) (dzielnik/FDivCnt<3>.Q, clock) 
+          (dzielnik/FDivCnt<4>.Q, clock) (dzielnik/FDivCnt<5>.Q, clock) 
+          (dzielnik/FDivCnt<6>.Q, clock) (dzielnik/FDivCnt<8>.Q, clock)
+  --1--> (dzielnik/FDivCnt<9>.T, clock) 
+showhr.T,net=clock: PO
+  <--1--  (N_PZ_231, clock)
+  --0--> 
+setmode.T,net=clock: PO
+  <--1--  (N_PZ_232, clock)
+  --0--> 
+dzielnik/FDivCnt<0>.T,net=clock: PO
+  <--1--  (N_PZ_254, clock)
+  --0--> 
+F8ms.T,net=clock: PO
+  <--1--  (N_PZ_260, clock)
+  --0--> 
+FSec.T,net=clock: PO
+  <--1--  (N_PZ_261, clock)
+  --0--> 
+F250ms.T,net=clock: PO
+  <--1--  (N_PZ_262, clock)
+  --0--> 
+dzielnik/FDivCnt<10>.T,net=clock: PO
+  <--1--  (N_PZ_263, clock)
+  --0--> 
+dzielnik/FDivCnt<11>.T,net=clock: PO
+  <--1--  (N_PZ_264, clock)
+  --0--> 
+dzielnik/FDivCnt<13>.T,net=clock: PO
+  <--1--  (N_PZ_265, clock)
+  --0--> 
+dzielnik/FDivCnt<1>.T,net=clock: PO
+  <--1--  (N_PZ_266, clock)
+  --0--> 
+dzielnik/FDivCnt<2>.T,net=clock: PO
+  <--1--  (N_PZ_267, clock)
+  --0--> 
+dzielnik/FDivCnt<3>.T,net=clock: PO
+  <--1--  (N_PZ_268, clock)
+  --0--> 
+dzielnik/FDivCnt<4>.T,net=clock: PO
+  <--1--  (N_PZ_269, clock)
+  --0--> 
+dzielnik/FDivCnt<5>.T,net=clock: PO
+  <--1--  (N_PZ_270, clock)
+  --0--> 
+dzielnik/FDivCnt<6>.T,net=clock: PO
+  <--1--  (N_PZ_271, clock)
+  --0--> 
+dzielnik/FDivCnt<8>.T,net=clock: PO
+  <--1--  (N_PZ_272, clock)
+  --0--> 
+dzielnik/FDivCnt<9>.T,net=clock: PO
+  <--1--  (N_PZ_273, clock)
+  --0--> 
+N_PZ_277,net=clock: PINT ( hoursbcd<0>.T )
+  <--0-- 
+  --1--> (hoursbcd<0>.T, clock) 
+N_PZ_278,net=clock: PINT ( hoursbcd<4>.T )
+  <--4--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<4>.T, clock) 
+N_PZ_280,net=clock: PINT ( hoursbcd<2>.T )
+  <--2--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock)
+  --1--> (hoursbcd<2>.T, clock) 
+N_PZ_281,net=clock: PINT ( hoursbcd<5>.T )
+  <--4--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hoursbcd<7>.Q, clock)
+  --1--> (hoursbcd<5>.T, clock) 
+N_PZ_282,net=clock: PINT ( hoursbcd<6>.T )
+  <--2--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock)
+  --1--> (hoursbcd<6>.T, clock) 
+N_PZ_283,net=clock: PINT ( secondsbcd<0>.T )
+  <--0-- 
+  --1--> (secondsbcd<0>.T, clock) 
+N_PZ_284,net=clock: PINT ( secondsbcd<4>.T )
+  <--0-- 
+  --1--> (secondsbcd<4>.T, clock) 
+N_PZ_285,net=clock: PINT ( hoursbcd<3>.T )
+  <--4--  (hoursbcd<0>.Q, clock) (hoursbcd<1>.Q, clock) (hoursbcd<2>.Q, clock) 
+          (hoursbcd<3>.Q, clock)
+  --1--> (hoursbcd<3>.T, clock) 
+N_PZ_286,net=clock: PINT ( hoursbcd<7>.T )
+  <--3--  (hoursbcd<4>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock)
+  --1--> (hoursbcd<7>.T, clock) 
+N_PZ_288,net=clock: PINT ( secondsbcd<2>.T )
+  <--2--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock)
+  --1--> (secondsbcd<2>.T, clock) 
+N_PZ_290,net=clock: PINT ( secondsbcd<6>.T )
+  <--4--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock)
+  --1--> (secondsbcd<6>.T, clock) 
+N_PZ_291,net=clock: PINT ( secondsbcd<3>.T )
+  <--4--  (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) 
+          (secondsbcd<3>.Q, clock)
+  --1--> (secondsbcd<3>.T, clock) 
+N_PZ_292,net=clock: PINT ( secondsbcd<7>.T )
+  <--3--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock)
+  --1--> (secondsbcd<7>.T, clock) 
+N_PZ_294,net=clock: PINT ( minutesbcd<0>.T )
+  <--0-- 
+  --1--> (minutesbcd<0>.T, clock) 
+N_PZ_295,net=clock: PINT ( minutesbcd<4>.T )
+  <--0-- 
+  --1--> (minutesbcd<4>.T, clock) 
+N_PZ_297,net=clock: PINT ( minutesbcd<2>.T )
+  <--2--  (minutesbcd<0>.Q, clock) (minutesbcd<1>.Q, clock)
+  --1--> (minutesbcd<2>.T, clock) 
+N_PZ_299,net=clock: PINT ( minutesbcd<6>.T )
+  <--4--  (minutesbcd<4>.Q, clock) (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) 
+          (minutesbcd<7>.Q, clock)
+  --1--> (minutesbcd<6>.T, clock) 
+N_PZ_300,net=clock: PINT ( minutesbcd<3>.T )
+  <--4--  (minutesbcd<0>.Q, clock) (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) 
+          (minutesbcd<3>.Q, clock)
+  --1--> (minutesbcd<3>.T, clock) 
+N_PZ_301,net=clock: PINT ( minutesbcd<7>.T )
+  <--3--  (minutesbcd<4>.Q, clock) (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock)
+  --1--> (minutesbcd<7>.T, clock) 
+N_PZ_336,net=clock: PINT ( seccount/intclk.D )
+  <--6--  (seccount/intclk.Q, clock) (secondsbcd<0>.Q, clock) (secondsbcd<1>.Q, clock) 
+          (secondsbcd<2>.Q, clock) (secondsbcd<3>.Q, clock) (settime.Q, clock)
+  --1--> (seccount/intclk.D, clock) 
+N_PZ_337,net=clock: PINT ( hourcount/intclk.D )
+  <--9--  (hoursbcd<0>.Q, clock) (hoursbcd<4>.Q, clock) (hoursbcd<1>.Q, clock) 
+          (hoursbcd<2>.Q, clock) (hoursbcd<5>.Q, clock) (hoursbcd<6>.Q, clock) 
+          (hourcount/intclk.Q, clock) (hoursbcd<3>.Q, clock) (hoursbcd<7>.Q, clock)
+  --1--> (hourcount/intclk.D, clock) 
+N_PZ_338,net=clock: PINT ( FMin.D )
+  <--6--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock) (FMin.Q, clock) (settime.Q, clock)
+  --1--> (FMin.D, clock) 
+hoursbcd<0>.T,net=clock: PO
+  <--1--  (N_PZ_277, clock)
+  --0--> 
+hoursbcd<4>.T,net=clock: PO
+  <--1--  (N_PZ_278, clock)
+  --0--> 
+hoursbcd<2>.T,net=clock: PO
+  <--1--  (N_PZ_280, clock)
+  --0--> 
+hoursbcd<5>.T,net=clock: PO
+  <--1--  (N_PZ_281, clock)
+  --0--> 
+hoursbcd<6>.T,net=clock: PO
+  <--1--  (N_PZ_282, clock)
+  --0--> 
+secondsbcd<0>.T,net=clock: PO
+  <--1--  (N_PZ_283, clock)
+  --0--> 
+secondsbcd<4>.T,net=clock: PO
+  <--1--  (N_PZ_284, clock)
+  --0--> 
+hoursbcd<3>.T,net=clock: PO
+  <--1--  (N_PZ_285, clock)
+  --0--> 
+hoursbcd<7>.T,net=clock: PO
+  <--1--  (N_PZ_286, clock)
+  --0--> 
+secondsbcd<2>.T,net=clock: PO
+  <--1--  (N_PZ_288, clock)
+  --0--> 
+secondsbcd<6>.T,net=clock: PO
+  <--1--  (N_PZ_290, clock)
+  --0--> 
+secondsbcd<3>.T,net=clock: PO
+  <--1--  (N_PZ_291, clock)
+  --0--> 
+secondsbcd<7>.T,net=clock: PO
+  <--1--  (N_PZ_292, clock)
+  --0--> 
+minutesbcd<0>.T,net=clock: PO
+  <--1--  (N_PZ_294, clock)
+  --0--> 
+minutesbcd<4>.T,net=clock: PO
+  <--1--  (N_PZ_295, clock)
+  --0--> 
+minutesbcd<2>.T,net=clock: PO
+  <--1--  (N_PZ_297, clock)
+  --0--> 
+minutesbcd<6>.T,net=clock: PO
+  <--1--  (N_PZ_299, clock)
+  --0--> 
+minutesbcd<3>.T,net=clock: PO
+  <--1--  (N_PZ_300, clock)
+  --0--> 
+minutesbcd<7>.T,net=clock: PO
+  <--1--  (N_PZ_301, clock)
+  --0--> 
+seccount/intclk.D,net=clock: PO
+  <--1--  (N_PZ_336, clock)
+  --0--> 
+hourcount/intclk.D,net=clock: PO
+  <--1--  (N_PZ_337, clock)
+  --0--> 
+FMin.D,net=clock: PO
+  <--1--  (N_PZ_338, clock)
+  --0--> 
+N_PZ_412,net=clock: INT
+  <--7--  (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) (secondsbcd<7>.Q, clock) 
+          (showhr.Q, clock) (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) 
+          (minutesbcd<7>.Q, clock)
+  --4--> (N_PZ_184, clock) (N_PZ_187, clock) (N_PZ_189, clock) (N_PZ_190, clock) 
+N_PZ_413,net=clock: INT
+  <--7--  (secondsbcd<1>.Q, clock) (secondsbcd<2>.Q, clock) (secondsbcd<3>.Q, clock) 
+          (showhr.Q, clock) (minutesbcd<1>.Q, clock) (minutesbcd<2>.Q, clock) 
+          (minutesbcd<3>.Q, clock)
+  --4--> (N_PZ_191, clock) (N_PZ_196, clock) (N_PZ_194, clock) (N_PZ_197, clock) 
+N_PZ_435,net=clock: INT
+  <--3--  (setmode.Q, clock) (sethour.Q, clock) (FHour.Q, clock)
+  --5--> (N_PZ_28, clock) (N_PZ_10, clock) (N_PZ_31, clock) (N_PZ_1, clock)  
+         (N_PZ_7, clock) 
+N_PZ_436,net=clock: INT
+  <--3--  (FMin.Q, clock) (setmode.Q, clock) (setminute.Q, clock)
+  --5--> (N_PZ_77, clock) (N_PZ_79, clock) (N_PZ_85, clock) (N_PZ_71, clock)  
+         (N_PZ_73, clock) 
+N_PZ_453,net=clock: INT
+  <--9--  (secondsbcd<4>.Q, clock) (secondsbcd<5>.Q, clock) (secondsbcd<6>.Q, clock) 
+          (secondsbcd<7>.Q, clock) (showhr.Q, clock) (minutesbcd<4>.Q, clock) 
+          (minutesbcd<5>.Q, clock) (minutesbcd<6>.Q, clock) (minutesbcd<7>.Q, clock)
+  --2--> (N_PZ_187, clock) (N_PZ_190, clock) 
