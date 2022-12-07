@@ -1,8 +1,0 @@
-xst -intstyle ise -ifn "/home/marek/Dropbox/Projekty/CPLDclock/code/clock.xst" -ofn "/home/marek/Dropbox/Projekty/CPLDclock/code/clock.syr" 
-ngdbuild -intstyle ise -dd _ngo -uc pins.ucf -p xc2c128-VQ100-6 clock.ngc clock.ngd  
-ngdbuild -intstyle ise -dd _ngo -uc pins.ucf -p xc2c128-VQ100-6 clock.ngc clock.ngd  
-cpldfit -intstyle ise -p xc2c128-6-VQ100 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 clock.ngd 
-XSLTProcess clock_build.xml 
-tsim -intstyle ise clock clock.nga 
-taengine -intstyle ise -f clock -w --format html1 -l clock_html/tim/timing_report.htm 
-hprep6 -s IEEE1149 -i clock 

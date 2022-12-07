@@ -1,7 +1,0 @@
-vhdl work "bcdcount.vhd"
-vhdl work "PushButton.vhd"
-vhdl work "FDivider.vhd"
-vhdl work "decconv.vhd"
-vhdl work "bcdcnt60.vhd"
-vhdl work "bcdcnt24.vhd"
-vhdl work "clock.vhd"
